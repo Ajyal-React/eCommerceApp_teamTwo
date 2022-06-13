@@ -21,9 +21,11 @@ export const FlexBox = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: ${(props) => props.backgroundColor};
+  background: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderR};
-  border: none;
+  border: ${(props) => props.border};
+  padding: ${(props) => props.padding};
+  color:${(props) => props.color};
 
 `;
 
@@ -31,6 +33,8 @@ export const MainHeader = styled.h1`
   letter-spacing: -2.53px;
   color: #ffffff;
   text-transform: uppercase;
+  font-size: ${(props) => props.fontSize};
+  margin:0;
 `;
 
 export const Title = styled.h2`
