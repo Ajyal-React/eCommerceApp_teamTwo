@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, InnerContainer, MainHeader, Paragraphe } from '../../Global.style'
 import { MainHero } from './HeroSection.Style'
+
 function HeroSection() {
   return (
     <MainHero>
