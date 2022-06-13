@@ -30,6 +30,7 @@ export const Button = styled.button`
     background-color:#f7981d;
     cursor: pointer
   }
+  z-index: ${(props) => props.zIndex}; 
 
 `;
 
@@ -39,6 +40,7 @@ export const MainHeader = styled.h1`
   // text-transform: uppercase;
   font-size: ${(props) => props.fontSize};
   margin:0;
+  z-index: ${(props) => props.zIndex}; 
 `;
 
 export const Title = styled.h2`
