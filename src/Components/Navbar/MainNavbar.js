@@ -9,6 +9,8 @@ import {
 import { BiSearch } from "react-icons/bi";
 import { Paragraphe } from "./../../Global.style";
 import { CenterSection,navContainer ,firstSection,signButton} from "./MainNavbar.Style";
+// import { CenterSection } from "./MainNavbar.Style";
+import image from '../../images/Group 14849.png'
 
 function MainNavbar() {
   return (
@@ -35,7 +37,7 @@ function MainNavbar() {
               <li>
                 <Paragraphe font-size="20px">Mobiles</Paragraphe>
               </li>
-              {/* <li><img src="../../../public/images/Group 14849.png" alt="logo"/></li> */}
+              <li><img src={image} alt="logo"/></li>
               <li>
                 <Paragraphe font-size="20px">Laptops</Paragraphe>
               </li>
