@@ -43,4 +43,5 @@ export const Paragraphe = styled.p`
 `;
 export const List = styled.ul`
 list-style:none;
+display: flex;
 `
