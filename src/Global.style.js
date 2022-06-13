@@ -36,5 +36,6 @@ export const Title = styled.h2`
 export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
 `;
-
-
+export const List = styled.ul`
+list-style:none;
+`
