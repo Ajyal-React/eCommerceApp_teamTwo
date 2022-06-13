@@ -11,10 +11,13 @@ export const InnerContainer = styled.div`
   margin:auto;
 `;
 
-export const FlexBox = styled.div`
+export const FlexBox = styled.div`  
   display: flex;
   justify-content: space-between;
+ 
 `;
+
+
 
 export const Button = styled.button`
   background-color: ${(props) => props.backgroundColor};

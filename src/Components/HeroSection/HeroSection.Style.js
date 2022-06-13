@@ -4,6 +4,7 @@ import { MdDoubleArrow } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { InnerContainer } from "../../Global.style";
 
+
 export const MainHero = styled.div`
   display: flex;
   align-items: center;
