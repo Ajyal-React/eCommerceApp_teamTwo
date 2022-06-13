@@ -25,7 +25,14 @@ function DevicesDisplaySection(){
 
                     {/* row1 */}
                     <FlexBox>
-                        <div><Button background-color="#FACE75" border-radius="10px" >SALE_50%</Button></div>
+                        <div>
+                          <Button background-color="#FACE75" padding= '1rem 3rem'
+                             border-radius="10px" border= 'none' display='flex' alignItems='center'
+                             fontWeight=' bolder'
+                             fontSize= '20px'>
+                            SALE_50%
+                           </Button>
+                        </div>
                         <div><img src={Point} alt="" /></div>
                     </FlexBox>
 
