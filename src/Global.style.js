@@ -38,5 +38,6 @@ export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
 `;
-
-
+export const List = styled.ul`
+list-style:none;
+`
