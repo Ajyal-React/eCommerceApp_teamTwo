@@ -26,13 +26,17 @@ export const Button = styled.button`
   border: ${(props) => props.border};
   padding: ${(props) => props.padding};
   color:${(props) => props.color};
+  &:hover{
+    background-color:#f7981d;
+    cursor: pointer
+  }
 
 `;
 
 export const MainHeader = styled.h1`
-  letter-spacing: -2.53px;
+  letter-spacing:${(props) => props.letterSpacing};
   color: #ffffff;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   font-size: ${(props) => props.fontSize};
   margin:0;
 `;
@@ -48,4 +52,8 @@ export const Paragraphe = styled.p`
 export const List = styled.ul`
 list-style:none;
 display: flex;
+`
+export const Link = styled.a`
+  text-decoration: none;
+  color:#fff
 `
