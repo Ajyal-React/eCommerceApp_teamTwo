@@ -1,24 +1,23 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.main`
-  width: 100vw;
-  max-width: 1920;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0;
-  
-
 `;
 
 export const InnerContainer = styled.div`
   width: 80%;
-  margin: auto;
+  margin:auto;
+`;
+
+export const FlexBox = styled.div`  
+  display: flex;
+  justify-content: space-between;
  
 `;
 
-export const FlexBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
+
 
 export const Button = styled.button`
   background: ${(props) => props.backgroundColor};
@@ -31,7 +30,10 @@ export const Button = styled.button`
     cursor: pointer
   }
   z-index: ${(props) => props.zIndex}; 
-
+  font-weight: ${(props) => props.fontWeight};
+  font-size: ${(props) => props.fontSize};
+  display: ${(props) => props.display};
+  align-items: ${(props) => props.alignItems};
 `;
 
 export const MainHeader = styled.h1`
@@ -49,11 +51,11 @@ export const Title = styled.h2`
 
 export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
-  color:${(props) => props.color};
+  color: ${(props) => props.color};
 `;
 export const List = styled.ul`
-list-style:none;
-display: flex;
+  list-style:none;
+  display: flex;
 `
 export const Link = styled.a`
   text-decoration: none;

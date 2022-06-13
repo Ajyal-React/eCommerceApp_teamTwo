@@ -3,14 +3,14 @@ import HeroSection from '../../Components/HeroSection/HeroSection'
 import MainNavbar from '../../Components/Navbar/MainNavbar'
 import { MainContainer, MainHeader, Button, Link} from '../../Global.style'
 import {BackgroundImage,UpdateFlexBox, DivOpacity} from './HomePage.Style'
+import DevicesDisplaySection from '../../Components/devicesDisplaySection/DevicesDisplaySection'
 
 function HomePage() {
   return (
     <MainContainer>
       <MainNavbar/>
       <HeroSection/>
-
-      
+      <DevicesDisplaySection/>      
       <BackgroundImage>
         <DivOpacity></DivOpacity>
         <UpdateFlexBox>
@@ -26,7 +26,6 @@ function HomePage() {
             </Button>
         </UpdateFlexBox>
       </BackgroundImage>
-
     </MainContainer>
   )
 }

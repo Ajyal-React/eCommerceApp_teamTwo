@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  MainContainer,
+  // MainContainer,
   InnerContainer,
   Button,
   FlexBox,
@@ -14,7 +14,7 @@ import image from '../../images/Group 14849.png'
 
 function MainNavbar() {
   return (
-    <MainContainer>
+    // <MainContainer>
       <InnerContainer>
        <NavContainer>
         <FirstSection>
@@ -57,7 +57,7 @@ function MainNavbar() {
         </SignButton>
         </NavContainer>
       </InnerContainer>
-    </MainContainer>
+    // </MainContainer>
   );
 }
 
