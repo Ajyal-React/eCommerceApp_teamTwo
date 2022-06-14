@@ -4,7 +4,6 @@ import { MdDoubleArrow } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { InnerContainer } from "../../Global.style";
 
-
 export const MainHero = styled.div`
   display: flex;
   align-items: center;
@@ -48,5 +47,23 @@ export const ContainerIcon = styled.div`
   margin-top: 180px;
   @media (max-width: 1199.98px) {
     margin-top: 100px;
+  }
+  @media (max-width: 767.98px) {
+    margin-top: 80px;
+  }
+`;
+export const ButtonHero = styled.button`
+  border: none;
+  padding: 1rem 3rem;
+  font-weight: bolder;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  border-radius: 10px;
+  background: #fff;
+  @media (max-width: 767.98px) {
+    font-size: 18px;
+    margin-top: 50px;
   }
 `;

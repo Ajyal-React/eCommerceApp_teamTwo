@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  Button,
   MainHeader,
   Paragraphe,
 } from "../../Global.style";
 import {
+  ButtonHero,
   ContainerIcon,
   InnerContainerHero,
   MainHero,
@@ -16,17 +16,13 @@ function HeroSection() {
   return (
     <MainHero>
       <InnerContainerHero>
-        <MainHeader letterSpacing='-2.53px'>PLAYSTATION 5</MainHeader>
+        <MainHeader letterSpacing='.5px'>PLAYSTATION 5</MainHeader>
         <Paragraphe fontSize="20px" color="#fff">
           lightning-fast download speed with super-fast ssd storage
         </Paragraphe>
-        <Button
-          backgroundColor="#fff"
-          borderR="9px"
-          style={{ marginTop: "100px" }}
-        >
+        <ButtonHero>
           Start Shopping <MdDoubleArrowIcon />
-        </Button>
+        </ButtonHero>
         <ContainerIcon>
           <RiArrowDownSLineIcon />
         </ContainerIcon>
