@@ -52,11 +52,15 @@ export const Button = styled.button`
 export const MainHeader = styled.h1`
   letter-spacing:${(props) => props.letterSpacing};
   color: #ffffff;
-  // text-transform: uppercase;
+  text-transform: uppercase;
   font-size: ${(props) => props.fontSize};
   margin:0;
   z-index: ${(props) => props.zIndex}; 
 `;
+
+export const SubHeader=styled(MainHeader)`
+color: #32353C;
+`
 
 export const Title = styled.h2`
   font-size: 30px;
@@ -69,7 +73,13 @@ export const Paragraphe = styled.p`
 export const StyledList = styled.ul`
   list-style:none;
 `
+export const ListItemsStyle= styled.li`
+padding: 0 3vh;
+`;
 export const Link = styled.a`
   text-decoration: none;
   color:#fff
+`
+export const HrStyle=styled.hr`
+
 `

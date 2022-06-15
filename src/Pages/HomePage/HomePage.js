@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroSection from '../../Components/HeroSection/HeroSection'
 import MainNavbar from '../../Components/Navbar/MainNavbar'
+import CategoriesNav from '../../Components/Navbar/CategoriesNav'
 import { MainContainer, MainHeader, Button, Link} from '../../Global.style'
 import {BackgroundImage,UpdateFlexBox, DivOpacity} from './HomePage.Style'
 import DevicesDisplaySection from '../../Components/devicesDisplaySection/DevicesDisplaySection'
@@ -10,6 +11,7 @@ function HomePage() {
     <MainContainer>
      <MainNavbar/>
       <HeroSection/>
+      <CategoriesNav/>
       <DevicesDisplaySection/>      
       <BackgroundImage>
         <DivOpacity></DivOpacity>
