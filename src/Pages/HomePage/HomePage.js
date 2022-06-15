@@ -8,7 +8,7 @@ import DevicesDisplaySection from '../../Components/devicesDisplaySection/Device
 function HomePage() {
   return (
     <MainContainer>
-      <MainNavbar/>
+     <MainNavbar/>
       <HeroSection/>
       <DevicesDisplaySection/>      
       <BackgroundImage>

@@ -16,6 +16,16 @@ export const FlexBox = styled.div`
   justify-content: space-between;
  
 `;
+export const FlexBoxCenter = styled(FlexBox)`  
+  align-items:center;
+ 
+ 
+`;
+
+export const FlexBoxRow = styled(FlexBox)`  
+ flex-direction:row;
+ 
+`;
 
 
 
@@ -34,6 +44,9 @@ export const Button = styled.button`
   font-size: ${(props) => props.fontSize};
   display: ${(props) => props.display};
   align-items: ${(props) => props.alignItems};
+  width: ${(props) => props.buttonWidth};
+  height: ${(props) => props.buttonHeight};
+
 `;
 
 export const MainHeader = styled.h1`
@@ -53,9 +66,8 @@ export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
 `;
-export const List = styled.ul`
+export const StyledList = styled.ul`
   list-style:none;
-  display: flex;
 `
 export const Link = styled.a`
   text-decoration: none;
