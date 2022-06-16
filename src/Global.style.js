@@ -16,6 +16,12 @@ export const FlexBox = styled.div`
   justify-content: space-between;
  
 `;
+export const FlexBoxAround = styled.div`  
+  display: flex;
+  justify-content: space-around;
+ 
+`;
+
 export const FlexBoxCenter = styled(FlexBox)`  
   align-items:center;
  
