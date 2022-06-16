@@ -2,6 +2,7 @@ import MainNavbar from "../../Components/Navbar/MainNavbar";
 import { InnerContainer, MainContainer, Paragraphe,Title,Button } from "../../Global.style";
 import { FlexBoxStyle,SideRight,SpanStyle,ColorOne,ColorTwo,ColorCompination,DivContent,SelectField} from "./BrowseProduct.Style";
 import DivImages from "./DivImages";
+import OptionFileds from "./OptionFields"
 
 function BrowseProduct(){
     return(
@@ -11,11 +12,11 @@ function BrowseProduct(){
                 <FlexBoxStyle PaddingTop='115px'>
                     <DivImages/>
                     <SideRight>
-                        <Title>MacBook Pro 13</Title>
-                        <Paragraphe color='#9B9A9A'>The best for your professional life</Paragraphe>
-                        <Paragraphe color='#707070'>Availability in stock: <SpanStyle>Available</SpanStyle></Paragraphe>
+                        <Title margin='0'>MacBook Pro 13</Title>
+                        <Paragraphe margin='0' color='#9B9A9A'>The best for your professional life</Paragraphe>
+                        <Paragraphe margin='0' color='#707070'>Availability in stock: <SpanStyle>Available</SpanStyle></Paragraphe>
                         <hr/>
-                        <Paragraphe color='#646363'>Choose your combination</Paragraphe>
+                        <Paragraphe margin='0' color='#646363'>Choose your combination</Paragraphe>
 
                         <FlexBoxStyle>
                             <DivContent>
@@ -48,39 +49,14 @@ function BrowseProduct(){
                             </DivContent>
                         </FlexBoxStyle>
                         <form>
-                            <Paragraphe color="#646363">Size and Weight</Paragraphe>
-                            
-                            <SelectField>
-                                <option></option>
-                                <option>option 2</option>
-                                <option>option 3</option>
-                                <option> option 4 </option>
-                                <option> option 5 </option>
-                                </SelectField>
-                            <Paragraphe color="#646363">Chip</Paragraphe>
-                            <SelectField>
-                                <option></option>
-                                <option>option 2</option>
-                                <option>option 3</option>
-                                <option> option 4 </option>
-                                <option> option 5 </option>
-                                </SelectField>
-                            <Paragraphe color="#646363">Storage</Paragraphe>
-                            <SelectField>
-                                <option></option>
-                                <option>option 2</option>
-                                <option>option 3</option>
-                                <option> option 4 </option>
-                                <option> option 5 </option>
-                                </SelectField>
-                            <Paragraphe color="#646363">Memory</Paragraphe>
-                            <SelectField>
-                                <option></option>
-                                <option>option 2</option>
-                                <option>option 3</option>
-                                <option> option 4 </option>
-                                <option> option 5 </option>
-                                </SelectField>
+                            <Paragraphe margin='0' color="#646363">Size and Weight</Paragraphe>
+                            <OptionFileds/>
+                            <Paragraphe margin='0' color="#646363">Chip</Paragraphe>
+                            <OptionFileds/>
+                            <Paragraphe margin='0' color="#646363">Storage</Paragraphe>
+                            <OptionFileds/>
+                            <Paragraphe margin='0' color="#646363">Memory</Paragraphe>
+                            <OptionFileds/>
                             <Button backgroundColor='#FA7400' buttonWidth='100%' buttonHeight='40px' borderR='5px'>Add To Card</Button>                     
                             </form>
                     </SideRight>
