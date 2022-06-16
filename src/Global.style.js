@@ -32,9 +32,9 @@ export const FlexBoxRow = styled(FlexBox)`
 export const Button = styled.button`
   background: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderR};
-  border: ${(props) => props.border};
+  border: ${(props) => props.border?props.border:'none'};
   padding: ${(props) => props.padding};
-  color:${(props) => props.color};
+  color:${(props) => props.color?props.color:'#ffff'};
   &:hover{
     background-color:#f7981d;
     cursor: pointer
@@ -64,11 +64,13 @@ color: #32353C;
 
 export const Title = styled.h2`
   font-size: 30px;
+  margin: ${(props) => props.margin};
 `;
 
 export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
+  margin: ${(props) => props.margin};
 `;
 export const StyledList = styled.ul`
   list-style:none;
