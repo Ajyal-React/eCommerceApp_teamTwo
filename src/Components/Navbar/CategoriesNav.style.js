@@ -1,6 +1,6 @@
 import { MainHeader } from './../../Global.style';
-import styled
- from 'styled-components';
+import styled from 'styled-components';
+
 export const NavMainHeader =styled(MainHeader)`
 color:#32353C;
 `
@@ -13,9 +13,7 @@ export const CategoriesSection = styled.div`
 
 `
 
-export const MainHeaderStyle = styled('div')`
-padding-top:4vh;
-`
+
 
 
 

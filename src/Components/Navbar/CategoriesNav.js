@@ -1,6 +1,5 @@
 import React from "react";
 import { InnerContainer,Button,FlexBox,FlexBoxCenter,StyledList,FlexBoxRow, Paragraphe,HrStyle,SubHeader,MainHeader, ListItemsStyle} from "../../Global.style";
-import styled from "styled-components";
 import {NavMainHeader,NavContainer, CategoriesSection} from "./CategoriesNav.style"
 
 function CategoriesNav(){
