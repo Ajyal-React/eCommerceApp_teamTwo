@@ -111,9 +111,10 @@ function BrowseProduct() {
             </form>
           </SideRight>
         </FlexBoxStyle>
-        <FooterPage/>
       </InnerContainer>
+      <FooterPage/>
     </FullContainer>
+    
   );
 }
 export default BrowseProduct;
