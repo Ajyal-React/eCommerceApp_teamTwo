@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  CustomLink,
   FullContainer,
   InnerContainer,
   SupTitle,
@@ -19,7 +20,10 @@ function TrendingPage() {
           <SupTitle>top products</SupTitle>
           <Title>trending this week</Title>
           <CardsContainer>
+            <CustomLink to="/product">
             <TrendingCards></TrendingCards>
+            </CustomLink>
+            
             <TrendingCards></TrendingCards>
             <TrendingCards></TrendingCards>
             <TrendingCards></TrendingCards>
