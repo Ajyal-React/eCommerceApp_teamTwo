@@ -59,9 +59,11 @@ export const ButtonHero = styled.button`
   font-size: 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 100px;
   border-radius: 10px;
   background: #fff;
+  cursor: pointer;
   @media (max-width: 767.98px) {
     font-size: 18px;
     margin-top: 50px;

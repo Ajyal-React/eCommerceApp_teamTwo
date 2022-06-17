@@ -1,19 +1,13 @@
-import { MainHeader } from './../../Global.style';
-import styled from 'styled-components';
+import { MainHeader, MarginTop } from "./../../Global.style";
+import styled from "styled-components";
 
-export const NavMainHeader =styled(MainHeader)`
-color:#32353C;
-`
+export const NavMainHeader = styled(MainHeader)`
+  color: #32353c;
+`;
 
-export const NavContainer =styled.div`
-padding:1vh 0;
-`
+export const NavContainer = styled.div`
+  padding: 1vh 0;
+  ${MarginTop}
+`;
 
-export const CategoriesSection = styled.div`
-
-`
-
-
-
-
-
+export const CategoriesSection = styled.div``;

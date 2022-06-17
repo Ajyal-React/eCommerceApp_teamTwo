@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexBoxAround, MainHeader } from '../../Global.style';
+import { MainHeader } from '../../Global.style';
 import { FlexBox } from './../../Global.style';
 
 export const TrendingContainer =styled('section')`

@@ -1,18 +1,14 @@
-import React from 'react'
-import { MainContainer, MainHeader, Button, Link,SubHeader, InnerContainer} from '../../Global.style'
-import FooterNav from '../../Components/Navbar/FooterNav';
+import React from "react";
+import { FullContainer, InnerContainer } from "../../Global.style";
+import FooterNav from "../../Components/Navbar/FooterNav";
 
-
-function FooterPage()
-{
-    return(
-        <MainContainer>
-            <InnerContainer>
-            <FooterNav>
-
-            </FooterNav>
-            </InnerContainer>
-        </MainContainer>
-    )
+function FooterPage() {
+  return (
+    <FullContainer>
+      <InnerContainer>
+        <FooterNav></FooterNav>
+      </InnerContainer>
+    </FullContainer>
+  );
 }
 export default FooterPage;

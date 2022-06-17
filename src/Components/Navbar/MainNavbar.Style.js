@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Button } from "style-components";
  
 export const FirstSide = styled.div`
 width: 187px;
