@@ -63,6 +63,7 @@ export const StyleFont = css`
 
 export const EndText = styled(FlexBox)`
   justify-content: end;
+  align-items: center;
   ${Bolder};
   ${StyleFont};
   cursor: pointer;

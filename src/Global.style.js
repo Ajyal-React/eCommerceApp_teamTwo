@@ -97,7 +97,6 @@ export const ContainerInput = styled.div`
   height: 80px;
   background: #fff;
   display: flex;
-  align-items: center;
   :first-of-type {
     border-left: 6px solid #fa7400;
     padding-top: 0.3rem;
