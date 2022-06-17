@@ -6,6 +6,7 @@ import {
   Title,
   Button,
 } from "../../Global.style";
+import FooterPage from "../FooterPage/FooterPage";
 import {
   FlexBoxStyle,
   SideRight,
@@ -24,7 +25,7 @@ function BrowseProduct() {
     <FullContainer>
       <MainNavbar />
       <InnerContainer>
-        <FlexBoxStyle PaddingTop="115px">
+        <FlexBoxStyle PaddingTop="115px" MarginBottom='75px'>
           <DivImages />
           <SideRight>
             <Title margin="0">MacBook Pro 13</Title>
@@ -110,6 +111,7 @@ function BrowseProduct() {
             </form>
           </SideRight>
         </FlexBoxStyle>
+        <FooterPage/>
       </InnerContainer>
     </FullContainer>
   );

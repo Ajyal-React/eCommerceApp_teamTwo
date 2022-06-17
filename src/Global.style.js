@@ -12,7 +12,7 @@ export const MarginTop = css`
 `
 export const FullContainer = styled.div`
   width: 100%;
-  ${MarginTop};
+
 `;
 
 export const InnerContainer = styled.div`
@@ -34,7 +34,7 @@ export const Button = styled.button`
   border-radius: ${(props) => props.borderR};
   border: ${(props) => props.border};
   padding: ${(props) => props.padding};
-  color: ${(props) => props.color};
+  color: ${(props) => props.color?props.color:'#ffff'};
   &:hover {
     background-color: #f7981d;
     cursor: pointer;
@@ -44,6 +44,9 @@ export const Button = styled.button`
   font-size: ${(props) => props.fontSize};
   display: ${(props) => props.display};
   align-items: ${(props) => props.alignItems};
+  width:${(props)=> props.buttonWidth};
+  height:${(props)=> props.buttonHeight};
+  border:none;
 `;
 
 export const MainHeader = styled.h1`

@@ -6,6 +6,7 @@ export const FlexBoxStyle = Styled.div`
     flex-wrap:wrap;
     gap: 35px;
     padding-top:${(props) => (props.PaddingTop ? props.PaddingTop : "0")};
+    margin-bottom: ${(props) => (props.PaddingTop ? props.MarginBottom : "0")};
 `;
 export const SideLeft = Styled.div`
     @media (width: 500px) {
