@@ -12,7 +12,7 @@ export const MarginTop = css`
 `
 export const FullContainer = styled.div`
   width: 100%;
-
+  ${MarginTop}
 `;
 
 export const InnerContainer = styled.div`
