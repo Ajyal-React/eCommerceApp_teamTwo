@@ -6,7 +6,6 @@ export const NavMainHeader = styled(MainHeader)`
 `;
 
 export const NavContainer = styled.div`
-  padding: 1vh 0;
   ${MarginTop}
 `;
 

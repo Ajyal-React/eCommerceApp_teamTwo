@@ -47,12 +47,12 @@ function FooterNav (){
      </SecondSide>
 
      <ThirdSide>
-     <InfoContainer>
+     
         <FooterTitle>Contacts</FooterTitle>
         <FooterSubTitle>Fell free get in touch with us via phone or send us a message</FooterSubTitle>
         <FooterSubTitle><BsFillTelephoneFill/>+1 234 567 89 10</FooterSubTitle>
         <FooterSubTitle><GrMail/>support@khoomi.com</FooterSubTitle>
-        </InfoContainer>
+       
      </ThirdSide>
 
      </FlexBoxRow>
@@ -60,14 +60,16 @@ function FooterNav (){
 
      <LastSide>
         <FlexBox>
+     
      <FooterSubTitle>all copyRights are reserved @2022</FooterSubTitle>
-     <SocialIcons>
-        <FlexBoxRow>
 
+     <SocialIcons>
+    <FlexBoxRow>
     <SocialStyle> <SiFacebook/></SocialStyle>
     <SocialStyle><RiWhatsappFill/></SocialStyle> 
      </FlexBoxRow>
      </SocialIcons>
+
      </FlexBox>
      </LastSide>
      </FooterContainer>

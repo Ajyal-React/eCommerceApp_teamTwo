@@ -36,9 +36,7 @@ color:#646363;
 export const MenuContainer=styled('div')`
 margin:2vh;
 `
-export const InfoContainer=styled('div')`
 
-`
 export const ThirdSide=styled('div')`
 
 `
