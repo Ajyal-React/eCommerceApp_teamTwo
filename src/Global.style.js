@@ -75,6 +75,7 @@ export const SupTitle = styled.p`
 export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
+  margin: ${(props) => props.margin};
 `;
 export const List = styled.ul`
   list-style: none;
