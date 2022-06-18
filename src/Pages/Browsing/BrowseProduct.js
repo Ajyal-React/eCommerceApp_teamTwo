@@ -1,10 +1,11 @@
 import MainNavbar from "../../Components/Navbar/MainNavbar";
 import {
   InnerContainer,
-  FullContainer,
+  // FullContainer,
   Paragraphe,
   Title,
   Button,
+  MainContainer,
 } from "../../Global.style";
 import FooterPage from "../FooterPage/FooterPage";
 import {
@@ -22,7 +23,7 @@ import OptionFileds from "./OptionFields";
 
 function BrowseProduct() {
   return (
-    <FullContainer>
+    <MainContainer>
       <MainNavbar />
       <InnerContainer>
         <FlexBoxStyle PaddingTop="115px" MarginBottom='75px'>
@@ -113,7 +114,7 @@ function BrowseProduct() {
         </FlexBoxStyle>
       </InnerContainer>
       <FooterPage/>
-    </FullContainer>
+    </MainContainer>
     
   );
 }

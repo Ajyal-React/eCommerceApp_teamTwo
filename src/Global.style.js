@@ -61,7 +61,7 @@ export const MainHeader = styled.h1`
 
 export const Title = styled.h2`
   font-size: 30px;
-  margin-top: -1rem;
+  margin-top:  0;
   text-transform: uppercase;
 `;
 export const SupTitle = styled.p`
@@ -69,6 +69,7 @@ export const SupTitle = styled.p`
   letter-spacing: -0.31px;
   color: #302f2f;
   text-transform: uppercase;
+  margin-bottom: 0;
 `;
 
 export const Paragraphe = styled.p`
