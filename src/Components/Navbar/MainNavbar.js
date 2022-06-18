@@ -43,7 +43,6 @@ function MainNavbar() {
           <CenterSide>
             <StyledList>
               <FlexBoxCenter>
-                <FlexBoxRow>
                   <ListItems>
                     <Paragraphe fontSize="16px" color="#32353C">
                       Home
@@ -78,7 +77,6 @@ function MainNavbar() {
                       Mobiles
                     </Paragraphe>
                   </ListItems>
-                </FlexBoxRow>
               </FlexBoxCenter>
             </StyledList>
           </CenterSide>
