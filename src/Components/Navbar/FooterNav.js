@@ -7,6 +7,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import {GrMail} from "react-icons/gr";
 import {RiWhatsappFill} from "react-icons/ri";
 import {SiFacebook}from "react-icons/si";
+import { IconContext } from 'react-icons/lib';
 
 function FooterNav (){
     return(
@@ -50,8 +51,10 @@ function FooterNav (){
      
         <FooterTitle>Contacts</FooterTitle>
         <FooterSubTitle>Fell free get in touch with us via phone or send us a message</FooterSubTitle>
+        <IconContext.Provider
+      value={{color:'#FF4F04'}}>
         <FooterSubTitle><BsFillTelephoneFill/>+1 234 567 89 10</FooterSubTitle>
-        <FooterSubTitle><GrMail/>support@khoomi.com</FooterSubTitle>
+        <FooterSubTitle><GrMail/>support@khoomi.com</FooterSubTitle></IconContext.Provider>
        
      </ThirdSide>
 
@@ -65,8 +68,12 @@ function FooterNav (){
 
      <SocialIcons>
     <FlexBoxRow>
-    <SocialStyle> <SiFacebook/></SocialStyle>
+      <IconContext.Provider
+      value={{color:'#FF4F04'}}>
+         <SocialStyle> <SiFacebook/></SocialStyle>
     <SocialStyle><RiWhatsappFill/></SocialStyle> 
+      </IconContext.Provider>
+    
      </FlexBoxRow>
      </SocialIcons>
 
