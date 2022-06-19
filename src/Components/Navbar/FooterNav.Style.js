@@ -32,6 +32,7 @@ color:#302F2F;
 export const FooterSubTitle=styled(Paragraphe)`
 font-size:12px;
 color:#646363;
+
 `
 export const MenuContainer=styled('div')`
 margin:2vh;
