@@ -27,8 +27,49 @@ import {
 } from "../Auth.Style";
 import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
+import { Link } from "react-router-dom";
 
 export default function Login() {
+
+  const [email, setEmail]= React.useState('')
+  const [password, setPassword]= React.useState('')
+  const [error, setError]= React.useState(false)
+
+  const handeChangeEmail = (e)=>{
+    if(e.target.value === '')
+    {
+      setError(true)
+    }
+    else{
+      setEmail(e.target.value)
+      setError(false)
+    }
+  }
+  const handeChangePassword = (e)=>{
+    if(e.target.value === '')
+    {
+      setError(true)
+    }
+    else{
+      setPassword(e.target.value)
+      setError(false)
+    }
+  }
+
+  const handeSubmit = (e)=>{
+    e.preventDefault()
+    if(email !== ''|| password !== '')
+    {
+      console.log('login')
+      // clear input after submit
+      setEmail('')
+      setPassword('')
+    }
+    else{
+      setError(true)
+    }
+  }
+
   return (
     <MainSign>
       <LeftBox>
@@ -42,19 +83,19 @@ export default function Login() {
         <Image src={Labtop} width="500px" />
       </LeftBox>
       <RightBox>
-        <InnerRigth>
+        <InnerRigth onSubmit={handeSubmit}>
           <SignText>login</SignText>
           <ContainerInput>
             <Span>
               <EmailIcon />
               Email
             </Span>
-            <Input type="email" placeholder="John@example.com" />
+            <Input type="email" placeholder="John@example.com" onChange={handeChangeEmail} value={email}  />
           </ContainerInput>
           <ContainerInput>
             <LocklIcon />
             <FlexBox>
-              <Input type="password" placeholder="Password" />
+              <Input type="password" placeholder="Password" onChange={handeChangePassword} value={password} />
               <Forget>Forget?</Forget>
             </FlexBox>
           </ContainerInput>
@@ -64,6 +105,7 @@ export default function Login() {
               <FaLongArrow />
             </ContainerIcon>
           </EndText>
+          {error ? <p>Please Enter your email or password</p>: null}
           <AlreadySign>
             Don't have account?{" "}
             <CustomLink to="/signin">

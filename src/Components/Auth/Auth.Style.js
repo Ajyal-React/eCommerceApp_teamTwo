@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Bolder, FlexBox, MainContainer } from "../../Global.style";
+import { Bolder, FlexBox, MainContainer, Button } from "../../Global.style";
 import { MdEmail } from "react-icons/md";
 import { IoMdLock } from "react-icons/io";
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -61,7 +61,7 @@ export const StyleFont = css`
   color: #707070;
 `;
 
-export const EndText = styled(FlexBox)`
+export const EndText = styled(Button)`
   justify-content: end;
   align-items: center;
   ${Bolder};
