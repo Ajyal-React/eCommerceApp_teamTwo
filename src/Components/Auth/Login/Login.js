@@ -30,50 +30,44 @@ import Labtop from "../../../images/Base1.png";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState(false);
 
-  const [email, setEmail]= React.useState('')
-  const [password, setPassword]= React.useState('')
-  const [error, setError]= React.useState(false)
+  const handeChangeEmail = (e) => {
+    if (e.target.value === "") {
+      setError(true);
+      setEmail(e.target.value);
+    } else {
+      setEmail(e.target.value);
+      setError(false);
+    }
+  };
+  const handeChangePassword = (e) => {
+    if (e.target.value === "") {
+      setError(true);
+      setPassword(e.target.value);
+    } else {
+      setPassword(e.target.value);
+      setError(false);
+    }
+  };
 
-  const handeChangeEmail = (e)=>{
-    if(e.target.value === '')
-    {
-      setError(true)
-    }
-    else{
-      setEmail(e.target.value)
-      setError(false)
-    }
-  }
-  const handeChangePassword = (e)=>{
-    if(e.target.value === '')
-    {
-      setError(true)
-    }
-    else{
-      setPassword(e.target.value)
-      setError(false)
-    }
-  }
-
-  const handeSubmit = (e)=>{
-    e.preventDefault()
-    if(email !== ''|| password !== '')
-    {
-      console.log('login')
+  const handeSubmit = (e) => {
+    e.preventDefault();
+    if (email !== "" || password !== "") {
       // clear input after submit
-      setEmail('')
-      setPassword('')
+      setEmail("");
+      setPassword("");
+    } else {
+      setError(true);
     }
-    else{
-      setError(true)
-    }
-  }
+  };
 
   return (
     <MainSign>
       <LeftBox>
-        <CustomLink to='/'>
+        <CustomLink to="/">
           <Image src={Logo} height="70px" width="360px" margin="4rem 0" />
         </CustomLink>
         <MainHeader margin="0 0 2rem">Welcome Back!</MainHeader>
@@ -90,12 +84,22 @@ export default function Login() {
               <EmailIcon />
               Email
             </Span>
-            <Input type="email" placeholder="John@example.com" onChange={handeChangeEmail} value={email}  />
+            <Input
+              type="email"
+              placeholder="John@example.com"
+              onChange={handeChangeEmail}
+              value={email}
+            />
           </ContainerInput>
           <ContainerInput>
             <LocklIcon />
             <FlexBox>
-              <Input type="password" placeholder="Password" onChange={handeChangePassword} value={password} />
+              <Input
+                type="password"
+                placeholder="Password"
+                onChange={handeChangePassword}
+                value={password}
+              />
               <Forget>Forget?</Forget>
             </FlexBox>
           </ContainerInput>
@@ -105,7 +109,7 @@ export default function Login() {
               <FaLongArrow />
             </ContainerIcon>
           </EndText>
-          {error ? <p>Please Enter your email or password</p>: null}
+          {error ? <p>Please Enter your email or password</p> : null}
           <AlreadySign>
             Don't have account?{" "}
             <CustomLink to="/signin">
