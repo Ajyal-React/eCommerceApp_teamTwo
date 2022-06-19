@@ -34,6 +34,7 @@ export const Button = styled.button`
   border-radius: ${(props) => props.borderR};
   border: ${(props) => props.border};
   padding: ${(props) => props.padding};
+  margin: ${(props) => props.margin};
   color: ${(props) => props.color?props.color:'#ffff'};
   &:hover {
     background-color: #f7981d;
@@ -170,8 +171,12 @@ export const FlexBoxAround = styled.div`
   justify-content: space-around;
 `;
 
-export const FlexBoxCenter = styled(FlexBox)`
+export const FlexBoxCenter = styled('div')`
+display:flex;
   align-items: center;
+ 
+
+ 
 `;
 
 export const FlexBoxRow = styled(FlexBox)`

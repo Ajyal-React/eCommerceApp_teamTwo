@@ -1,6 +1,6 @@
 import React from 'react'
-import { FlexBoxRow, HrStyle, FlexBox} from '../../Global.style'
-import { FooterContainer ,FirstSide,LogoImg, FooterText, SecondSide, FooterTitle,FooterSubTitle, MenuContainer, LastSide,InfoContainer, SocialIcons, SocialStyle} from './FooterNav.Style';
+import { FlexBoxRow, HrStyle, FlexBox, FlexBoxCenter} from '../../Global.style'
+import { FooterContainer ,FirstSide,LogoImg, FooterText, SecondSide, FooterTitle,FooterSubTitle, MenuContainer, LastSide, SocialIcons, SocialStyle, IconsSec} from './FooterNav.Style';
 import LogoImage from '../../images/Group 14849.png'
 import { ThirdSide } from './MainNavbar.Style';
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -52,9 +52,10 @@ function FooterNav (){
         <FooterTitle>Contacts</FooterTitle>
         <FooterSubTitle>Fell free get in touch with us via phone or send us a message</FooterSubTitle>
         <IconContext.Provider
-      value={{color:'#FF4F04'}}>
-        <FooterSubTitle><BsFillTelephoneFill/>+1 234 567 89 10</FooterSubTitle>
-        <FooterSubTitle><GrMail/>support@khoomi.com</FooterSubTitle></IconContext.Provider>
+      value={{color:'#FA7400'}}>
+      
+      <IconsSec> <FlexBoxCenter> <FooterSubTitle><BsFillTelephoneFill/>+1 234 567 89 10</FooterSubTitle></FlexBoxCenter></IconsSec>
+      <IconsSec> <FlexBoxCenter><FooterSubTitle><GrMail/>support@khoomi.com</FooterSubTitle></FlexBoxCenter></IconsSec></IconContext.Provider>
        
      </ThirdSide>
 
@@ -69,7 +70,7 @@ function FooterNav (){
      <SocialIcons>
     <FlexBoxRow>
       <IconContext.Provider
-      value={{color:'#FF4F04'}}>
+      value={{color:'#FA7400'}}>
          <SocialStyle> <SiFacebook/></SocialStyle>
     <SocialStyle><RiWhatsappFill/></SocialStyle> 
       </IconContext.Provider>

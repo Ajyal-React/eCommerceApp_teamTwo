@@ -1,22 +1,31 @@
 import React from "react";
-import { Paragraphe, FlexBox } from "./../../Global.style";
-import { TrendingCard, TrendingImg } from "./TrendingCards.style";
-import TrendingPage from "../../Pages/TrendingPage/TrendingPage";
+import { Paragraphe, FlexBoxCenter, FlexBoxAround } from "./../../Global.style";
+import { TrendingCard, TrendingImg,PriceBG } from "./TrendingCards.style";
+
 // import image from "../../images/Base.png";
 
 function TrendingCards({name, price, image}) {
   return (
     <TrendingCard>
       <TrendingImg src={image}></TrendingImg>
-      <FlexBox>
+     
+      <FlexBoxAround>
+      <FlexBoxCenter>
         <Paragraphe fontSize="14px" color="111111">
           {name}
         </Paragraphe>
-        <Paragraphe fontSize="12px" color="#FF4F04">
+       
+         
+    <PriceBG>
+    <Paragraphe fontSize="12px" color="#FF4F04">
          {price}
         </Paragraphe>
-      </FlexBox>
-    </TrendingCard>
+    </PriceBG>
+     
+     
+      </FlexBoxCenter>
+      </FlexBoxAround>
+      </TrendingCard>
   );
 }
 
