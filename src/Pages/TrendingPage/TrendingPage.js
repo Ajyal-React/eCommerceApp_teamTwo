@@ -9,11 +9,24 @@ import {
 import TrendingCards from "../../Components/TrendingCards/TrendingCards";
 import { CardsContainer, TrendingContainer } from "./TrendingPage.style";
 import image from "../../images/Base.png";
+import LapImage from "../../images/maxim-hopman-Hin-rzhOdWs-unsplash-removebg-preview.png";
+import BagImage from "../../images/BackBag.png";
+import GameImage from "../../images/2010.i211.006_gamepad_controller_videogames_composition_realistic_3-01-removebg-preview.png";
 
 function TrendingPage() {
   const [data, setdata] = React.useState([
     {
-      img: image,
+      img: LapImage,
+      name: "Nike Court Air",
+      price: "$58",
+    },
+    {
+      img: BagImage,
+      name: "Nike Court Air",
+      price: "$58",
+    },
+    {
+      img: GameImage,
       name: "Nike Court Air",
       price: "$58",
     },
@@ -23,7 +36,17 @@ function TrendingPage() {
       price: "$58",
     },
     {
-      img: image,
+      img: LapImage,
+      name: "Nike Court Air",
+      price: "$58",
+    },
+    {
+      img: BagImage,
+      name: "Nike Court Air",
+      price: "$58",
+    },
+    {
+      img: GameImage,
       name: "Nike Court Air",
       price: "$58",
     },
@@ -33,37 +56,17 @@ function TrendingPage() {
       price: "$58",
     },
     {
-      img: image,
+      img: LapImage,
       name: "Nike Court Air",
       price: "$58",
     },
     {
-      img: image,
+      img: BagImage,
       name: "Nike Court Air",
       price: "$58",
     },
     {
-      img: image,
-      name: "Nike Court Air",
-      price: "$58",
-    },
-    {
-      img: image,
-      name: "Nike Court Air",
-      price: "$58",
-    },
-    {
-      img: image,
-      name: "Nike Court Air",
-      price: "$58",
-    },
-    {
-      img: image,
-      name: "Nike Court Air",
-      price: "$58",
-    },
-    {
-      img: image,
+      img: GameImage,
       name: "Nike Court Air",
       price: "$58",
     },{

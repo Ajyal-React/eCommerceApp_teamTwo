@@ -15,6 +15,7 @@ import {
   CenterSide,
   ThirdSide,
   ListItems,
+  SignInButton,
 } from "./MainNavbar.Style";
 import image from "../../images/Group 14849.png";
 
@@ -26,13 +27,14 @@ function MainNavbar() {
           <FirstSide>
             <FlexBoxCenter>
               <Button
-                backgroundColor="#7B77770F"
+               backgroundColor="#7B77770F"
                 borderR="3px"
                 border="none"
                 buttonWidth="110px"
                 buttonHeight="33px"
                 fontSize="16px"
                 color="#32353C"
+               margin="0 3.5vh 0 0"
               >
                 English
               </Button>

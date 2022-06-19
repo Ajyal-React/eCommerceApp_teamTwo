@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Paragraphe, Title } from './../../Global.style';
+import { Paragraphe, Title, FlexBoxCenter } from './../../Global.style';
 
 export const FooterContainer=styled('div')`
 height: 333px;
@@ -33,9 +33,10 @@ export const FooterSubTitle=styled(Paragraphe)`
 font-size:12px;
 color:#646363;
 
+
 `
 export const MenuContainer=styled('div')`
-margin:2vh;
+margin:3vh;
 `
 
 export const ThirdSide=styled('div')`
@@ -50,7 +51,10 @@ export const SocialIcons=styled('div')`
 export const SocialStyle=styled('div')`
 padding:1vh;
 `
+export const IconsSec =styled('div')`
 
 
+
+`
 
 
