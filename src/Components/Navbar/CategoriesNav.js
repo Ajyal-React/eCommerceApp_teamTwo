@@ -8,6 +8,7 @@ import {
   SubHeader,
   ListItemsStyle,
   SupTitle,
+  FlexBoxAround,
 } from "../../Global.style";
 import {
   NavMainHeader,
@@ -20,7 +21,10 @@ function CategoriesNav() {
     <>
       <NavContainer>
         <SupTitle>laptops</SupTitle>
+        
+      
         <FlexBoxCenter>
+        <FlexBoxRow>
           <NavMainHeader fontSize="20px">featured categories</NavMainHeader>
           <CategoriesSection>
             <StyledList>
@@ -46,7 +50,10 @@ function CategoriesNav() {
               </FlexBoxRow>
             </StyledList>
           </CategoriesSection>
-        </FlexBoxCenter>
+          </FlexBoxRow>
+          </FlexBoxCenter>
+          
+       
       </NavContainer>
       <HrStyle></HrStyle>
     </>
