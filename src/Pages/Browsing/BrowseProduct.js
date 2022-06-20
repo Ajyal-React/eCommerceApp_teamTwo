@@ -16,6 +16,7 @@ import {
   ColorTwo,
   ColorCompination,
   DivContent,
+  HrS,
   // SelectField,
 } from "./BrowseProduct.Style";
 import DivImages from "./DivImages";
@@ -29,19 +30,19 @@ function BrowseProduct() {
         <FlexBoxStyle PaddingTop="115px" MarginBottom='75px'>
           <DivImages />
           <SideRight>
-            <Title margin="0">MacBook Pro 13</Title>
-            <Paragraphe margin="0" color="#9B9A9A">
+            <Title marginBottom="0" textTransform='capitalize'>MacBook Pro 13</Title>
+            <Paragraphe margin="0" color="#9B9A9A" fontSize='12px'>
               The best for your professional life
             </Paragraphe>
             <Paragraphe margin="0" color="#707070">
               Availability in stock: <SpanStyle>Available</SpanStyle>
             </Paragraphe>
-            <hr />
-            <Paragraphe margin="0" color="#646363">
+            <HrS />
+            <Paragraphe color="#646363">
               Choose your combination
             </Paragraphe>
 
-            <FlexBoxStyle>
+            <FlexBoxStyle MarginBottom='16px'>
               <DivContent>
                 <ColorCompination>
                   <ColorOne BackGColor="#646363">
@@ -103,15 +104,17 @@ function BrowseProduct() {
               <OptionFileds />
               <Button
                 backgroundColor="#FA7400"
-                buttonWidth="100%"
+                buttonWidth="81%"
                 buttonHeight="40px"
                 borderR="5px"
+                boxShadow='0px 3px 6px #00000029;'
               >
                 Add To Card
               </Button>
             </form>
           </SideRight>
         </FlexBoxStyle>
+        <HrS margin='0px -101px'/>
       </InnerContainer>
       <FooterPage/>
     </MainContainer>
