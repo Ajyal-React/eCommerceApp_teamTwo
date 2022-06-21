@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import backImg from "../../images/Group14858.png";
-import {FlexBox} from '../../Global.style'
+import {FlexBox, MainHeader} from '../../Global.style'
 
 export const BackgroundImage = styled.div`
     height: 200px;
@@ -23,4 +23,7 @@ export const DivOpacity = styled.div`
     left: 0;
     opacity: 0.5;
     background: #000;    
+`
+export const MainHeaderUpdate = styled(MainHeader)`
+text-transform: capitalize;
 `

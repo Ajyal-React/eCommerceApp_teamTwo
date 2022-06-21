@@ -1,3 +1,4 @@
+import { Button } from "style-components";
 import Styled from "styled-components";
 import { Title } from "../../Global.style";
 
@@ -6,7 +7,7 @@ export const FlexBoxStyle = Styled.div`
     flex-wrap:wrap;
     gap: 35px;
     padding-top:${(props) => (props.PaddingTop ? props.PaddingTop : "0")};
-    margin-bottom: ${(props) => (props.PaddingTop ? props.MarginBottom : "0")};
+    margin-bottom: ${(props) => (props.MarginBottom ? props.MarginBottom : "0")};
 `;
 export const SideLeft = Styled.div`
     @media (width: 500px) {
@@ -14,13 +15,13 @@ export const SideLeft = Styled.div`
     }
 `;
 export const SideRight = Styled.div`
-   
+   width:41%
 `;
 export const ImageDiv = Styled.div`
     border:${(props) =>
       props.Border ? `1px solid ${props.Border}` : "1px solid #ddd"}; 
     border-radius: 9px;
-    margin-bottom:20px;
+    margin-bottom:9px;
     overflow: hidden;
     background-color:${(props) => props.BackGColor};
 
@@ -66,10 +67,13 @@ export const ColorTwo = Styled.div`
 `;
 export const SelectField = Styled.select`
     outline: none;
-    border: none;
+    border: 1px solid #AFAFAF;
     height: 40px;
-    width: 100%;
+    width: 81%;
     background: #F4F4F4;
     border-radius: 5px;
     margin-bottom:15px
 `;
+export const HrS= Styled.hr`
+ margin:${(props)=>props.margin}
+`

@@ -32,7 +32,7 @@ export const FlexCol = styled(FlexBox)`
 export const Button = styled.button`
   background: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderR};
-  border: ${(props) => props.border};
+  border: ${(props) => props.border?props.border:'none'};
   padding: ${(props) => props.padding};
   margin: ${(props) => props.margin};
   color: ${(props) => props.color?props.color:'#ffff'};
@@ -47,7 +47,7 @@ export const Button = styled.button`
   align-items: ${(props) => props.alignItems};
   width:${(props)=> props.buttonWidth};
   height:${(props)=> props.buttonHeight};
-  border:none;
+  box-shadow: ${(props)=> props.boxShadow};
 `;
 
 export const MainHeader = styled.h1`
@@ -63,7 +63,8 @@ export const MainHeader = styled.h1`
 export const Title = styled.h2`
   font-size: 30px;
   margin-top:  0;
-  text-transform: uppercase;
+  text-transform: ${(props)=>props.textTransform?props.textTransform:'uppercase'};
+  margin-bottom: ${(props=>props.marginBottom)}
 `;
 export const SupTitle = styled.p`
   font-size: 14px;
