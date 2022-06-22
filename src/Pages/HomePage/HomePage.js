@@ -21,7 +21,7 @@ function HomePage() {
             Get 50% Off
           </MainHeaderUpdate>
           <Button
-            backgroundColor="#FA7400"
+            backgroundColor="none"
             borderR="5px"
             border="1px solid #fff"
             padding="10px 35px"
