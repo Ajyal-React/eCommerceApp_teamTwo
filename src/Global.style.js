@@ -9,7 +9,18 @@ export const MainContainer = styled.main`
 `;
 export const MarginTop = css`
   margin-top: 100px;
-`
+  @media (max-width: 1199.98px) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 575.98px) {
+    margin-top: 30px;
+  }
+`;
 export const FullContainer = styled.div`
   width: 100%;
   ${MarginTop}
@@ -34,7 +45,7 @@ export const Button = styled.button`
   border-radius: ${(props) => props.borderR};
   border: ${(props) => props.border};
   padding: ${(props) => props.padding};
-  color: ${(props) => props.color?props.color:'#ffff'};
+  color: ${(props) => (props.color ? props.color : "#ffff")};
   &:hover {
     background-color: #f7981d;
     cursor: pointer;
@@ -44,9 +55,9 @@ export const Button = styled.button`
   font-size: ${(props) => props.fontSize};
   display: ${(props) => props.display};
   align-items: ${(props) => props.alignItems};
-  width:${(props)=> props.buttonWidth};
-  height:${(props)=> props.buttonHeight};
-  border:none;
+  width: ${(props) => props.buttonWidth};
+  height: ${(props) => props.buttonHeight};
+  border: none;
 `;
 
 export const MainHeader = styled.h1`
@@ -57,12 +68,33 @@ export const MainHeader = styled.h1`
   margin: ${(props) => (props.margin ? props.margin : 0)};
   z-index: ${(props) => props.zIndex};
   text-transform: uppercase;
+
+  @media (max-width: 767.98px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 20px;
+    text-align: center;
+  }
 `;
 
 export const Title = styled.h2`
   font-size: 30px;
-  margin-top:  0;
+  margin-top: 0;
   text-transform: uppercase;
+   @media (max-width: 1199.98px) {
+    font-size: 25px;
+  }
+  
+  @media (max-width: 767.98px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 575.98px) { 
+    font-size: 18px;
+    text-align: center;
+  }
 `;
 export const SupTitle = styled.p`
   font-size: 14px;
@@ -70,12 +102,20 @@ export const SupTitle = styled.p`
   color: #302f2f;
   text-transform: uppercase;
   margin-bottom: 0;
+
+  @media (max-width: 575.98px) { 
+    margin-top: 12px;
+    text-align: center;
+  }
 `;
 
 export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
   margin: ${(props) => props.margin};
+  @media (max-width: 575.98px) { 
+    margin-top: 12px;
+  }
 `;
 export const List = styled.ul`
   list-style: none;
@@ -116,6 +156,9 @@ export const StylePlaceholder = css`
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  @media (max-width: 575.98px) { 
+    margin-top: 12px;
+  }
 `;
 
 export const Input = styled.input`
@@ -125,6 +168,7 @@ export const Input = styled.input`
   letter-spacing: 1px;
   font-size: 14px;
   width: 70%;
+  
   &[type="email"] {
     font-size: 18px;
     letter-spacing: 2px;
@@ -132,6 +176,9 @@ export const Input = styled.input`
   }
   &placeholder {
     ${StylePlaceholder}
+  }
+  @media (max-width: 575.98px) { 
+    margin-top: 12px;
   }
 `;
 
@@ -152,11 +199,17 @@ export const Price = styled.p`
   justify-content: center;
   font-size: 14px;
   margin: 0;
+  @media (max-width: 575.98px) { 
+    margin-top: 12px;
+  }
 `;
 export const ProductName = styled.p`
   font-size: 16px;
   color: #111111;
   font-weight: bold;
+  @media (max-width: 575.98px) { 
+    margin-top: 14px;
+  }
 `;
 
 export const CustomLink = styled(Link)`
@@ -181,7 +234,6 @@ export const HrStyle = styled.hr``;
 export const StyledList = styled.ul`
   list-style: none;
 `;
-export const ListItemsStyle= styled.li`
-padding: 0 3vh;
+export const ListItemsStyle = styled.li`
+  padding: 0 3vh;
 `;
-

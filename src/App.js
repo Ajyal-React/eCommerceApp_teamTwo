@@ -3,15 +3,17 @@ import Login from "./Components/Auth/Login/Login";
 import SignUp from "./Components/Auth/SignUp/SignUp";
 import BrowseProduct from "./Pages/Browsing/BrowseProduct";
 import HomePage from "./Pages/HomePage/HomePage";
+import Test from "./Pages/Test";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage/>}></Route>
-        <Route path="/signin" element={<SignUp/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/product" element={<BrowseProduct/>}></Route>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/signin" element={<SignUp/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/product" element={<BrowseProduct/>}/>
+        <Route path="/test" element={<Test/>}/>
       </Routes>
     </BrowserRouter>
   );

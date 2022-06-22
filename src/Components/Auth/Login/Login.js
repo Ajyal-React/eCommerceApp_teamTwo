@@ -27,7 +27,6 @@ import {
 } from "../Auth.Style";
 import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
-import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = React.useState("");

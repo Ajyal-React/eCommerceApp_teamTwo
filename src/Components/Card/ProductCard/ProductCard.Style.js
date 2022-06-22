@@ -12,6 +12,9 @@ export const TextInnerProduct = styled.div`
 `;
 export const ContainerImage = styled.div`
   height: 270px;
+  @media (max-width: 575.98px) { 
+    height: 230px;
+  }
 `;
 export const BsArrowRightIcon = styled(BsArrowRight)`
   margin-left: 8px;

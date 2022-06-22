@@ -1,7 +1,6 @@
 import React from "react";
 import {
   MainHeader,
-  Paragraphe,
 } from "../../Global.style";
 import {
   ButtonHero,
@@ -10,6 +9,7 @@ import {
   MainHero,
   MdDoubleArrowIcon,
   RiArrowDownSLineIcon,
+  TextCenter,
 } from "./HeroSection.Style";
 
 function HeroSection() {
@@ -17,9 +17,9 @@ function HeroSection() {
     <MainHero>
       <InnerContainerHero>
         <MainHeader letterSpacing='.5px'>PLAYSTATION 5</MainHeader>
-        <Paragraphe fontSize="20px" color="#fff">
+        <TextCenter fontSize="20px" color="#fff">
           lightning-fast download speed with super-fast ssd storage
-        </Paragraphe>
+        </TextCenter>
         <ButtonHero>
           Start Shopping <MdDoubleArrowIcon />
         </ButtonHero>

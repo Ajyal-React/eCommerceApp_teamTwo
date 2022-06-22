@@ -26,6 +26,7 @@ import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
 
 export default function SignUp() {
+  
   return (
     <MainSign>
       <LeftBox>

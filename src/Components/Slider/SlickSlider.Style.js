@@ -9,4 +9,5 @@ export const CustomBtn = styled(ButtonHero)`
   &:hover{
     background-color: #f3f3f3;
   }
+ 
 `;

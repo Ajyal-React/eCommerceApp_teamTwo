@@ -2,7 +2,7 @@ import styled from "styled-components";
 import image from "../../images/hero.png";
 import { MdDoubleArrow } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { InnerContainer } from "../../Global.style";
+import { InnerContainer, Paragraphe } from "../../Global.style";
 
 export const MainHero = styled.div`
   display: flex;
@@ -69,3 +69,10 @@ export const ButtonHero = styled.button`
     margin-top: 50px;
   }
 `;
+
+export const TextCenter = styled(Paragraphe)`
+  @media (max-width: 575.98px) { 
+    text-align: center;
+    font-size: 14px;
+  }
+`
