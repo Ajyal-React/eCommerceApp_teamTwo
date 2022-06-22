@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./SlickSlider.css";
-import { InnerContainer, FullContainer, SupTitle, Title } from "../../Global.style";
+import {
+  InnerContainer,
+  FullContainer,
+  SupTitle,
+  Title,
+} from "../../Global.style";
 import ProductCard from "../Card/ProductCard/ProductCard";
-import Base from "../../images/Base.png";
-import Games from "../../images/Games.png";
-import Mac from "../../images/Mac.png";
-import BackBag from "../../images/BackBag.png";
 import { CustomBtn } from "./SlickSlider.Style";
+import axios from "axios";
 
 function SampleNextArrow(props) {
   const { className, onClick } = props;
@@ -58,17 +60,16 @@ export default function SlickSlider() {
       },
     ],
   };
-  const arr = [
-    { name: "Smart Watch", img: Base },
-    { name: "Games Arm", img: Games },
-    { name: "Mac Laptop", img: Mac },
-    { name: "Back Bag", img: BackBag },
-    { name: "Smart Watch", img: Base },
-    { name: "Games Arm", img: Games },
-    { name: "Mac Laptop", img: Mac },
-    { name: "Back Bag", img: BackBag },
-    { name: "Smart Watch", img: Base },
-  ];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(
+        "https://omar-tech-store.herokuapp.com/api/products/featured-products"
+      );
+      setData(response.data);
+    };
+    getData();
+  }, []);
   return (
     <FullContainer>
       <InnerContainer>
@@ -76,8 +77,12 @@ export default function SlickSlider() {
         <Title>FEATURED PRODUCTS</Title>
       </InnerContainer>
       <Slider {...settings}>
-        {arr.map((element) => (
-          <ProductCard src={element.img} name={element.name} />
+        {data.map((element) => (
+          <ProductCard
+            src={element.images}
+            name={element.name}
+            price={element.price}
+          />
         ))}
       </Slider>
       <CustomBtn>View More</CustomBtn>

@@ -102,7 +102,7 @@
   }
 
   .slick-slider {
-    min-height: 570px;
+    min-height: 520px;
   }
 
   .slick-prev,
@@ -114,5 +114,8 @@
   .slick-next::before {
     width: 18px;
     height: 60px;
+  }
+  .slick-list{
+    margin: 0 auto;
   }
 }

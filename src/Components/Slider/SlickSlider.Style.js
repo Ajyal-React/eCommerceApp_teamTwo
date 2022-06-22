@@ -9,5 +9,9 @@ export const CustomBtn = styled(ButtonHero)`
   &:hover{
     background-color: #f3f3f3;
   }
- 
+  @media (max-width: 575.98px) { 
+   width: auto;
+   height: 45px;
+   font-size: 16px;
+  }
 `;
