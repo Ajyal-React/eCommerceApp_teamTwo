@@ -75,7 +75,7 @@ export default function Login() {
         <AuthP fontSize="25px" color="#DEAB80">
           Login to your account and start your shopping <Italic>NOW!</Italic>
         </AuthP>
-        <Image src={Labtop} width="100%" />
+        <Image src={Labtop} width="100%" height="50%"/>
       </LeftBox>
       <RightBox>
         <InnerRigth onSubmit={handeSubmit}>
