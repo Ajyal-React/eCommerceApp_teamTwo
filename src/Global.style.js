@@ -57,8 +57,8 @@ export const Button = styled.button`
   font-size: ${(props) => props.fontSize};
   display: ${(props) => props.display};
   align-items: ${(props) => props.alignItems};
-  width:${(props) => props.buttonWidth};
-  height:${(props) => props.buttonHeight};
+  width: ${(props) => props.buttonWidth};
+  height: ${(props) => props.buttonHeight};
   box-shadow: ${(props) => props.boxShadow};
 `;
 
@@ -70,14 +70,16 @@ export const MainHeader = styled.h1`
   margin: ${(props) => (props.margin ? props.margin : 0)};
   z-index: ${(props) => props.zIndex};
   text-transform: uppercase;
-
+  @media (max-width: 1199.98px) {
+    text-align: center;
+  }
   @media (max-width: 767.98px) {
     font-size: 25px;
+    margin-bottom: 16px;
   }
 
   @media (max-width: 575.98px) {
     font-size: 20px;
-    text-align: center;
   }
 `;
 
@@ -118,8 +120,13 @@ export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
   margin: ${(props) => props.margin};
+  @media (max-width: 1199.98px) {
+    font-size: 20px;
+    text-align: center;
+  }
   @media (max-width: 575.98px) {
     margin-top: 12px;
+    font-size: 14px;
   }
 `;
 export const List = styled.ul`
@@ -154,6 +161,15 @@ export const ContainerInput = styled.div`
     flex-direction: column;
     align-items: start;
   }
+  @media (max-width: 1199.98px) {
+    height: 50px;
+  }
+  @media (max-width: 767.98px) {
+    margin: 16px 0;
+  }
+  @media (max-width: 575.98px) {
+    margin: 8px 0;
+  }
 `;
 export const StylePlaceholder = css`
   font-size: 14px;
@@ -182,13 +198,18 @@ export const Input = styled.input`
   &placeholder {
     ${StylePlaceholder}
   }
-  @media (max-width: 575.98px) {
-    margin-top: 12px;
+  @media (max-width: 1199.98px) {
+    &[type="email"] {
+    font-size: 14px;
+  }
   }
 `;
 
 export const Span = styled.span`
   ${StylePlaceholder}
+  @media (max-width: 1199.98px) {
+    margin: 0;
+  }
 `;
 export const Bolder = css`
   font-weight: bolder;

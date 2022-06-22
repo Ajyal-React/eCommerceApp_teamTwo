@@ -16,7 +16,7 @@ export default function ProductCard(props) {
       </ContainerImage>
       <TextInnerProduct>
           <ProductName>{props.name}</ProductName>
-          <Price>{props.price}</Price>
+          <Price>$ {props.price}</Price>
           <MoreInfo>More info <BsArrowRightIcon/></MoreInfo>
         </TextInnerProduct>
     </ContaierProduct>
