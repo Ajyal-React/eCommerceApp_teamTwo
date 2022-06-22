@@ -4,7 +4,6 @@ import {
   // FullContainer,
   Paragraphe,
   Title,
-  Button,
   MainContainer,
 } from "../../Global.style";
 import FooterPage from "../FooterPage/FooterPage";
@@ -17,7 +16,7 @@ import {
   ColorCompination,
   DivContent,
   HrS,
-  // SelectField,
+  CustomButton
 } from "./BrowseProduct.Style";
 import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
@@ -102,15 +101,9 @@ function BrowseProduct() {
                 Memory
               </Paragraphe>
               <OptionFileds />
-              <Button
-                backgroundColor="#FA7400"
-                buttonWidth="81%"
-                buttonHeight="40px"
-                borderR="5px"
-                boxShadow='0px 3px 6px #00000029;'
-              >
+              <CustomButton>
                 Add To Card
-              </Button>
+              </CustomButton>
             </form>
           </SideRight>
         </FlexBoxStyle>
