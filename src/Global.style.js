@@ -43,8 +43,10 @@ export const FlexCol = styled(FlexBox)`
 export const Button = styled.button`
   background: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderR};
-  border: ${(props) => props.border};
+  border: ${(props) => (props.border ? props.border : "none")};
   padding: ${(props) => props.padding};
+  color: ${(props) => (props.color ? props.color : "#ffff")};
+  margin: ${(props) => props.margin};
   color: ${(props) => (props.color ? props.color : "#ffff")};
   &:hover {
     background-color: #f7981d;
@@ -55,9 +57,9 @@ export const Button = styled.button`
   font-size: ${(props) => props.fontSize};
   display: ${(props) => props.display};
   align-items: ${(props) => props.alignItems};
-  width: ${(props) => props.buttonWidth};
-  height: ${(props) => props.buttonHeight};
-  border: none;
+  width:${(props) => props.buttonWidth};
+  height:${(props) => props.buttonHeight};
+  box-shadow: ${(props) => props.boxShadow};
 `;
 
 export const MainHeader = styled.h1`
@@ -83,15 +85,18 @@ export const Title = styled.h2`
   font-size: 30px;
   margin-top: 0;
   text-transform: uppercase;
-   @media (max-width: 1199.98px) {
+  text-transform: ${(props) =>
+    props.textTransform ? props.textTransform : "uppercase"};
+  margin-bottom: ${(props) => props.marginBottom};
+  @media (max-width: 1199.98px) {
     font-size: 25px;
   }
-  
+
   @media (max-width: 767.98px) {
     font-size: 20px;
   }
 
-  @media (max-width: 575.98px) { 
+  @media (max-width: 575.98px) {
     font-size: 18px;
     text-align: center;
   }
@@ -103,7 +108,7 @@ export const SupTitle = styled.p`
   text-transform: uppercase;
   margin-bottom: 0;
 
-  @media (max-width: 575.98px) { 
+  @media (max-width: 575.98px) {
     margin-top: 12px;
     text-align: center;
   }
@@ -113,7 +118,7 @@ export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
   margin: ${(props) => props.margin};
-  @media (max-width: 575.98px) { 
+  @media (max-width: 575.98px) {
     margin-top: 12px;
   }
 `;
@@ -156,7 +161,7 @@ export const StylePlaceholder = css`
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
-  @media (max-width: 575.98px) { 
+  @media (max-width: 575.98px) {
     margin-top: 12px;
   }
 `;
@@ -168,7 +173,7 @@ export const Input = styled.input`
   letter-spacing: 1px;
   font-size: 14px;
   width: 70%;
-  
+
   &[type="email"] {
     font-size: 18px;
     letter-spacing: 2px;
@@ -177,7 +182,7 @@ export const Input = styled.input`
   &placeholder {
     ${StylePlaceholder}
   }
-  @media (max-width: 575.98px) { 
+  @media (max-width: 575.98px) {
     margin-top: 12px;
   }
 `;
@@ -199,7 +204,7 @@ export const Price = styled.p`
   justify-content: center;
   font-size: 14px;
   margin: 0;
-  @media (max-width: 575.98px) { 
+  @media (max-width: 575.98px) {
     margin-top: 12px;
   }
 `;
@@ -207,7 +212,7 @@ export const ProductName = styled.p`
   font-size: 16px;
   color: #111111;
   font-weight: bold;
-  @media (max-width: 575.98px) { 
+  @media (max-width: 575.98px) {
     margin-top: 14px;
   }
 `;
@@ -223,7 +228,8 @@ export const FlexBoxAround = styled.div`
   justify-content: space-around;
 `;
 
-export const FlexBoxCenter = styled(FlexBox)`
+export const FlexBoxCenter = styled("div")`
+  display: flex;
   align-items: center;
 `;
 

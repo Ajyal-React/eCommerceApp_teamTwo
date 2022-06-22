@@ -12,4 +12,6 @@ color:#32353C;
 
 export const CardsContainer =styled(FlexBox)`
 flex-wrap: wrap;
+flex-direction:row;
+
 `

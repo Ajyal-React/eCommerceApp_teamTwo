@@ -1,7 +1,6 @@
 import styled from "styled-components";
  
 export const FirstSide = styled.div`
-width: 187px;
 padding-top:3.5vh ;
 `
 export const NavBG = styled.div`
@@ -18,11 +17,14 @@ export const CenterSide= styled.div`
 `;
 
 export const ListItems= styled.li`
-padding: 0 2vh;
+padding: 0 2.5vh;
 `;
 
 export const ThirdSide = styled.div`
 padding-top:4vh;
 `
+
+
+
 
 

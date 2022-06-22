@@ -1,8 +1,8 @@
 import React from "react";
 import HeroSection from "../../Components/HeroSection/HeroSection";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
-import { MainContainer, MainHeader, Button, LinkBTN } from "../../Global.style";
-import { BackgroundImage, UpdateFlexBox, DivOpacity } from "./HomePage.Style";
+import { MainContainer, Button, LinkBTN } from "../../Global.style";
+import { BackgroundImage, UpdateFlexBox, DivOpacity, MainHeaderUpdate } from "./HomePage.Style";
 import DevicesDisplaySection from "../../Components/devicesDisplaySection/DevicesDisplaySection";
 import SlickSlider from "../../Components/Slider/SlickSlider";
 import TrendingPage from "../TrendingPage/TrendingPage";
@@ -17,13 +17,13 @@ function HomePage() {
       <BackgroundImage>
         <DivOpacity></DivOpacity>
         <UpdateFlexBox>
-          <MainHeader fontSize="20px" letterSpacing="0.2px" zIndex="99">
+          <MainHeaderUpdate textTransform= 'uppercase' fontSize="20px" letterSpacing="0.2px" zIndex="99">
             Get 50% Off
-          </MainHeader>
+          </MainHeaderUpdate>
           <Button
             backgroundColor="none"
             borderR="5px"
-            border="1px solid"
+            border="1px solid #fff"
             padding="10px 35px"
             color="#ffff"
             zIndex="99"
