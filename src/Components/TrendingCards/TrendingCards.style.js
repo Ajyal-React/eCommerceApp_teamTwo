@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Paragraphe, FlexBoxCenter } from './../../Global.style';
+import { FlexBoxCenter } from './../../Global.style';
 
 
 export const TrendingCard = styled('div')`

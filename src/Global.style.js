@@ -9,7 +9,18 @@ export const MainContainer = styled.main`
 `;
 export const MarginTop = css`
   margin-top: 100px;
-`
+  @media (max-width: 1199.98px) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 575.98px) {
+    margin-top: 30px;
+  }
+`;
 export const FullContainer = styled.div`
   width: 100%;
   ${MarginTop}
@@ -32,10 +43,11 @@ export const FlexCol = styled(FlexBox)`
 export const Button = styled.button`
   background: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderR};
-  border: ${(props) => props.border?props.border:'none'};
+  border: ${(props) => (props.border ? props.border : "none")};
   padding: ${(props) => props.padding};
+  color: ${(props) => (props.color ? props.color : "#ffff")};
   margin: ${(props) => props.margin};
-  color: ${(props) => props.color?props.color:'#ffff'};
+  color: ${(props) => (props.color ? props.color : "#ffff")};
   &:hover {
     background-color: #f7981d;
     cursor: pointer;
@@ -45,9 +57,9 @@ export const Button = styled.button`
   font-size: ${(props) => props.fontSize};
   display: ${(props) => props.display};
   align-items: ${(props) => props.alignItems};
-  width:${(props)=> props.buttonWidth};
-  height:${(props)=> props.buttonHeight};
-  box-shadow: ${(props)=> props.boxShadow};
+  width: ${(props) => props.buttonWidth};
+  height: ${(props) => props.buttonHeight};
+  box-shadow: ${(props) => props.boxShadow};
 `;
 
 export const MainHeader = styled.h1`
@@ -58,13 +70,38 @@ export const MainHeader = styled.h1`
   margin: ${(props) => (props.margin ? props.margin : 0)};
   z-index: ${(props) => props.zIndex};
   text-transform: uppercase;
+  @media (max-width: 1199.98px) {
+    text-align: center;
+  }
+  @media (max-width: 767.98px) {
+    font-size: 25px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 20px;
+  }
 `;
 
 export const Title = styled.h2`
   font-size: 30px;
-  margin-top:  0;
-  text-transform: ${(props)=>props.textTransform?props.textTransform:'uppercase'};
-  margin-bottom: ${(props=>props.marginBottom)}
+  margin-top: 0;
+  text-transform: uppercase;
+  text-transform: ${(props) =>
+    props.textTransform ? props.textTransform : "uppercase"};
+  margin-bottom: ${(props) => props.marginBottom};
+  @media (max-width: 1199.98px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 767.98px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 18px;
+    text-align: center;
+  }
 `;
 export const SupTitle = styled.p`
   font-size: 14px;
@@ -72,12 +109,25 @@ export const SupTitle = styled.p`
   color: #302f2f;
   text-transform: uppercase;
   margin-bottom: 0;
+
+  @media (max-width: 575.98px) {
+    margin-top: 12px;
+    text-align: center;
+  }
 `;
 
 export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
   margin: ${(props) => props.margin};
+  @media (max-width: 1199.98px) {
+    font-size: 20px;
+    text-align: center;
+  }
+  @media (max-width: 575.98px) {
+    margin-top: 12px;
+    font-size: 14px;
+  }
 `;
 export const List = styled.ul`
   list-style: none;
@@ -111,6 +161,15 @@ export const ContainerInput = styled.div`
     flex-direction: column;
     align-items: start;
   }
+  @media (max-width: 1199.98px) {
+    height: 50px;
+  }
+  @media (max-width: 767.98px) {
+    margin: 16px 0;
+  }
+  @media (max-width: 575.98px) {
+    margin: 8px 0;
+  }
 `;
 export const StylePlaceholder = css`
   font-size: 14px;
@@ -118,6 +177,9 @@ export const StylePlaceholder = css`
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  @media (max-width: 575.98px) {
+    margin-top: 12px;
+  }
 `;
 
 export const Input = styled.input`
@@ -127,6 +189,7 @@ export const Input = styled.input`
   letter-spacing: 1px;
   font-size: 14px;
   width: 70%;
+
   &[type="email"] {
     font-size: 18px;
     letter-spacing: 2px;
@@ -135,10 +198,18 @@ export const Input = styled.input`
   &placeholder {
     ${StylePlaceholder}
   }
+  @media (max-width: 1199.98px) {
+    &[type="email"] {
+    font-size: 14px;
+  }
+  }
 `;
 
 export const Span = styled.span`
   ${StylePlaceholder}
+  @media (max-width: 1199.98px) {
+    margin: 0;
+  }
 `;
 export const Bolder = css`
   font-weight: bolder;
@@ -154,11 +225,17 @@ export const Price = styled.p`
   justify-content: center;
   font-size: 14px;
   margin: 0;
+  @media (max-width: 575.98px) {
+    margin-top: 12px;
+  }
 `;
 export const ProductName = styled.p`
   font-size: 16px;
   color: #111111;
   font-weight: bold;
+  @media (max-width: 575.98px) {
+    margin-top: 14px;
+  }
 `;
 
 export const CustomLink = styled(Link)`
@@ -172,12 +249,9 @@ export const FlexBoxAround = styled.div`
   justify-content: space-around;
 `;
 
-export const FlexBoxCenter = styled('div')`
-display:flex;
+export const FlexBoxCenter = styled("div")`
+  display: flex;
   align-items: center;
- 
-
- 
 `;
 
 export const FlexBoxRow = styled(FlexBox)`
@@ -187,7 +261,6 @@ export const HrStyle = styled.hr``;
 export const StyledList = styled.ul`
   list-style: none;
 `;
-export const ListItemsStyle= styled.li`
-padding: 0 3vh;
+export const ListItemsStyle = styled.li`
+  padding: 0 3vh;
 `;
-

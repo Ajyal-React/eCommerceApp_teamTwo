@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from "react";
 import {
   MainHeader,
-  Paragraphe,
 } from "../../Global.style";
 import {
   ButtonHero,
@@ -10,6 +9,7 @@ import {
   MainHero,
   MdDoubleArrowIcon,
   RiArrowDownSLineIcon,
+  TextCenter,
 } from "./HeroSection.Style";
 import axios from 'axios';
 
@@ -34,6 +34,10 @@ function HeroSection() {
         <Paragraphe fontSize="20px" color="#fff">
           {data.description}
         </Paragraphe>
+        <MainHeader letterSpacing='.5px'>PLAYSTATION 5</MainHeader>
+        <TextCenter fontSize="20px" color="#fff">
+          lightning-fast download speed with super-fast ssd storage
+        </TextCenter>
         <ButtonHero>
           Start Shopping <MdDoubleArrowIcon />
         </ButtonHero>

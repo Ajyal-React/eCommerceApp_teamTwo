@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Paragraphe, Title, FlexBoxCenter } from './../../Global.style';
+import { Paragraphe, Title } from './../../Global.style';
 
 export const FooterContainer=styled('div')`
 height: 333px;

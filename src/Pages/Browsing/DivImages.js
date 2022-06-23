@@ -1,4 +1,4 @@
-import { ImageDiv, ImgStyle, SideLeft, FlexGap } from "./BrowseProduct.Style";
+import { ImageDiv, ImgStyle, SideLeft, FlexGap, ImageDivCustom } from "./BrowseProduct.Style";
 import image from "../../images/maxim-hopman-Hin-rzhOdWs-unsplash-removebg-preview.png";
 
 function DivImages() {
@@ -8,21 +8,21 @@ function DivImages() {
         <ImgStyle src={image} marginLeft="70px" height="350px" width="558px" />
       </ImageDiv>
       <FlexGap>
-        <ImageDiv BackGColor="#fafafa" Border="#FA7400">
+        <ImageDivCustom BackGColor="#fafafa" Border="#FA7400">
           <ImgStyle src={image} />
-        </ImageDiv>
-        <ImageDiv>
+        </ImageDivCustom>
+        <ImageDivCustom>
           <ImgStyle src={image} />
-        </ImageDiv>
-        <ImageDiv>
+        </ImageDivCustom>
+        <ImageDivCustom>
           <ImgStyle src={image} />
-        </ImageDiv>
-        <ImageDiv>
+        </ImageDivCustom>
+        <ImageDivCustom>
           <ImgStyle src={image} />
-        </ImageDiv>
-        <ImageDiv>
+        </ImageDivCustom>
+        <ImageDivCustom>
           <ImgStyle src={image} width="118px" height="100%" />
-        </ImageDiv>
+        </ImageDivCustom>
       </FlexGap>
     </SideLeft>
   );

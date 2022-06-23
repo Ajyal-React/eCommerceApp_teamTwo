@@ -8,7 +8,6 @@ import {
   SubHeader,
   ListItemsStyle,
   SupTitle,
-  FlexBoxAround,
 } from "../../Global.style";
 import {
   NavMainHeader,

@@ -17,17 +17,18 @@ import {
   InnerRigth,
   EmailIcon,
   LocklIcon,
-  EndText,
+  AuthBtn,
   FaLongArrow,
   ContainerIcon,
   AlreadySign,
   Bold,
   Italic,
   Forget,
+  ImageLogo,
+  AuthP,
 } from "../Auth.Style";
 import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
-import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = React.useState("");
@@ -68,13 +69,13 @@ export default function Login() {
     <MainSign>
       <LeftBox>
         <CustomLink to="/">
-          <Image src={Logo} height="70px" width="360px" margin="4rem 0" />
+          <ImageLogo src={Logo} />
         </CustomLink>
         <MainHeader margin="0 0 2rem">Welcome Back!</MainHeader>
-        <Paragraphe fontSize="25px" color="#DEAB80">
+        <AuthP fontSize="25px" color="#DEAB80">
           Login to your account and start your shopping <Italic>NOW!</Italic>
-        </Paragraphe>
-        <Image src={Labtop} width="500px" />
+        </AuthP>
+        <Image src={Labtop} width="100%" height="50%"/>
       </LeftBox>
       <RightBox>
         <InnerRigth onSubmit={handeSubmit}>
@@ -103,12 +104,12 @@ export default function Login() {
               <Forget>Forget?</Forget>
             </FlexBox>
           </ContainerInput>
-          <EndText>
+          <AuthBtn>
             <Paragraphe>LOGIN </Paragraphe>
             <ContainerIcon>
               <FaLongArrow />
             </ContainerIcon>
-          </EndText>
+          </AuthBtn>
           {error ? <p>Please Enter your email or password</p> : null}
           <AlreadySign>
             Don't have account?{" "}

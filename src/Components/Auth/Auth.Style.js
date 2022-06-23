@@ -1,5 +1,12 @@
 import styled, { css } from "styled-components";
-import { Bolder, FlexBox, MainContainer, Button } from "../../Global.style";
+import {
+  Bolder,
+  FlexBox,
+  MainContainer,
+  Button,
+  Image,
+  Paragraphe,
+} from "../../Global.style";
 import { MdEmail } from "react-icons/md";
 import { IoMdLock } from "react-icons/io";
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -7,6 +14,9 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 export const MainSign = styled(MainContainer)`
   display: flex;
   height: 100vh;
+  @media (max-width: 1199.98px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftBox = styled.div`
@@ -17,12 +27,22 @@ export const LeftBox = styled.div`
   justify-content: center;
   padding: 0 6rem;
   box-sizing: border-box;
+  @media (max-width: 1399.98px) {
+    width: 645px;
+  }
+  @media (max-width: 1199.98px) {
+    width: 100%;
+    height: 50%;
+  }
 `;
 export const RightBox = styled(LeftBox)`
   width: auto;
   flex-grow: 1;
   box-sizing: border-box;
   background: #f3f3f3;
+  @media (max-width: 1199.98px) {
+    padding: 0px;
+  }
 `;
 
 export const SignText = styled.p`
@@ -32,11 +52,37 @@ export const SignText = styled.p`
   text-transform: uppercase;
   padding-left: 20px;
   margin-bottom: 32px;
+  @media (max-width: 1199.98px) {
+    font-size: 25px;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 767.98px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 18px;
+  }
 `;
 
 export const InnerRigth = styled.form`
   width: 65%;
   margin: auto;
+  @media (max-width: 1399.98px) {
+    width: 85%;
+  }
+  @media (max-width: 1199.98px) {
+    margin-top: 1rem;
+  }
+  /* @media (max-width: 767.98px) {
+    width: 65%;
+  }
+
+  @media (max-width: 575.98px) {
+    width: 65%;
+  } */
 `;
 
 export const Style = css`
@@ -61,9 +107,12 @@ export const StyleFont = css`
   color: #707070;
 `;
 
-export const EndText = styled(Button)`
+export const AuthBtn = styled(Button)`
+  display: flex;
   justify-content: end;
   align-items: center;
+  background: none;
+  width: 100%;
   ${Bolder};
   ${StyleFont};
   cursor: pointer;
@@ -84,6 +133,13 @@ export const AlreadySign = styled(FlexBox)`
   bottom: 40px;
   width: auto;
   ${StyleFont};
+  @media (max-width: 1199.98px) {
+    bottom: 0;
+  }
+  @media (max-width: 575.98px) {
+    left: 25%;
+    font-size: 14px;
+  }
 `;
 export const Bold = styled.p`
   ${Bolder}
@@ -101,4 +157,20 @@ export const Forget = styled.span`
   margin-right: 20px;
   text-transform: uppercase;
   cursor: pointer;
+`;
+
+export const ImageLogo = styled(Image)`
+  margin: 4rem 0;
+  height: 70px;
+  width: 360px;
+  object-fit: contain;
+  @media (max-width: 1199.98px) {
+    width: 100%;
+    margin: 0;
+  }
+`;
+export const AuthP = styled(Paragraphe)`
+  @media (max-width: 1199.98px) {
+    margin: 0;
+  }
 `;

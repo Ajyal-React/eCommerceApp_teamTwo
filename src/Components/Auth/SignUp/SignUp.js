@@ -16,27 +16,30 @@ import {
   InnerRigth,
   EmailIcon,
   LocklIcon,
-  EndText,
+  AuthBtn,
   FaLongArrow,
   ContainerIcon,
   AlreadySign,
   Bold,
+  ImageLogo,
+  AuthP,
 } from "../Auth.Style";
 import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
 
 export default function SignUp() {
+  
   return (
     <MainSign>
       <LeftBox>
         <CustomLink to='/'>
-          <Image src={Logo} height="70px" width="360px" margin="4rem 0" />
+          <ImageLogo src={Logo}/>
         </CustomLink>
         <MainHeader margin="0 0 2rem">Get Started</MainHeader>
-        <Paragraphe fontSize="25px" color="#DEAB80">
+        <AuthP fontSize="25px" color="#DEAB80">
           Create a new account and start shopping NOW!
-        </Paragraphe>
-        <Image src={Labtop} width="500px" />
+        </AuthP>
+        <Image src={Labtop} width="100%" height="50%" />
       </LeftBox>
       <RightBox>
         <InnerRigth>
@@ -56,12 +59,12 @@ export default function SignUp() {
             <LocklIcon />
             <Input type="password" placeholder="Confirm Password" />
           </ContainerInput>
-          <EndText>
+          <AuthBtn>
             <Paragraphe>SIGN UP </Paragraphe>
             <ContainerIcon>
               <FaLongArrow />
             </ContainerIcon>
-          </EndText>
+          </AuthBtn>
           <AlreadySign>
             Already member?
             <CustomLink to="/login">

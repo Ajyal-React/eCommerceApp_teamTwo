@@ -79,6 +79,43 @@
   width: 85%;
   /* min-height: 450px; */
 }
-.slick-slider{
+
+.slick-slider {
   min-height: 600px;
+}
+
+@media screen and (max-width: 767.98px) {
+
+  .slick-prev::before,
+  .slick-next::before {
+    width: 20px;
+    height: 65px;
+  }
+  .slick-next:before{
+    position: absolute;
+    left: 7px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .btnSlider {
+    margin: 0;
+  }
+
+  .slick-slider {
+    min-height: 520px;
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: 20%;
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    width: 18px;
+    height: 60px;
+  }
+  .slick-list{
+    margin: 0 auto;
+  }
 }

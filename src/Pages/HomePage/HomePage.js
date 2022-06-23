@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import HeroSection from "../../Components/HeroSection/HeroSection";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
-import { MainContainer, MainHeader, Button, LinkBTN } from "../../Global.style";
+import { MainContainer, Button, LinkBTN } from "../../Global.style";
 import { BackgroundImage, UpdateFlexBox, DivOpacity, MainHeaderUpdate } from "./HomePage.Style";
 import DevicesDisplaySection from "../../Components/devicesDisplaySection/DevicesDisplaySection";
 import SlickSlider from "../../Components/Slider/SlickSlider";
@@ -24,7 +24,7 @@ function HomePage() {
             Get 50% Off
           </MainHeaderUpdate>
           <Button
-            backgroundColor="#FA7400"
+            backgroundColor="none"
             borderR="5px"
             border="1px solid #fff"
             padding="10px 35px"
