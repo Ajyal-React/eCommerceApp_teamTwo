@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import HeroSection from "../../Components/HeroSection/HeroSection";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
 import { MainContainer, Button, LinkBTN } from "../../Global.style";
@@ -8,7 +8,10 @@ import SlickSlider from "../../Components/Slider/SlickSlider";
 import TrendingPage from "../TrendingPage/TrendingPage";
 import FooterPage from "../FooterPage/FooterPage";
 
+
 function HomePage() {
+  
+  
   return (
     <MainContainer>
       <MainNavbar />

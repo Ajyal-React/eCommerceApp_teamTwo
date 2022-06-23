@@ -7,7 +7,7 @@ import { InnerContainer, Paragraphe } from "../../Global.style";
 export const MainHero = styled.div`
   display: flex;
   align-items: center;
-  background-image: url(${image});
+  background-image: url(${props => props.image? props.image: image});
   height: 1088px;
   background-repeat: no-repeat;
   width: 100%;
