@@ -8,16 +8,24 @@ import {
 } from "../../Global.style";
 import TrendingCards from "../../Components/TrendingCards/TrendingCards";
 import { CardsContainer, TrendingContainer } from "./TrendingPage.style";
-import axios from 'axios';
+// import axios from 'axios';
+
+import { useDispatch } from "react-redux";
+import {useSelector} from 'react-redux';
+import { TrendingAction } from "../../redux/guest/guestActions";
 function TrendingPage() {
+  const trendingData = useSelector(data=>data);
+  const dispatch= useDispatch();
+  console.log(trendingData);
   const [data, setData] = React.useState([]);
   React.useEffect(()=>{
-    const fetchApi= async()=>{
-    const res=  await axios.get('https://omar-tech-store.herokuapp.com/api/products/trending-products');
-      console.log(res.data);
-      setData(res.data)
-   }
-   fetchApi();
+    dispatch(TrendingAction)
+  //   const fetchApi= async()=>{
+  //   const res=  await axios.get('https://omar-tech-store.herokuapp.com/api/products/trending-products');
+  //     // console.log(res.data);
+  //     setData(res.data)
+  //  }
+  //  fetchApi();
   },[]);
   return (
     <FullContainer>
