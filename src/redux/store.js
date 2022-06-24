@@ -3,6 +3,7 @@ import { userReducer } from "./user/userReducers";
 import { guestReducer } from "./guest/guestReducer";
 import thunk from "redux-thunk";
 
+
 const reducer = combineReducers({
   userReducer,
   guestReducer,

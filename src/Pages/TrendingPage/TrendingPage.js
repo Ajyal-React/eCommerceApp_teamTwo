@@ -8,16 +8,21 @@ import {
 } from "../../Global.style";
 import TrendingCards from "../../Components/TrendingCards/TrendingCards";
 import { CardsContainer, TrendingContainer } from "./TrendingPage.style";
-import axios from 'axios';
+import { useDispatch } from "react-redux";
+import {useSelector} from 'react-redux';
+import { TrendingAction } from "../../redux/guest/guestActions";
+
 function TrendingPage() {
-  const [data, setData] = React.useState([]);
+
+  const dispatch= useDispatch();
+  const storeData = useSelector(data=>data);
+  const trendingData = [...storeData.guestReducer]
+
   React.useEffect(()=>{
-    const fetchApi= async()=>{
-    const res=  await axios.get('https://omar-tech-store.herokuapp.com/api/products/trending-products');
-      setData(res.data)
-   }
-   fetchApi();
-  },[]);
+    dispatch(TrendingAction());
+  },[dispatch]);
+
+
   return (
     <FullContainer>
       <TrendingContainer>
@@ -26,7 +31,7 @@ function TrendingPage() {
           <Title>trending this week</Title>
           <CardsContainer>
 
-            {data.map((element) => (
+            {trendingData.map((element) => (
               <CustomLink to="/product">
                   <TrendingCards
                     image={element.images}
