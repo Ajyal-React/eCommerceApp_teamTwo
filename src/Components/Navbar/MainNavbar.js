@@ -17,8 +17,11 @@ import {
   ListItems,
 } from "./MainNavbar.Style";
 import image from "../../images/Group 14849.png";
+import { useSelector } from "react-redux";
 
 function MainNavbar() {
+  const dataStore = useSelector((store) => store);
+  console.log('dataStore.user main navbar',dataStore);
   return (
     <NavBG>
       <InnerContainer>
@@ -26,14 +29,14 @@ function MainNavbar() {
           <FirstSide>
             <FlexBoxCenter>
               <Button
-               backgroundColor="#7B77770F"
+                backgroundColor="#7B77770F"
                 borderR="3px"
                 border="none"
                 buttonWidth="110px"
                 buttonHeight="33px"
                 fontSize="16px"
                 color="#32353C"
-               margin="0 3.5vh 0 0"
+                margin="0 3.5vh 0 0"
               >
                 English
               </Button>
@@ -44,47 +47,47 @@ function MainNavbar() {
           <CenterSide>
             <StyledList>
               <FlexBoxCenter>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      Home
-                    </Paragraphe>
-                  </ListItems>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      New arrival
-                    </Paragraphe>
-                  </ListItems>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      Mobiles
-                    </Paragraphe>
-                  </ListItems>
-                  <ListItems>
-                    {" "}
-                    <img src={image} alt="logo" />
-                  </ListItems>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      Laptops
-                    </Paragraphe>
-                  </ListItems>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      HeadPhones
-                    </Paragraphe>
-                  </ListItems>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      Mobiles
-                    </Paragraphe>
-                  </ListItems>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                    Home
+                  </Paragraphe>
+                </ListItems>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                    New arrival
+                  </Paragraphe>
+                </ListItems>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                    Mobiles
+                  </Paragraphe>
+                </ListItems>
+                <ListItems>
+                  {" "}
+                  <img src={image} alt="logo" />
+                </ListItems>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                    Laptops
+                  </Paragraphe>
+                </ListItems>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                    HeadPhones
+                  </Paragraphe>
+                </ListItems>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                    Mobiles
+                  </Paragraphe>
+                </ListItems>
               </FlexBoxCenter>
             </StyledList>
           </CenterSide>
 
           <ThirdSide>
             <FlexBoxCenter>
-              <CustomLink to='/signin'>
+              <CustomLink to="/signin">
                 <Button
                   backgroundColor="#FFFFFF"
                   borderR="10px"

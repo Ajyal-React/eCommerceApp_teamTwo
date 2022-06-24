@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from "react";
 import {
-  MainHeader,
+  MainHeader, Paragraphe,
 } from "../../Global.style";
 import {
   ButtonHero,
@@ -19,10 +19,7 @@ function HeroSection() {
   useEffect(() => {
     const OffersGet=async()=>{
       const res=await axios.get('https://omar-tech-store.herokuapp.com/api/products/offers')
-      getData(res.data[0])
-    
-    
-    
+      getData(res.data[0])  
     }
    
     OffersGet()

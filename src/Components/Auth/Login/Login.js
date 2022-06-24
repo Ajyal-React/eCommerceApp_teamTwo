@@ -29,42 +29,15 @@ import {
 } from "../Auth.Style";
 import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
+import { Formik } from "formik";
+import { SignInSchema } from "../Schema";
+import { useDispatch, useSelector } from "react-redux";
+import { LoginAction } from "../../../redux/user/userActions";
 
 export default function Login() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [error, setError] = React.useState(false);
-
-  const handeChangeEmail = (e) => {
-    if (e.target.value === "") {
-      setError(true);
-      setEmail(e.target.value);
-    } else {
-      setEmail(e.target.value);
-      setError(false);
-    }
-  };
-  const handeChangePassword = (e) => {
-    if (e.target.value === "") {
-      setError(true);
-      setPassword(e.target.value);
-    } else {
-      setPassword(e.target.value);
-      setError(false);
-    }
-  };
-
-  const handeSubmit = (e) => {
-    e.preventDefault();
-    if (email !== "" || password !== "") {
-      // clear input after submit
-      setEmail("");
-      setPassword("");
-    } else {
-      setError(true);
-    }
-  };
-
+  const dataStore = useSelector((store) => store);
+  const dispatch = useDispatch();
+  console.log("data store", dataStore);
   return (
     <MainSign>
       <LeftBox>
@@ -75,50 +48,76 @@ export default function Login() {
         <AuthP fontSize="25px" color="#DEAB80">
           Login to your account and start your shopping <Italic>NOW!</Italic>
         </AuthP>
-        <Image src={Labtop} width="100%" height="50%"/>
+        <Image src={Labtop} width="100%" height="50%" />
       </LeftBox>
-      <RightBox>
-        <InnerRigth onSubmit={handeSubmit}>
-          <SignText>login</SignText>
-          <ContainerInput>
-            <Span>
-              <EmailIcon />
-              Email
-            </Span>
-            <Input
-              type="email"
-              placeholder="John@example.com"
-              onChange={handeChangeEmail}
-              value={email}
-            />
-          </ContainerInput>
-          <ContainerInput>
-            <LocklIcon />
-            <FlexBox>
-              <Input
-                type="password"
-                placeholder="Password"
-                onChange={handeChangePassword}
-                value={password}
-              />
-              <Forget>Forget?</Forget>
-            </FlexBox>
-          </ContainerInput>
-          <AuthBtn>
-            <Paragraphe>LOGIN </Paragraphe>
-            <ContainerIcon>
-              <FaLongArrow />
-            </ContainerIcon>
-          </AuthBtn>
-          {error ? <p>Please Enter your email or password</p> : null}
-          <AlreadySign>
-            Don't have account?{" "}
-            <CustomLink to="/signin">
-              <Bold> Sign Up</Bold>
-            </CustomLink>
-          </AlreadySign>
-        </InnerRigth>
-      </RightBox>
+      <Formik
+        initialValues={{ email: "omaralhafni@gmail.com", password: "omarAlhafni@123456" }}
+        validationSchema={SignInSchema()}
+        onSubmit={(values, { setSubmitting }) => {
+          dispatch(LoginAction(values));
+        }}
+      >
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+        }) => (
+          <RightBox>
+            <InnerRigth onSubmit={handleSubmit}>
+              <SignText>login</SignText>
+              <ContainerInput>
+                <Span>
+                  <EmailIcon />
+                  Email
+                </Span>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="John@example.com"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                />
+              </ContainerInput>
+              {errors.email && touched.email ? (
+                <div style={{ color: "red" }}>{errors.email}</div>
+              ) : null}
+              <ContainerInput>
+                <LocklIcon />
+                <FlexBox>
+                  <Input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                  />
+                  <Forget>Forget?</Forget>
+                </FlexBox>
+              </ContainerInput>
+              {errors.password && touched.password ? (
+                <div style={{ color: "red" }}>{errors.password}</div>
+              ) : null}
+              <AuthBtn>
+                <Paragraphe>LOGIN </Paragraphe>
+                <ContainerIcon>
+                  <FaLongArrow />
+                </ContainerIcon>
+              </AuthBtn>
+              <AlreadySign>
+                Don't have account?{" "}
+                <CustomLink to="/signin">
+                  <Bold> Sign Up</Bold>
+                </CustomLink>
+              </AlreadySign>
+            </InnerRigth>
+          </RightBox>
+        )}
+      </Formik>
     </MainSign>
   );
 }

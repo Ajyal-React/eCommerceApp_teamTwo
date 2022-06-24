@@ -11,7 +11,6 @@ import {
 import {
   LeftBox,
   MainSign,
-  RightBox,
   SignText,
   InnerRigth,
   EmailIcon,
@@ -23,17 +22,19 @@ import {
   Bold,
   ImageLogo,
   AuthP,
+  RightBox,
 } from "../Auth.Style";
 import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
+import { Formik } from "formik";
+import { SignUpSchema } from "../Schema";
 
 export default function SignUp() {
-  
   return (
     <MainSign>
       <LeftBox>
-        <CustomLink to='/'>
-          <ImageLogo src={Logo}/>
+        <CustomLink to="/">
+          <ImageLogo src={Logo} />
         </CustomLink>
         <MainHeader margin="0 0 2rem">Get Started</MainHeader>
         <AuthP fontSize="25px" color="#DEAB80">
@@ -42,36 +43,87 @@ export default function SignUp() {
         <Image src={Labtop} width="100%" height="50%" />
       </LeftBox>
       <RightBox>
-        <InnerRigth>
-          <SignText>sign up</SignText>
-          <ContainerInput>
-            <Span>
-              <EmailIcon />
-              Email
-            </Span>
-            <Input type="email" placeholder="John@example.com" />
-          </ContainerInput>
-          <ContainerInput>
-            <LocklIcon />
-            <Input type="password" placeholder="Password" />
-          </ContainerInput>
-          <ContainerInput>
-            <LocklIcon />
-            <Input type="password" placeholder="Confirm Password" />
-          </ContainerInput>
-          <AuthBtn>
-            <Paragraphe>SIGN UP </Paragraphe>
-            <ContainerIcon>
-              <FaLongArrow />
-            </ContainerIcon>
-          </AuthBtn>
-          <AlreadySign>
-            Already member?
-            <CustomLink to="/login">
-              <Bold> Sign in</Bold>
-            </CustomLink>
-          </AlreadySign>
-        </InnerRigth>
+        <Formik
+          initialValues={{ email: "", password: "", passwordConfirm: "" }}
+          validationSchema={SignUpSchema()}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            /* and other goodies */
+          }) => (
+            <InnerRigth onSubmit={handleSubmit}>
+              <SignText>sign up</SignText>
+              <ContainerInput>
+                <Span>
+                  <EmailIcon />
+                  Email
+                </Span>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="John@example.com"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                />
+              </ContainerInput>
+              {errors.email && touched.email ? (
+                <div style={{ color: "red" }}>{errors.email}</div>
+              ) : null}
+              <ContainerInput>
+                <LocklIcon />
+                <Input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.password}
+                />
+              </ContainerInput>
+              {errors.password && touched.password ? (
+                <div style={{ color: "red" }}>{errors.password}</div>
+              ) : null}
+              <ContainerInput>
+                <LocklIcon />
+                <Input
+                  type="password"
+                  name="passwordConfirm"
+                  placeholder="Confirm Password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.passwordConfirm}
+                />
+              </ContainerInput>
+              {errors.passwordConfirm && touched.passwordConfirm ? (
+                <div style={{ color: "red" }}>{errors.passwordConfirm}</div>
+              ) : null}
+              <AuthBtn>
+                <Paragraphe>SIGN UP </Paragraphe>
+                <ContainerIcon>
+                  <FaLongArrow />
+                </ContainerIcon>
+              </AuthBtn>
+              <AlreadySign>
+                Already member?
+                <CustomLink to="/login">
+                  <Bold> Sign in</Bold>
+                </CustomLink>
+              </AlreadySign>
+            </InnerRigth>
+          )}
+        </Formik>
       </RightBox>
     </MainSign>
   );

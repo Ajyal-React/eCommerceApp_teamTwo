@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React from "react";
 import HeroSection from "../../Components/HeroSection/HeroSection";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
 import { MainContainer, Button, LinkBTN } from "../../Global.style";
