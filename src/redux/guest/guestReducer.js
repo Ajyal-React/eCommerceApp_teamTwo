@@ -1,12 +1,18 @@
 import { TRENDING } from "./guestTypes";
 import { GET_FEATURED_PRODUCTS } from "./guestTypes";
 
-export const guestReducer = (state = "", action) => {
+export const guestReducer = (
+  state = {
+    featuredProducts: [],
+    trending: [],
+  },
+  action
+) => {
   switch (action.type) {
     case GET_FEATURED_PRODUCTS:
-      return action.payload;
+      return {...state, featuredProducts: action.payload };
     case TRENDING:
-        return action.payload  
+      return {...state, trending: action.payload };
     default:
       return state;
   }

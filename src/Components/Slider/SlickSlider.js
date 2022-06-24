@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,9 +11,6 @@ import {
 } from "../../Global.style";
 import ProductCard from "../Card/ProductCard/ProductCard";
 import { CustomBtn } from "./SlickSlider.Style";
-import { useDispatch, useSelector } from "react-redux";
-import { getFeaturedProductsAction } from "../../redux/guest/guestActions";
-
 function SampleNextArrow(props) {
   const { className, onClick } = props;
   return <div className={className} onClick={onClick} />;
@@ -24,7 +21,7 @@ function SamplePrevArrow(props) {
   return <div className={className} onClick={onClick} />;
 }
 
-export default function SlickSlider() {
+export default function SlickSlider({products}) {
   const settings = {
     dots: true,
     infinite: true,
@@ -61,13 +58,7 @@ export default function SlickSlider() {
       },
     ],
   };
-  const dataStore = useSelector(store=>store)
-  const array = [...dataStore.guestReducer]
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getFeaturedProductsAction())
-  }, [dispatch]);
+ 
   return (
     <FullContainer>
       <InnerContainer>
@@ -75,7 +66,7 @@ export default function SlickSlider() {
         <Title>FEATURED PRODUCTS</Title>
       </InnerContainer>
       <Slider {...settings}>
-        {array?.map((element) => (
+        {products?.map((element) => (
           <ProductCard
             src={element.images}
             name={element.name}
