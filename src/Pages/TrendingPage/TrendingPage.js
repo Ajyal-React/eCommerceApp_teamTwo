@@ -17,11 +17,9 @@ function TrendingPage() {
   const dispatch= useDispatch();
   const storeData = useSelector(data=>data);
   const trendingData = [...storeData.guestReducer]
-  
-  const [data, setData] = React.useState([]);
+
   React.useEffect(()=>{
     dispatch(TrendingAction());
-    setData(trendingData);
   },[dispatch]);
 
 
@@ -33,7 +31,7 @@ function TrendingPage() {
           <Title>trending this week</Title>
           <CardsContainer>
 
-            {data.map((element) => (
+            {trendingData.map((element) => (
               <CustomLink to="/product">
                   <TrendingCards
                     image={element.images}
