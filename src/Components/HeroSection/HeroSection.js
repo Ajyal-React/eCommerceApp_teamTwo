@@ -31,10 +31,6 @@ function HeroSection() {
         <Paragraphe fontSize="20px" color="#fff">
           {data.description}
         </Paragraphe>
-        <MainHeader letterSpacing='.5px'>PLAYSTATION 5</MainHeader>
-        <TextCenter fontSize="20px" color="#fff">
-          lightning-fast download speed with super-fast ssd storage
-        </TextCenter>
         <ButtonHero>
           Start Shopping <MdDoubleArrowIcon />
         </ButtonHero>

@@ -21,7 +21,6 @@ import { useSelector } from "react-redux";
 
 function MainNavbar() {
   const dataStore = useSelector((store) => store);
-  console.log('dataStore.user main navbar',dataStore);
   return (
     <NavBG>
       <InnerContainer>
@@ -85,23 +84,27 @@ function MainNavbar() {
             </StyledList>
           </CenterSide>
 
-          <ThirdSide>
-            <FlexBoxCenter>
-              <CustomLink to="/signin">
-                <Button
-                  backgroundColor="#FFFFFF"
-                  borderR="10px"
-                  border="none"
-                  buttonWidth="60px"
-                  buttonHeight="25px"
-                  fontSize="12px"
-                  color="#FA7400"
-                >
-                  Sign in
-                </Button>
-              </CustomLink>
-            </FlexBoxCenter>
-          </ThirdSide>
+          {dataStore?.userReducer?.user?.id ? (
+            <ThirdSide>
+              <FlexBoxCenter>
+                <CustomLink to="/signin">
+                  <Button
+                    backgroundColor="#FFFFFF"
+                    borderR="10px"
+                    border="none"
+                    buttonWidth="60px"
+                    buttonHeight="25px"
+                    fontSize="12px"
+                    color="#FA7400"
+                  >
+                    Sign in
+                  </Button>
+                </CustomLink>
+              </FlexBoxCenter>
+            </ThirdSide>
+          ) : (
+            <p>logout</p>
+          )}
         </FlexBoxRow>
       </InnerContainer>
     </NavBG>

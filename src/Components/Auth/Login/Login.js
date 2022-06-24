@@ -37,7 +37,7 @@ import { LoginAction } from "../../../redux/user/userActions";
 export default function Login() {
   const dataStore = useSelector((store) => store);
   const dispatch = useDispatch();
-  console.log("data store", dataStore);
+  console.log("data store login", dataStore);
   return (
     <MainSign>
       <LeftBox>
@@ -51,7 +51,10 @@ export default function Login() {
         <Image src={Labtop} width="100%" height="50%" />
       </LeftBox>
       <Formik
-        initialValues={{ email: "omaralhafni@gmail.com", password: "omarAlhafni@123456" }}
+        initialValues={{
+          email: "omaralhafni@gmail.com",
+          password: "omarAlhafni@123456",
+        }}
         validationSchema={SignInSchema()}
         onSubmit={(values, { setSubmitting }) => {
           dispatch(LoginAction(values));

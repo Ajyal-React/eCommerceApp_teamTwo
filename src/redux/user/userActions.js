@@ -8,7 +8,6 @@ export const LoginAction = (values) => {
         "https://omar-tech-store.herokuapp.com/api/users/login",
         values
       );
-      console.log("response :",response.data);
       localStorage.setItem("user", JSON.stringify(response.data));
       dispatch({
         type: USER_LOGIN,

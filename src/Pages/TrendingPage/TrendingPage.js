@@ -14,7 +14,6 @@ function TrendingPage() {
   React.useEffect(()=>{
     const fetchApi= async()=>{
     const res=  await axios.get('https://omar-tech-store.herokuapp.com/api/products/trending-products');
-      console.log(res.data);
       setData(res.data)
    }
    fetchApi();
