@@ -31,13 +31,11 @@ import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
 import { Formik } from "formik";
 import { SignInSchema } from "../Schema";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { LoginAction } from "../../../redux/user/userActions";
 
 export default function Login() {
-  const dataStore = useSelector((store) => store);
   const dispatch = useDispatch();
-  console.log("data store login", dataStore);
   return (
     <MainSign>
       <LeftBox>
