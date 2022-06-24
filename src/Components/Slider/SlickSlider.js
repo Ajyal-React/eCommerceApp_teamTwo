@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,7 +11,8 @@ import {
 } from "../../Global.style";
 import ProductCard from "../Card/ProductCard/ProductCard";
 import { CustomBtn } from "./SlickSlider.Style";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { getFeaturedProductsAction } from "../../redux/guest/guestActions";
 
 function SampleNextArrow(props) {
   const { className, onClick } = props;
@@ -60,16 +61,13 @@ export default function SlickSlider() {
       },
     ],
   };
-  const [data, setData] = useState([]);
+  const dataStore = useSelector(store=>store)
+  const array = [...dataStore.guestReducer]
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    const getData = async () => {
-      const response = await axios.get(
-        "https://omar-tech-store.herokuapp.com/api/products/featured-products"
-      );
-      setData(response.data);
-    };
-    getData();
-  }, []);
+    dispatch(getFeaturedProductsAction())
+  }, [dispatch]);
   return (
     <FullContainer>
       <InnerContainer>
@@ -77,7 +75,7 @@ export default function SlickSlider() {
         <Title>FEATURED PRODUCTS</Title>
       </InnerContainer>
       <Slider {...settings}>
-        {data.map((element) => (
+        {array?.map((element) => (
           <ProductCard
             src={element.images}
             name={element.name}
