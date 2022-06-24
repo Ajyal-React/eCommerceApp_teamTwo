@@ -1,7 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { userReducer } from "./user/userReducers";
+import { guestReducer } from "./guest/guestReducer";
 import thunk from "redux-thunk";
-import guestReducer from "./guest/guestReducer";
+
 
 const reducer = combineReducers({
   userReducer,
@@ -11,9 +12,10 @@ const reducer = combineReducers({
 const userDetailsLocalStorage = JSON.parse(localStorage.getItem("user")) || {};
 
 const initialState = {
-  userInfo: {
+  userReducer: {
     user: userDetailsLocalStorage,
   },
+
 };
 
 const middleWare = [thunk];
@@ -24,7 +26,4 @@ const store = createStore(
   applyMiddleware(...middleWare)
 );
 
-// export const trendingStore = createStore(
-//   guestReducer
-// )
 export default store;

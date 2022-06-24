@@ -5,7 +5,7 @@ import * as Yup from "yup";
 
 function Test() {
   const SignReq = async () => {
-    console.log(formik.values);
+    // console.log(formik.values);
     // const res = await axios.post(
     //   "https://omar-tech-store.herokuapp.com/api/users/signup",
     //   formik.values

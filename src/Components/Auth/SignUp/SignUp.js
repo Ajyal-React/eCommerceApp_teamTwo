@@ -28,8 +28,11 @@ import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
 import { Formik } from "formik";
 import { SignUpSchema } from "../Schema";
+import { SignUpAction } from "../../../redux/user/userActions";
+import { useDispatch } from "react-redux";
 
 export default function SignUp() {
+  const dispatch = useDispatch();
   return (
     <MainSign>
       <LeftBox>
@@ -47,10 +50,7 @@ export default function SignUp() {
           initialValues={{ email: "", password: "", passwordConfirm: "" }}
           validationSchema={SignUpSchema()}
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+            dispatch(SignUpAction(values))
           }}
         >
           {({

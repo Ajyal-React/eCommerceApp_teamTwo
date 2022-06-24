@@ -1,4 +1,4 @@
-import { USER_LOGIN } from "./userTypes";
+import { USER_LOGIN, USER_SIGNUP } from "./userTypes";
 import axios from "axios";
 
 export const LoginAction = (values) => {
@@ -8,10 +8,27 @@ export const LoginAction = (values) => {
         "https://omar-tech-store.herokuapp.com/api/users/login",
         values
       );
-      console.log("response :",response.data);
       localStorage.setItem("user", JSON.stringify(response.data));
       dispatch({
         type: USER_LOGIN,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log("error",error);
+    }
+  };
+};
+
+export const SignUpAction = (values) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.post(
+        "https://omar-tech-store.herokuapp.com/api/users/signup",
+        values
+      );
+      localStorage.setItem("user", JSON.stringify(response.data));
+      dispatch({
+        type: USER_SIGNUP,
         payload: response.data,
       });
     } catch (error) {

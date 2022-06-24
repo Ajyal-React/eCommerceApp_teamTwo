@@ -31,13 +31,11 @@ import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
 import { Formik } from "formik";
 import { SignInSchema } from "../Schema";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { LoginAction } from "../../../redux/user/userActions";
 
 export default function Login() {
-  const dataStore = useSelector((store) => store);
   const dispatch = useDispatch();
-  console.log("data store", dataStore);
   return (
     <MainSign>
       <LeftBox>
@@ -51,7 +49,10 @@ export default function Login() {
         <Image src={Labtop} width="100%" height="50%" />
       </LeftBox>
       <Formik
-        initialValues={{ email: "omaralhafni@gmail.com", password: "omarAlhafni@123456" }}
+        initialValues={{
+          email: "omaralhafni@gmail.com",
+          password: "omarAlhafni@123456",
+        }}
         validationSchema={SignInSchema()}
         onSubmit={(values, { setSubmitting }) => {
           dispatch(LoginAction(values));
