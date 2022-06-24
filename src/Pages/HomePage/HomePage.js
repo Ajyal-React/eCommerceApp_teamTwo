@@ -20,14 +20,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 function HomePage() {
   const dataStore = useSelector((store) => store);
-
-  console.log(dataStore);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFeaturedProductsAction());
     dispatch(TrendingAction());
   }, [dispatch]);
-  console.log(dataStore);
 
   return (
     <MainContainer>
