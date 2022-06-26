@@ -1,6 +1,19 @@
 import axios from "axios";
-import { TRENDING } from "./guestTypes";
+import { GET_OFFER_PRODUCTS, TRENDING } from "./guestTypes";
 import { GET_FEATURED_PRODUCTS } from "./guestTypes";
+
+export const offerAction = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(
+        "https://omar-tech-store.herokuapp.com/api/products/offers"
+      );
+      dispatch({ type: GET_OFFER_PRODUCTS, payload: response.data });
+    } catch (error) {
+      console.log("Error is: ", error);
+    }
+  };
+};
 
 export const TrendingAction = () => {
   return async (dispatch) => {

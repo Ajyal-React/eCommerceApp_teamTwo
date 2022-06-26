@@ -14,6 +14,7 @@ import TrendingPage from "../TrendingPage/TrendingPage";
 import FooterPage from "../FooterPage/FooterPage";
 import {
   getFeaturedProductsAction,
+  offerAction,
   TrendingAction,
 } from "../../redux/guest/guestActions";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,14 +23,16 @@ function HomePage() {
   const dataStore = useSelector((store) => store);
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(offerAction());
     dispatch(getFeaturedProductsAction());
     dispatch(TrendingAction());
-  }, [dispatch]);
+  }, []);
 
+  console.log(dataStore);
   return (
     <MainContainer>
       <MainNavbar />
-      <HeroSection />
+      <HeroSection offer={dataStore?.guestReducer?.offer[0]}/>
       <DevicesDisplaySection />
       <BackgroundImage>
         <DivOpacity></DivOpacity>

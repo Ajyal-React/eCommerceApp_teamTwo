@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MainHeader } from "../../Global.style";
 import {
   ButtonHero,
@@ -9,27 +9,14 @@ import {
   RiArrowDownSLineIcon,
   TextCenter,
 } from "./HeroSection.Style";
-import axios from "axios";
 
-function HeroSection() {
-  const [data, getData] = useState([]);
-
-  useEffect(() => {
-    const OffersGet = async () => {
-      const res = await axios.get(
-        "https://omar-tech-store.herokuapp.com/api/products/offers"
-      );
-      getData(res.data[0]);
-    };
-
-    OffersGet();
-  }, []);
+function HeroSection({offer}) {
   return (
-    <MainHero image={data.imageBanner}>
+    <MainHero image={offer?.imageBanner}>
       <InnerContainerHero>
-        <MainHeader letterSpacing=".5px">{data.name}</MainHeader>
+        <MainHeader letterSpacing=".5px">{offer?.name}</MainHeader>
         <TextCenter fontSize="20px" color="#fff">
-          {data.description}
+          {offer?.description}
         </TextCenter>
         <ButtonHero>
           Start Shopping <MdDoubleArrowIcon />
