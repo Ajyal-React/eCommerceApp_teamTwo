@@ -1,6 +1,7 @@
 import { Button } from "style-components";
+import styled from "styled-components";
 import Styled from "styled-components";
-import { Title } from "../../Global.style";
+import { Paragraphe, Title } from "../../Global.style";
 
 export const FlexBoxStyle = Styled.div`
     display: flex;
@@ -103,4 +104,16 @@ color: #ffff;
 @media (min-width: 500px) and (max-width: 677px) {
     width:100%
 }
+`
+export const CustomTitle = styled(Title)`
+@media (max-width: 575.98px) {
+    font-size: 18px;
+    text-align: start;
+  }
+`
+export const CustomParaghraph = styled(Paragraphe)`
+@media (max-width: 1199.98px) {
+    font-size: 16px;
+    text-align: start;
+  }
 `
