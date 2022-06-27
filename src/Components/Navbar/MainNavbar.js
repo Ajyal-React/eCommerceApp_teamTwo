@@ -52,7 +52,7 @@ function MainNavbar() {
               <FlexBoxCenter>
                 <ListItems>
                   <Paragraphe fontSize="16px" color="#32353C">
-                    Home
+                  <CustomLink to="/profile">Home</CustomLink>
                   </Paragraphe>
                 </ListItems>
                 <ListItems>
