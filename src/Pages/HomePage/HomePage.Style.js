@@ -13,6 +13,9 @@ export const UpdateFlexBox = styled(FlexBox)`
     justify-content: space-around;
     padding-top: 95px;
     margin-left: 50px;
+    width: 80%;
+    margin: auto;
+    align-items: center;
 `
 
 export const DivOpacity = styled.div`

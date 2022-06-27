@@ -25,7 +25,7 @@
 
 .slick-prev,
 .slick-next {
-  top: 35%;
+  top: 20%;
 }
 
 .slick-prev {
@@ -81,7 +81,7 @@
 }
 
 .slick-slider {
-  min-height: 600px;
+  min-height: 500px;
 }
 
 @media screen and (max-width: 767.98px) {
@@ -102,7 +102,7 @@
   }
 
   .slick-slider {
-    min-height: 520px;
+    min-height: 390px;
   }
 
   .slick-prev,
@@ -113,9 +113,17 @@
   .slick-prev::before,
   .slick-next::before {
     width: 18px;
-    height: 60px;
+    height: 50px;
   }
   .slick-list{
     margin: 0 auto;
+  }
+  .slick-next:before{
+    position: absolute;
+    left: 13px;
+    padding-left: 11px;
+  }
+  .slick-prev:before{
+    padding-right: 11px;
   }
 }

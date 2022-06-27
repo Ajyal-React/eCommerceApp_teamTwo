@@ -13,5 +13,6 @@ export const CustomBtn = styled(ButtonHero)`
    width: auto;
    height: 45px;
    font-size: 16px;
+   margin: 0 auto 3rem auto;
   }
 `;

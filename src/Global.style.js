@@ -238,7 +238,7 @@ export const ProductName = styled.p`
   color: #111111;
   font-weight: bold;
   @media (max-width: 575.98px) {
-    margin-top: 14px;
+    margin-top: 12px;
   }
 `;
 
@@ -264,6 +264,7 @@ export const FlexBoxRow = styled(FlexBox)`
 export const HrStyle = styled.hr``;
 export const StyledList = styled.ul`
   list-style: none;
+  margin:0;
 `;
 export const ListItemsStyle = styled.li`
   padding: 0 3vh;

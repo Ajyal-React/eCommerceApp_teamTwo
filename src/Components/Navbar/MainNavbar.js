@@ -19,6 +19,7 @@ import {
   BsHeartIcon,
   AiOutlineUserIcon,
   RiShoppingBagFillIcon,
+  CustomSign,
 } from "./MainNavbar.Style";
 import image from "../../images/Group 14849.png";
 import { useSelector } from "react-redux";
@@ -100,17 +101,9 @@ function MainNavbar() {
                 </MainNavIcons>
               ) : (
                 <CustomLink to="/signin">
-                  <Button
-                    backgroundColor="#FFFFFF"
-                    borderR="10px"
-                    border="none"
-                    buttonWidth="60px"
-                    buttonHeight="25px"
-                    fontSize="12px"
-                    color="#FA7400"
-                  >
+                  <CustomSign>
                     Sign in
-                  </Button>
+                  </CustomSign>
                 </CustomLink>
               )}
             </FlexBoxCenter>

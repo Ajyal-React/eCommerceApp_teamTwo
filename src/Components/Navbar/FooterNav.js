@@ -22,6 +22,7 @@ import {
   BsFillTelephoneFillIcon,
   GrMailIcon,
   ContactContainer,
+  FlexCenter,
 } from "./FooterNav.Style";
 import LogoImage from "../../images/Group 14849.png";
 import { ThirdSide } from "./MainNavbar.Style";
@@ -103,7 +104,7 @@ function FooterNav() {
       <HrStyle></HrStyle>
 
       <LastSide>
-        <FlexBox>
+        <FlexCenter>
           <FooterSubTitle>all copyRights are reserved @2022</FooterSubTitle>
 
           <SocialIcons>
@@ -119,7 +120,7 @@ function FooterNav() {
               </IconContext.Provider>
             </FlexBoxRow>
           </SocialIcons>
-        </FlexBox>
+        </FlexCenter>
       </LastSide>
     </FooterContainer>
   );
