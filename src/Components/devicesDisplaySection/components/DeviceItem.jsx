@@ -1,36 +1,49 @@
 import React from "react";
 
-import {FlexBox} from "../../../Global.style";
-import {Item, FlexEnd} from "./DeviceItem.style";
-import FirstImage from "../../../images/FirstMaskGroup.png";
-import Heart from "../../../images/heart.jpg";
-import Star from "../../../images/star.jpg"
-import Store from "../../../images/store.jpg"
-function  DeviceItem(){
-    return(
-        <Item>
-            <FlexEnd>
-                <img src={Heart} alt="" />
-            </FlexEnd>
-            <div>
-                <img src={FirstImage} alt="" />
-            </div>
-            <div>
-                <FlexBox>
-                    <div>Dell Laptop</div>
-                    <div>99$</div>
-                </FlexBox>
-            </div>
-            <hr />
-            <div>
-                <FlexBox>
-                    <div><img src={Star} alt="" /></div>
-                    <div><img src={Store} alt="" /></div>
-                </FlexBox>
-            </div>
-        </Item>
+import { FlexBox, Image } from "../../../Global.style";
+import { Item, FlexEnd } from "./DeviceItem.style";
+import { LabName, LabPrice, ImageBox } from "../DevicesDisplaySection.style";
+import SecondImage from "../../../images/MG.png";
+import { FaHeart } from "react-icons/fa";
+import { IconContext } from "react-icons/lib";
+import { AiFillStar } from "react-icons/ai";
+import { BsCartFill } from "react-icons/bs";
 
-    );
+function DeviceItem(props) {
+  return (
+    <Item>
+      <FlexEnd>
+        <FaHeart color="#BDBDBD" />
+      </FlexEnd>
+      <ImageBox>
+        <Image src={props.images} width="200px" height="200px" alt="" />
+      </ImageBox>
+      <div>
+        <FlexBox>
+          <LabName>{props.name}</LabName>
+          <LabPrice>${props.price}</LabPrice>
+        </FlexBox>
+      </div>
+      <hr />
+      <div>
+        <FlexBox>
+          <AiFillStar color="yellow" />
+          <AiFillStar color="yellow" />
+          <AiFillStar color="yellow" />
+          <AiFillStar color="yellow" />
+          <AiFillStar color="yellow" />
+          <p>({props.rating})</p>
+          <IconContext.Provider
+            value={{ color: "#BDBDBD", backgroundColor: "#BDBDBD" }}
+          >
+            <div>
+              <BsCartFill />
+            </div>
+          </IconContext.Provider>
+        </FlexBox>
+      </div>
+    </Item>
+  );
 }
 
 export default DeviceItem;

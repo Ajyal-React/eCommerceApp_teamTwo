@@ -1,10 +1,11 @@
-import { GET_OFFER_PRODUCTS, TRENDING } from "./guestTypes";
+import { GET_OFFER_PRODUCTS, TRENDING, GET_FEATURED_CATEGORIES} from "./guestTypes";
 import { GET_FEATURED_PRODUCTS } from "./guestTypes";
 
 export const guestReducer = (
   state = {
     featuredProducts: [],
     trending: [],
+    categories:[],
     offer: {},
   },
   action
@@ -16,6 +17,8 @@ export const guestReducer = (
       return {...state, featuredProducts: action.payload };
     case TRENDING:
       return {...state, trending: action.payload };
+      case GET_FEATURED_CATEGORIES:
+        return state = {...state, categories: action.payload };
     default:
       return state;
   }
