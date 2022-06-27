@@ -5,7 +5,7 @@ function DivImages() {
   return (
     <SideLeft>
       <ImageDiv>
-        <ImgStyle src={image} marginLeft="70px" height="350px" width="558px" />
+        <ImgStyle src={image} height="80%" width="80%" />
       </ImageDiv>
       <FlexGap>
         <ImageDivCustom BackGColor="#fafafa" Border="#FA7400">

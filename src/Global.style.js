@@ -85,7 +85,7 @@ export const MainHeader = styled.h1`
 
 export const Title = styled.h2`
   font-size: 30px;
-  margin-top: 0;
+  margin-top: ${(props) => (props.marginTop ? props.marginTop : 0)};
   text-transform: uppercase;
   text-transform: ${(props) =>
     props.textTransform ? props.textTransform : "uppercase"};
@@ -121,8 +121,8 @@ export const Paragraphe = styled.p`
   color: ${(props) => props.color};
   margin: ${(props) => props.margin};
   margin-right: ${(props) => props.marginRight};
- padding: ${(props) => props.padding};
- 
+  padding: ${(props) => props.padding};
+
   @media (max-width: 1199.98px) {
     font-size: 20px;
     text-align: center;
@@ -135,7 +135,7 @@ export const Paragraphe = styled.p`
 export const List = styled.ul`
   list-style: none;
   display: flex;
-  padding:0;
+  padding: 0;
 `;
 export const LinkBTN = styled.a`
   text-decoration: none;
@@ -204,8 +204,8 @@ export const Input = styled.input`
   }
   @media (max-width: 1199.98px) {
     &[type="email"] {
-    font-size: 14px;
-  }
+      font-size: 14px;
+    }
   }
 `;
 
@@ -260,11 +260,13 @@ export const FlexBoxCenter = styled("div")`
 
 export const FlexBoxRow = styled(FlexBox)`
   flex-direction: row;
+  padding: ${(props) => props.padding};
+  align-items: ${(props) => props.alignItems};
 `;
 export const HrStyle = styled.hr``;
 export const StyledList = styled.ul`
   list-style: none;
-  margin:0;
+  margin: 0;
 `;
 export const ListItemsStyle = styled.li`
   padding: 0 3vh;

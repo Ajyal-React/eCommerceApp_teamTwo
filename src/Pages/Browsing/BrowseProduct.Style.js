@@ -6,20 +6,33 @@ import { Paragraphe, Title } from "../../Global.style";
 export const FlexBoxStyle = Styled.div`
     display: flex;
     flex-wrap:wrap;
-    gap: 35px;
+    justify-content: space-between;
+    width: 80%;
+    /* gap: 35px; */
     padding-top:${(props) => (props.PaddingTop ? props.PaddingTop : "0")};
-    margin-bottom: ${(props) => (props.MarginBottom ? props.MarginBottom : "0")};
+    margin-bottom: ${(props) =>
+      props.MarginBottom ? props.MarginBottom : "0"};
+    @media (max-width: 1400px) {
+      width: 100%;
+    }
+`;
+export const FlexBoxContainer = Styled(FlexBoxStyle)`
+    width: 100%;
 `;
 export const SideLeft = Styled.div`
-    @media (min-width: 500px) and (max-width: 677px) {
-        width:100%
+    width: 50%;
+    @media (max-width: 768.98px) {
+        width:100%;
     }
 `;
 export const SideRight = Styled.div`
-   width:41%
-   @media (min-width: 500px) and (max-width: 677px) {
-    width: 100%;
-}
+   width:50%;
+   padding-left: 2.5rem;
+   @media (max-width: 768.98px) {
+        width:100%;
+        padding-left: 0rem;
+        margin-top: 2rem;
+    }
 `;
 export const ImageDiv = Styled.div`
     border:${(props) =>
@@ -28,31 +41,36 @@ export const ImageDiv = Styled.div`
     margin-bottom:9px;
     overflow: hidden;
     background-color:${(props) => props.BackGColor};
+    display: flex;
+    justify-content: center;
 `;
 export const ImageDivCustom = Styled(ImageDiv)`
-    @media (min-width: 500px) and (max-width: 677px) {
+    width: calc(90%/5);
+    /* @media (min-width: 500px) and (max-width: 677px) {
         width: 19%;
         height:80px;
-    }
+    } */
 `;
 export const ImgStyle = Styled.img`
-    width:${(props) => (props.width ? props.width : "118px")};
-    height: ${(props) => (props.width ? props.height : "100%")};
+    width: 100%;
+    height: ${(props) => (props.width ? props.height : "118px")};
+    object-fit: contain;
     margin-left: ${(props) => (props.marginLeft ? props.marginLeft : "0")};
-    @media (min-width: 500px) and (max-width: 677px) {
-        margin-left:0;
-        width: 116%;
+    @media (max-width: 1400px) {
+       height: auto;
+       padding: 10px 0;
     }
 `;
 export const FlexGap = Styled(FlexBoxStyle)`
-    gap:7px;
+    gap:10px;
     margin:0;
-    @media (min-width: 500px) and (max-width: 677px) {
-        gap: 5px;
+    width: 100%;
+    @media (max-width: 575.98px){
+        gap: 7px;
     }
 `;
 export const Header = Styled(Title)`
-   margin:0
+   margin:0;
 `;
 
 export const SpanStyle = Styled.span`
@@ -61,59 +79,62 @@ export const SpanStyle = Styled.span`
 `;
 export const DivContent = Styled.div`
     text-align:Center;
+    width: calc(90%/4);
 `;
 export const ColorCompination = Styled(FlexGap)`
-   width:70px;
-   height:30px;
+   width: 90%;
+   height:50px;
    gap:0;
    box-shadow: 0px 3px 8px #888888;
-   margin-bottom:5px
-
+   margin-bottom:5px;
+   @media (max-width: 768.98px) {
+      height: 35px;
+    }
 `;
 export const ColorOne = Styled.div`
     background:${(props) => (props.BackGColor ? props.BackGColor : "0")};
-    width:50%
+    width:50%;
 `;
 export const ColorTwo = Styled.div`
     background:${(props) => (props.BackGColor ? props.BackGColor : "0")};
-    width:50%
+    width:50%;
 `;
 export const SelectField = Styled.select`
     outline: none;
     border: 1px solid #AFAFAF;
     height: 40px;
-    width: 81%;
+    width: 100%;
     background: #F4F4F4;
     border-radius: 5px;
     margin-bottom:15px;
-    @media (min-width: 500px) and (max-width: 677px) {
-        width:100%
-    }
 `;
-export const HrS= Styled.hr`
- margin:${(props)=>props.margin}
-`
-export const CustomButton=Styled(Button)`
-background: #FA7400;
-border-radius: 5px;
-border: none;
-box-shadow: 0px 3px 6px #00000029;
-height:40px;
-width:81%;
-color: #ffff;
-@media (min-width: 500px) and (max-width: 677px) {
-    width:100%
-}
-`
+export const HrS = Styled.hr`
+    margin:${(props) => props.margin};
+`;
+export const CustomButton = Styled(Button)`
+    background: #FA7400;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 3px 6px #00000029;
+    height:40px;
+    width:100%;
+    color: #ffff;
+`;
 export const CustomTitle = styled(Title)`
-@media (max-width: 575.98px) {
+  @media (max-width: 575.98px) {
     font-size: 18px;
     text-align: start;
   }
-`
+`;
 export const CustomParaghraph = styled(Paragraphe)`
-@media (max-width: 1199.98px) {
+  @media (max-width: 1199.98px) {
     font-size: 16px;
     text-align: start;
   }
-`
+`;
+export const FormProduct = Styled.form`
+   width: 80%;
+   @media (max-width: 768.98px) {
+      width: 100%;
+    }
+`;

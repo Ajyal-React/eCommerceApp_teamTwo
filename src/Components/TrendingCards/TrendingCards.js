@@ -1,31 +1,26 @@
 import React from "react";
-import { Paragraphe,FlexBoxRow } from "./../../Global.style";
-import { TrendingCard, TrendingImg,PriceBG ,ProductTitle} from "./TrendingCards.style";
+import { FlexBoxRow, Image, Price } from "./../../Global.style";
+import {
+  TrendingCard,
+  TrendingImg,
+  ProductTitle,
+} from "./TrendingCards.style";
 
 // import image from "../../images/Base.png";
 
-function TrendingCards({name, price, image}) {
+function TrendingCards({ name, price, image }) {
   return (
     <TrendingCard>
-      <TrendingImg src={image}></TrendingImg>
-     
-     
-    <FlexBoxRow>
-        <ProductTitle>
-          {name}
-        </ProductTitle>
-       
-         
-    <PriceBG>
-    <Paragraphe fontSize="12px" color="#FF4F04">
-         {price}$
-        </Paragraphe>
-    </PriceBG>
-    </FlexBoxRow>
-     
-     
-    
-      </TrendingCard>
+      <TrendingImg>
+        <Image src={image} width="100%" height="100%" />
+      </TrendingImg>
+      <FlexBoxRow padding={'.5rem 0'} alignItems="center">
+        <ProductTitle>{name}</ProductTitle>
+        <Price>
+            {price}$
+        </Price>
+      </FlexBoxRow>
+    </TrendingCard>
   );
 }
 

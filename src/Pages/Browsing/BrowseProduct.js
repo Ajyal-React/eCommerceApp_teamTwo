@@ -1,8 +1,5 @@
 import MainNavbar from "../../Components/Navbar/MainNavbar";
-import {
-  InnerContainer,
-  MainContainer,
-} from "../../Global.style";
+import { InnerContainer, MainContainer } from "../../Global.style";
 import FooterPage from "../FooterPage/FooterPage";
 import {
   FlexBoxStyle,
@@ -15,7 +12,9 @@ import {
   HrS,
   CustomButton,
   CustomParaghraph,
-  CustomTitle
+  CustomTitle,
+  FormProduct,
+  FlexBoxContainer,
 } from "./BrowseProduct.Style";
 import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
@@ -25,14 +24,16 @@ function BrowseProduct() {
     <MainContainer>
       <MainNavbar />
       <InnerContainer>
-        <FlexBoxStyle PaddingTop="115px" MarginBottom='75px'>
+        <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
           <DivImages />
           <SideRight>
-            <CustomTitle marginBottom="0" textTransform='capitalize'>MacBook Pro 13</CustomTitle>
-            <CustomParaghraph margin="0" color="#9B9A9A" fontSize='12px'>
+            <CustomTitle marginBottom="0" textTransform="capitalize">
+              MacBook Pro 13
+            </CustomTitle>
+            <CustomParaghraph margin="0 0 .5rem 0" color="#9B9A9A" fontSize="12px">
               The best for your professional life
             </CustomParaghraph>
-            <CustomParaghraph margin="0" color="#707070">
+            <CustomParaghraph margin="0 0 .5rem 0" color="#707070">
               Availability in stock: <SpanStyle>Available</SpanStyle>
             </CustomParaghraph>
             <HrS />
@@ -40,7 +41,7 @@ function BrowseProduct() {
               Choose your combination
             </CustomParaghraph>
 
-            <FlexBoxStyle MarginBottom='16px'>
+            <FlexBoxStyle MarginBottom="16px">
               <DivContent>
                 <ColorCompination>
                   <ColorOne BackGColor="#646363">
@@ -83,34 +84,31 @@ function BrowseProduct() {
                 <input type="radio" name="compination" value="val4" />
               </DivContent>
             </FlexBoxStyle>
-            <form>
-              <CustomParaghraph margin="0" color="#646363">
+            <FormProduct>
+              <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Size and Weight
               </CustomParaghraph>
               <OptionFileds />
-              <CustomParaghraph margin="0" color="#646363">
+              <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Chip
               </CustomParaghraph>
               <OptionFileds />
-              <CustomParaghraph margin="0" color="#646363">
+              <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Storage
               </CustomParaghraph>
               <OptionFileds />
-              <CustomParaghraph margin="0" color="#646363">
+              <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Memory
               </CustomParaghraph>
               <OptionFileds />
-              <CustomButton>
-                Add To Card
-              </CustomButton>
-            </form>
+              <CustomButton>Add To Card</CustomButton>
+            </FormProduct>
           </SideRight>
-        </FlexBoxStyle>
-        <HrS margin='0px -101px'/>
+        </FlexBoxContainer>
+        <HrS margin="0px -101px" />
       </InnerContainer>
-      <FooterPage/>
+      <FooterPage />
     </MainContainer>
-    
   );
 }
 export default BrowseProduct;
