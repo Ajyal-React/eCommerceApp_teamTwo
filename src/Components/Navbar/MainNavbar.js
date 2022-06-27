@@ -8,8 +8,6 @@ import {
   FlexBoxRow,
   Paragraphe,
   CustomLink,
-  FlexBox,
-  FlexBoxAround,
 } from "../../Global.style";
 import {
   FirstSide,
@@ -20,7 +18,7 @@ import {
   MainNavIcons,
   BsHeartIcon,
   AiOutlineUserIcon,
-  RiShoppingBagFillIcon
+  RiShoppingBagFillIcon,
 } from "./MainNavbar.Style";
 import image from "../../images/Group 14849.png";
 import { useSelector } from "react-redux";
@@ -90,9 +88,17 @@ function MainNavbar() {
             </StyledList>
           </CenterSide>
           <ThirdSide>
-              <FlexBoxCenter>
-          {dataStore?.userReducer?.user?.id ? (
-          
+            <FlexBoxCenter>
+              {dataStore?.userReducer?.user?.id ? (
+                <MainNavIcons>
+                  <FlexBoxCenter>
+                    <BsHeartIcon />
+                    <AiOutlineUserIcon />
+                    <Paragraphe marginRight="3vh">0.00$</Paragraphe>
+                    <RiShoppingBagFillIcon />
+                  </FlexBoxCenter>
+                </MainNavIcons>
+              ) : (
                 <CustomLink to="/signin">
                   <Button
                     backgroundColor="#FFFFFF"
@@ -106,20 +112,9 @@ function MainNavbar() {
                     Sign in
                   </Button>
                 </CustomLink>
-              
-          ) : (
-            <MainNavIcons>
-             <FlexBoxCenter>
-              <BsHeartIcon/>
-            <AiOutlineUserIcon/>
-            <Paragraphe marginRight="3vh">0.00$</Paragraphe>
-            <RiShoppingBagFillIcon/>
+              )}
             </FlexBoxCenter>
-            </MainNavIcons>
-          
-          )}
-          </FlexBoxCenter>
-            </ThirdSide>
+          </ThirdSide>
         </FlexBoxRow>
       </InnerContainer>
     </NavBG>

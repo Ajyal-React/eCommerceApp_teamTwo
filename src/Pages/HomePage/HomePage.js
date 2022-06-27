@@ -26,13 +26,13 @@ function HomePage() {
     dispatch(offerAction());
     dispatch(getFeaturedProductsAction());
     dispatch(TrendingAction());
-  }, []);
+  }, [dispatch]);
 
   console.log(dataStore);
   return (
     <MainContainer>
       <MainNavbar />
-      <HeroSection offer={dataStore?.guestReducer?.offer[0]}/>
+      <HeroSection offer={dataStore?.guestReducer?.offer[0]} />
       <DevicesDisplaySection />
       <BackgroundImage>
         <DivOpacity></DivOpacity>
