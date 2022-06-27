@@ -120,6 +120,8 @@ export const Paragraphe = styled.p`
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
   margin: ${(props) => props.margin};
+  margin-right: ${(props) => props.marginRight};
+ padding: ${(props) => props.padding};
   @media (max-width: 1199.98px) {
     font-size: 20px;
     text-align: center;
