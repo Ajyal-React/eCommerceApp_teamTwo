@@ -3,6 +3,7 @@ import Login from "./Components/Auth/Login/Login";
 import SignUp from "./Components/Auth/SignUp/SignUp";
 import BrowseProduct from "./Pages/Browsing/BrowseProduct";
 import HomePage from "./Pages/HomePage/HomePage";
+import ProfilePage from "./Pages/ProfilePage/ProfilePage";
 import Test from "./Pages/Test";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/product" element={<BrowseProduct/>}/>
         <Route path="/test" element={<Test/>}/>
+        <Route path="/Profile" element={<ProfilePage/>}/>
       </Routes>
     </BrowserRouter>
   );
