@@ -132,6 +132,7 @@ export const Paragraphe = styled.p`
 export const List = styled.ul`
   list-style: none;
   display: flex;
+  padding:0;
 `;
 export const LinkBTN = styled.a`
   text-decoration: none;
