@@ -1,9 +1,6 @@
 import MainNavbar from "../../Components/Navbar/MainNavbar";
 import {
   InnerContainer,
-  // FullContainer,
-  Paragraphe,
-  Title,
   MainContainer,
 } from "../../Global.style";
 import FooterPage from "../FooterPage/FooterPage";
@@ -16,7 +13,9 @@ import {
   ColorCompination,
   DivContent,
   HrS,
-  CustomButton
+  CustomButton,
+  CustomParaghraph,
+  CustomTitle
 } from "./BrowseProduct.Style";
 import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
@@ -29,17 +28,17 @@ function BrowseProduct() {
         <FlexBoxStyle PaddingTop="115px" MarginBottom='75px'>
           <DivImages />
           <SideRight>
-            <Title marginBottom="0" textTransform='capitalize'>MacBook Pro 13</Title>
-            <Paragraphe margin="0" color="#9B9A9A" fontSize='12px'>
+            <CustomTitle marginBottom="0" textTransform='capitalize'>MacBook Pro 13</CustomTitle>
+            <CustomParaghraph margin="0" color="#9B9A9A" fontSize='12px'>
               The best for your professional life
-            </Paragraphe>
-            <Paragraphe margin="0" color="#707070">
+            </CustomParaghraph>
+            <CustomParaghraph margin="0" color="#707070">
               Availability in stock: <SpanStyle>Available</SpanStyle>
-            </Paragraphe>
+            </CustomParaghraph>
             <HrS />
-            <Paragraphe color="#646363">
+            <CustomParaghraph color="#646363">
               Choose your combination
-            </Paragraphe>
+            </CustomParaghraph>
 
             <FlexBoxStyle MarginBottom='16px'>
               <DivContent>
@@ -85,21 +84,21 @@ function BrowseProduct() {
               </DivContent>
             </FlexBoxStyle>
             <form>
-              <Paragraphe margin="0" color="#646363">
+              <CustomParaghraph margin="0" color="#646363">
                 Size and Weight
-              </Paragraphe>
+              </CustomParaghraph>
               <OptionFileds />
-              <Paragraphe margin="0" color="#646363">
+              <CustomParaghraph margin="0" color="#646363">
                 Chip
-              </Paragraphe>
+              </CustomParaghraph>
               <OptionFileds />
-              <Paragraphe margin="0" color="#646363">
+              <CustomParaghraph margin="0" color="#646363">
                 Storage
-              </Paragraphe>
+              </CustomParaghraph>
               <OptionFileds />
-              <Paragraphe margin="0" color="#646363">
+              <CustomParaghraph margin="0" color="#646363">
                 Memory
-              </Paragraphe>
+              </CustomParaghraph>
               <OptionFileds />
               <CustomButton>
                 Add To Card
