@@ -122,6 +122,7 @@ export const Paragraphe = styled.p`
   margin: ${(props) => props.margin};
   margin-right: ${(props) => props.marginRight};
   padding: ${(props) => props.padding};
+  width: ${(props) => props.width};
 
   @media (max-width: 1199.98px) {
     font-size: 20px;
@@ -136,6 +137,8 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
 `;
 export const LinkBTN = styled.a`
   text-decoration: none;
@@ -270,4 +273,7 @@ export const StyledList = styled.ul`
 `;
 export const ListItemsStyle = styled.li`
   padding: 0 3vh;
+  &:first-of-type{
+    padding-right: 0;
+  }
 `;
