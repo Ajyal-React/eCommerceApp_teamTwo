@@ -90,7 +90,7 @@ function MainNavbar() {
           </CenterSide>
           <ThirdSide>
             <FlexBoxCenter>
-              {dataStore?.userReducer?.user?.id ? (
+              {dataStore?.userReducer?.user?._id ? (
                 <MainNavIcons>
                   <FlexBoxCenter>
                     <BsHeartIcon />
