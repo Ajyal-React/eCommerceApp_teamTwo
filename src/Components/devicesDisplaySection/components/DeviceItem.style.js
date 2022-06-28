@@ -3,10 +3,12 @@ import styled from "styled-components";
 
 export const Item = styled.div` 
  display: flex;
- flex-basis: 35%;
+ margin-bottom:10px;
+ width:48%;
  flex-direction:column;
  background-color:#DBDBDB;
- padding:5px;
+ box-sizing: border-box;
+
 `;
 
 export const FlexEnd = styled.div` 

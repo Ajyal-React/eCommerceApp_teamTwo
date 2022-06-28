@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_OFFER_PRODUCTS, TRENDING } from "./guestTypes";
+import { GET_OFFER_PRODUCTS, TRENDING, GET_FEATURED_CATEGORIES } from "./guestTypes";
 import { GET_FEATURED_PRODUCTS } from "./guestTypes";
 
 export const offerAction = () => {
@@ -43,3 +43,18 @@ export const getFeaturedProductsAction = () => {
     }
   };
 };
+
+export const getFeaturedCategories = () => {
+  return async (dispatch) => {
+ 
+    try{
+      const response = await axios.get("https://omar-tech-store.herokuapp.com/api/products/featured-categories");
+      dispatch({
+        type: GET_FEATURED_CATEGORIES,
+        payload: response.data,
+      });   
+    }catch(error){
+      console.log("error in get feature categores => " + error);
+    }
+  }
+}
