@@ -13,7 +13,7 @@ function Items() {
           </DivImg>
         </ListItemsStyle>
         <CustomListItemsStyle>Laptop Bag</CustomListItemsStyle>
-        <CustomListItemsStyle>$75</CustomListItemsStyle>
+        <CustomListItemsStyle color={'#2BB377'}>$75</CustomListItemsStyle>
       </List>
     </Item>
   );

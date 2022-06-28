@@ -1,87 +1,74 @@
-import { List, ListItemsStyle, Paragraphe } from "../../../../Global.style";
+import { Image, List, ListItemsStyle } from "../../../../Global.style";
 import {
   ContactDetails,
   ConteainerUl,
   CustomFlex,
+  EmailIcon,
+  FillBagFillIcon,
   H5,
   ImgProfile,
+  TelephoneFillIcon,
+  UserIcon,
+  ParagraphProfile
 } from "./ContactSection.style";
-import { IconContext } from "react-icons/lib";
-import { FaUserAlt } from "react-icons/fa";
 import BackBag from "../../../../images/BackBag.png";
 function ContactSection() {
   return (
     <ContactDetails>
       <ImgProfile>
-        <img src={BackBag} alt="" width="80px" height="80px" />
+        <Image src={BackBag} alt="" borderR="50%" />
       </ImgProfile>
       <CustomFlex>
-        <ConteainerUl>
+        <ConteainerUl marginRight="100px">
           <List>
-            <ListItemsStyle>
-              <IconContext.Provider value={{ color: "#aaaaaa" }}>
-                <FaUserAlt />
-              </IconContext.Provider>
-            </ListItemsStyle>
-            <ListItemsStyle>
+            <ListItemsStyle padding="0">
+              <UserIcon />
               <H5>UserName</H5>
             </ListItemsStyle>
-            <ListItemsStyle>
-              <Paragraphe margin="-3px" fontSize="14px">
+            <ListItemsStyle width="50%" padding="0">
+              <ParagraphProfile margin="-3px" fontSize="14px">
                 Eman Hassouna
-              </Paragraphe>
+              </ParagraphProfile>
             </ListItemsStyle>
           </List>
 
           <List>
-            <ListItemsStyle>
-              <IconContext.Provider value={{ color: "#aaaaaa" }}>
-                <FaUserAlt />
-              </IconContext.Provider>
-            </ListItemsStyle>
-            <ListItemsStyle>
+            <ListItemsStyle padding="0">
+              <FillBagFillIcon />
               <H5>Title</H5>
             </ListItemsStyle>
-            <ListItemsStyle>
-              <Paragraphe margin="-3px" fontSize="14px">
+            <ListItemsStyle padding="0" width="50%">
+              <ParagraphProfile margin="-3px" fontSize="14px">
                 NetWork Engineers
-              </Paragraphe>
+              </ParagraphProfile>
             </ListItemsStyle>
           </List>
         </ConteainerUl>
 
-        <div>
+        <ConteainerUl>
           <List>
-            <ListItemsStyle>
-              <IconContext.Provider value={{ color: "#aaaaaa" }}>
-                <FaUserAlt />
-              </IconContext.Provider>
-            </ListItemsStyle>
-            <ListItemsStyle>
+            <ListItemsStyle padding="0">
+              <EmailIcon />
               <H5>Address</H5>
             </ListItemsStyle>
-            <ListItemsStyle>
-              <Paragraphe margin="-3px" fontSize="14px">
+            <ListItemsStyle padding="0" width="50%">
+              <ParagraphProfile margin="-3px" fontSize="14px">
                 eman@hotmail.com
-              </Paragraphe>
+              </ParagraphProfile>
             </ListItemsStyle>
           </List>
           <List>
-            <ListItemsStyle>
-              <IconContext.Provider value={{ color: "#aaaaaa" }}>
-                <FaUserAlt />
-              </IconContext.Provider>
-            </ListItemsStyle>
-            <ListItemsStyle>
+            <ListItemsStyle padding="0">
+              <TelephoneFillIcon />
               <H5>Cell-Phone</H5>
             </ListItemsStyle>
-            <ListItemsStyle>
-              <Paragraphe margin="-3px" fontSize="14px">
+            <ListItemsStyle padding="0" width="50%">
+              <ParagraphProfile margin="-3px" fontSize="14px">
                 +1-202-555-0144
-              </Paragraphe>
+              </ParagraphProfile>
             </ListItemsStyle>
           </List>
-        </div>
+        </ConteainerUl>
       </CustomFlex>
     </ContactDetails>
   );

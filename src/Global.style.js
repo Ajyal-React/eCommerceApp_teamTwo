@@ -146,9 +146,10 @@ export const LinkBTN = styled.a`
 `;
 export const Image = styled.img`
   /* width: 100%; */
-  height: ${(props) => props.height};
-  width: ${(props) => props.width};
+  height: ${(props) => (props.height ? props.height : "100%")};
+  width: ${(props) => (props.width ? props.width : "100%")};
   margin: ${(props) => props.margin};
+  border-radius: ${(props) => props.borderR};
   object-fit: contain;
 `;
 
@@ -272,8 +273,14 @@ export const StyledList = styled.ul`
   margin: 0;
 `;
 export const ListItemsStyle = styled.li`
-  padding: 0 3vh;
-  &:first-of-type{
+  padding: ${(props) => (props.padding ? props.padding : "0 3vh")};
+  width: ${(props) => props.width};
+  &:first-of-type {
     padding-right: 0;
+  }
+  display: flex;
+  @media (max-width: 575.98px) {
+    padding: 0 2vh;
+    font-size: 12px;
   }
 `;

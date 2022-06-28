@@ -31,6 +31,7 @@ export const CustomFlexBox = styled(FlexBox)`
 
   @media (max-width: 575.98px) {
     /* margin-top: 30px; */
+    padding: 10px;
   }
 `;
 export const LeftItem = styled.div`
@@ -38,21 +39,23 @@ export const LeftItem = styled.div`
   @media (max-width: 1199.98px) {
     width: 100%;
   }
-
 `;
 export const RightItem = styled.div`
   width: 48%;
   @media (max-width: 1199.98px) {
     width: 100%;
   }
-  
 `;
 export const Item = styled.div`
   border: 1px solid #ddd;
   border-radius: 5px;
 `;
 export const CustomListItemsStyle = styled(ListItemsStyle)`
-  padding: 19px 35px;
+  /* padding: 19px 35px; */
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: ${(props) => props.color};
 `;
 export const DivImg = styled.div`
   background: #ddd;

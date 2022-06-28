@@ -1,4 +1,3 @@
-import { Paragraphe } from "../../../../Global.style";
 import {
   SideBarDiv,
   List,
@@ -7,6 +6,7 @@ import {
   ContainerList,
   ListItems,
   ListItem,
+  Paragraphe
 } from "./SideBar.style";
 
 function SideBar() {
@@ -21,14 +21,14 @@ function SideBar() {
           <ParagraphStyle>Notification</ParagraphStyle>
           <ParagraphStyle>Settings</ParagraphStyle>
         </List>
-        <ParagraphStyle color="red" fontWieght="bold">
+        <ParagraphStyle color="#D21010" fontWieght="bold">
           Logout
         </ParagraphStyle>
       </SideBarDiv>
       <ContainerList>
         <ListItems>
           <ListItem>
-            <Paragraphe>My Orders</Paragraphe>
+            <Paragraphe style={{color:'#fff'}}>My Orders</Paragraphe>
           </ListItem>
           <Paragraphe width="25%">Wishlist</Paragraphe>
           <Paragraphe width="25%">Notification</Paragraphe>

@@ -4,7 +4,8 @@ import FooterPage from "../FooterPage/FooterPage";
 import ContactSection from "./Component/ContactSection/ContactSection";
 import Mylist from "./Component/MyList/Mylist";
 import SideBar from "./Component/sideBarSetting/SideBar";
-import { DivArround, Flex } from "./ProfilePage.style";
+import { ParagraphStyle } from "./Component/sideBarSetting/SideBar.style";
+import { DivArround, Flex, Logout } from "./ProfilePage.style";
 
 function ProfilePage() {
   return (
@@ -14,6 +15,9 @@ function ProfilePage() {
       <Flex>
         <SideBar />
         <Mylist />
+        <Logout>
+          Logout
+        </Logout>
       </Flex>
       <DivArround>
         <FooterPage />

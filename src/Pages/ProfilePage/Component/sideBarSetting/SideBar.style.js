@@ -7,6 +7,11 @@ export const SideBarDiv = styled.div`
   width: 22%;
   /* height: 500px; */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 490px;
+
   @media (max-width: 1199.98px) {
     width: 30%;
   }
@@ -20,7 +25,7 @@ export const SideBarDiv = styled.div`
 
 export const List = styled.div`
   margin-top: 60px;
-  margin-bottom: 140px;
+  /* margin-bottom: 140px; */
 `;
 
 export const SelectedDiv = styled.div`
@@ -54,8 +59,18 @@ export const ListItems = styled.div`
   width: 100%;
 `;
 export const ListItem = styled.div`
-  background-color: red;
+  background-color: #fa7400;
   width: 25%;
   border-radius: 30px;
-  padding: 0 1.5rem;
+  /* padding: 0 1rem;*/
+`;
+export const Paragraphe = styled.p`
+  font-size: 20px;
+  @media (max-width: 1199.98px) {
+    font-size: 16px;
+    text-align: center;
+  }
+  @media (max-width: 575.98px) {
+    font-size: 12px;
+  }
 `;
