@@ -3,7 +3,7 @@ import React from "react";
 import { FlexBox, Image } from "../../../Global.style";
 import { Item, FlexEnd } from "./DeviceItem.style";
 import { LabName, LabPrice, ImageBox } from "../DevicesDisplaySection.style";
-import SecondImage from "../../../images/MG.png";
+// import SecondImage from "../../../images/MG.png";
 import { FaHeart } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { AiFillStar } from "react-icons/ai";
