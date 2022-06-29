@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
 import { InnerContainer, MainContainer } from "../../Global.style";
 import FooterPage from "../FooterPage/FooterPage";
@@ -15,26 +16,44 @@ import {
   CustomTitle,
   FormProduct,
   FlexBoxContainer,
+  NotAvailable,
 } from "./BrowseProduct.Style";
 import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
+import { useDispatch, useSelector } from "react-redux";
+import { FetchProduct } from "../../redux/product/ProductAction";
+import {useParams} from 'react-router-dom';
 
 function BrowseProduct() {
+  const dispatch = useDispatch();
+  const dataStore = useSelector((store) => store);
+  const product= dataStore.ProductReducer.product;
+  const param = useParams();
+  // const sizeProduct=product.size;
+  // console.log('Size is',sizeProduct.length);
+  useEffect(() => {
+    dispatch(FetchProduct(param.id));
+  }, [dispatch]);
   return (
     <MainContainer>
       <MainNavbar />
       <InnerContainer>
         <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
-          <DivImages />
+          <DivImages allImages={product.images}/>
           <SideRight>
             <CustomTitle marginBottom="0" textTransform="capitalize">
-              MacBook Pro 13
+            {product.name}
             </CustomTitle>
             <CustomParaghraph margin="0 0 .5rem 0" color="#9B9A9A" fontSize="12px">
               The best for your professional life
             </CustomParaghraph>
             <CustomParaghraph margin="0 0 .5rem 0" color="#707070">
-              Availability in stock: <SpanStyle>Available</SpanStyle>
+              Availability in stock: {
+              product.countInStock>0 ?
+              <SpanStyle>Available</SpanStyle>
+              :
+              <NotAvailable>Not Available</NotAvailable>
+              }
             </CustomParaghraph>
             <HrS />
             <CustomParaghraph color="#646363">
@@ -42,21 +61,23 @@ function BrowseProduct() {
             </CustomParaghraph>
 
             <FlexBoxStyle MarginBottom="16px">
-              <DivContent>
-                <ColorCompination>
-                  <ColorOne BackGColor="#646363">
-                    <p></p>
-                  </ColorOne>
-                  <ColorTwo></ColorTwo>
-                </ColorCompination>
-                <input
-                  type="radio"
-                  name="compination"
-                  value="val1"
-                  checked="checked"
-                />
-              </DivContent>
-              <DivContent>
+                  <DivContent>
+                  <ColorCompination>
+                    <ColorOne BackGColor='#646363'>
+                      <p></p>
+                    </ColorOne>
+                    <ColorTwo BackGColor='#000'></ColorTwo>
+                  </ColorCompination>
+                  <input
+                    type="radio"
+                    name="compination"
+                    value="val1"
+                    checked="checked"
+                    />
+                </DivContent>
+               
+              
+               <DivContent>
                 <ColorCompination>
                   <ColorOne BackGColor="#FFFFFF">
                     <p></p>
@@ -83,12 +104,21 @@ function BrowseProduct() {
                 </ColorCompination>
                 <input type="radio" name="compination" value="val4" />
               </DivContent>
+              
             </FlexBoxStyle>
             <FormProduct>
+              {/* {
+              product.size.length>0
+              ?
+              <>
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Size and Weight
               </CustomParaghraph>
               <OptionFileds />
+              </>
+              :null
+              } */}
+              
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Chip
               </CustomParaghraph>
