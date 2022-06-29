@@ -27,10 +27,9 @@ import {useParams} from 'react-router-dom';
 function BrowseProduct() {
   const dispatch = useDispatch();
   const dataStore = useSelector((store) => store);
-  const product= dataStore.ProductReducer?.product;
+  const product= dataStore?.ProductReducer?.product;
   const param = useParams();
-  // const sizeProduct=product.size;
-  // console.log('Size is',sizeProduct.length);
+  const sizeProduct=product?.size;
   useEffect(() => {
     dispatch(FetchProduct(param?.id));
   }, [dispatch,param?.id]);
@@ -107,8 +106,8 @@ function BrowseProduct() {
               
             </FlexBoxStyle>
             <FormProduct>
-              {/* {
-              product.size.length>0
+              {
+              sizeProduct?.length>0
               ?
               <>
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
@@ -117,7 +116,7 @@ function BrowseProduct() {
               <OptionFileds />
               </>
               :null
-              } */}
+              }
               
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Chip
