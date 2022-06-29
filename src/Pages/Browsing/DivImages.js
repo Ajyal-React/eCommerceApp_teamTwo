@@ -1,27 +1,27 @@
 import { ImageDiv, ImgStyle, SideLeft, FlexGap, ImageDivCustom } from "./BrowseProduct.Style";
+import image from "../../images/maxim-hopman-Hin-rzhOdWs-unsplash-removebg-preview.png";
 
-function DivImages(imagesProduct) {
+function DivImages() {
   return (
     <SideLeft>
       <ImageDiv>
-        <ImgStyle src={imagesProduct.allImages} height="80%" width="80%" />
+        <ImgStyle src={image} height="80%" width="80%" />
       </ImageDiv>
       <FlexGap>
-
-      <ImageDivCustom>
-          <ImgStyle src={imagesProduct.allImages} />
+        <ImageDivCustom BackGColor="#fafafa" Border="#FA7400">
+          <ImgStyle src={image} />
         </ImageDivCustom>
         <ImageDivCustom>
-          <ImgStyle src={imagesProduct.allImages} />
+          <ImgStyle src={image} />
         </ImageDivCustom>
         <ImageDivCustom>
-          <ImgStyle src={imagesProduct.allImages} />
+          <ImgStyle src={image} />
         </ImageDivCustom>
         <ImageDivCustom>
-          <ImgStyle src={imagesProduct.allImages} />
+          <ImgStyle src={image} />
         </ImageDivCustom>
         <ImageDivCustom>
-          <ImgStyle src={imagesProduct.allImages} width="118px" height="100%" />
+          <ImgStyle src={image} width="118px" height="100%" />
         </ImageDivCustom>
       </FlexGap>
     </SideLeft>
