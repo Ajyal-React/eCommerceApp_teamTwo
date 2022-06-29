@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
 import { InnerContainer, MainContainer } from "../../Global.style";
 import FooterPage from "../FooterPage/FooterPage";
@@ -18,8 +19,19 @@ import {
 } from "./BrowseProduct.Style";
 import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
+import { useDispatch, useSelector } from "react-redux";
+import { FetchProduct } from "../../redux/product/ProductAction";
+import {useParams} from 'react-router-dom';
 
 function BrowseProduct() {
+  const dispatch = useDispatch();
+  const dataStore = useSelector((store) => store);
+  const product= dataStore.ProductReducer.product;
+  const param = useParams();
+  // console.log(product.colors.map((ele)=>{ele}));
+  useEffect(() => {
+    dispatch(FetchProduct(param.id));
+  }, [dispatch]);
   return (
     <MainContainer>
       <MainNavbar />
@@ -28,13 +40,13 @@ function BrowseProduct() {
           <DivImages />
           <SideRight>
             <CustomTitle marginBottom="0" textTransform="capitalize">
-              MacBook Pro 13
+            {product.name}
             </CustomTitle>
             <CustomParaghraph margin="0 0 .5rem 0" color="#9B9A9A" fontSize="12px">
               The best for your professional life
             </CustomParaghraph>
             <CustomParaghraph margin="0 0 .5rem 0" color="#707070">
-              Availability in stock: <SpanStyle>Available</SpanStyle>
+              Availability in stock: <SpanStyle>{product.countInStock>0?'Available':'null'}</SpanStyle>
             </CustomParaghraph>
             <HrS />
             <CustomParaghraph color="#646363">
@@ -42,21 +54,25 @@ function BrowseProduct() {
             </CustomParaghraph>
 
             <FlexBoxStyle MarginBottom="16px">
-              <DivContent>
-                <ColorCompination>
-                  <ColorOne BackGColor="#646363">
-                    <p></p>
-                  </ColorOne>
-                  <ColorTwo></ColorTwo>
-                </ColorCompination>
-                <input
-                  type="radio"
-                  name="compination"
-                  value="val1"
-                  checked="checked"
-                />
-              </DivContent>
-              <DivContent>
+              {/* {product.colors.map((element)=>{
+                  <DivContent>
+                    <ColorCompination>
+                      <ColorOne BackGColor={element[0]}>
+                        <p></p>
+                      </ColorOne>
+                      <ColorTwo BackGColor={element[1]}></ColorTwo>
+                    </ColorCompination>
+                    <input
+                      type="radio"
+                      name="compination"
+                      value="val1"
+                      checked="checked"
+                      />
+                  </DivContent>
+              })
+                } */}
+              
+              {/* <DivContent>
                 <ColorCompination>
                   <ColorOne BackGColor="#FFFFFF">
                     <p></p>
@@ -83,6 +99,7 @@ function BrowseProduct() {
                 </ColorCompination>
                 <input type="radio" name="compination" value="val4" />
               </DivContent>
+              */ }
             </FlexBoxStyle>
             <FormProduct>
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
