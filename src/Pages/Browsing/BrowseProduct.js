@@ -31,24 +31,24 @@ function BrowseProduct() {
   const param = useParams();
   const sizeProduct=product?.size;
   useEffect(() => {
-    dispatch(FetchProduct(param.id));
-  }, [dispatch]);
+    dispatch(FetchProduct(param?.id));
+  }, [dispatch,param?.id]);
   return (
     <MainContainer>
       <MainNavbar />
       <InnerContainer>
         <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
-          <DivImages allImages={product.images}/>
+          <DivImages allImages={product?.images}/>
           <SideRight>
             <CustomTitle marginBottom="0" textTransform="capitalize">
-            {product.name}
+            {product?.name}
             </CustomTitle>
             <CustomParaghraph margin="0 0 .5rem 0" color="#9B9A9A" fontSize="12px">
               The best for your professional life
             </CustomParaghraph>
             <CustomParaghraph margin="0 0 .5rem 0" color="#707070">
               Availability in stock: {
-              product.countInStock>0 ?
+              product?.countInStock>0 ?
               <SpanStyle>Available</SpanStyle>
               :
               <NotAvailable>Not Available</NotAvailable>

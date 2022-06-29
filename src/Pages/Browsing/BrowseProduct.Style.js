@@ -77,10 +77,6 @@ export const SpanStyle = Styled.span`
     font-weight: bold;
     color: #0EA965;
 `;
-
-export const NotAvailable = Styled(SpanStyle)`
-   color :#f00
-`
 export const DivContent = Styled.div`
     text-align:Center;
     width: calc(90%/4);
