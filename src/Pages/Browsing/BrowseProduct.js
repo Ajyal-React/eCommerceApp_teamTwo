@@ -16,6 +16,7 @@ import {
   CustomTitle,
   FormProduct,
   FlexBoxContainer,
+  NotAvailable,
 } from "./BrowseProduct.Style";
 import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
@@ -28,7 +29,8 @@ function BrowseProduct() {
   const dataStore = useSelector((store) => store);
   const product= dataStore.ProductReducer.product;
   const param = useParams();
-  // console.log(product.colors.map((ele)=>{ele}));
+  // const sizeProduct=product.size;
+  // console.log('Size is',sizeProduct.length);
   useEffect(() => {
     dispatch(FetchProduct(param.id));
   }, [dispatch]);
@@ -37,7 +39,7 @@ function BrowseProduct() {
       <MainNavbar />
       <InnerContainer>
         <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
-          <DivImages />
+          <DivImages allImages={product.images}/>
           <SideRight>
             <CustomTitle marginBottom="0" textTransform="capitalize">
             {product.name}
@@ -46,7 +48,12 @@ function BrowseProduct() {
               The best for your professional life
             </CustomParaghraph>
             <CustomParaghraph margin="0 0 .5rem 0" color="#707070">
-              Availability in stock: <SpanStyle>{product.countInStock>0?'Available':'null'}</SpanStyle>
+              Availability in stock: {
+              product.countInStock>0 ?
+              <SpanStyle>Available</SpanStyle>
+              :
+              <NotAvailable>Not Available</NotAvailable>
+              }
             </CustomParaghraph>
             <HrS />
             <CustomParaghraph color="#646363">
@@ -54,25 +61,23 @@ function BrowseProduct() {
             </CustomParaghraph>
 
             <FlexBoxStyle MarginBottom="16px">
-              {/* {product.colors.map((element)=>{
                   <DivContent>
-                    <ColorCompination>
-                      <ColorOne BackGColor={element[0]}>
-                        <p></p>
-                      </ColorOne>
-                      <ColorTwo BackGColor={element[1]}></ColorTwo>
-                    </ColorCompination>
-                    <input
-                      type="radio"
-                      name="compination"
-                      value="val1"
-                      checked="checked"
-                      />
-                  </DivContent>
-              })
-                } */}
+                  <ColorCompination>
+                    <ColorOne BackGColor='#646363'>
+                      <p></p>
+                    </ColorOne>
+                    <ColorTwo BackGColor='#000'></ColorTwo>
+                  </ColorCompination>
+                  <input
+                    type="radio"
+                    name="compination"
+                    value="val1"
+                    checked="checked"
+                    />
+                </DivContent>
+               
               
-              {/* <DivContent>
+               <DivContent>
                 <ColorCompination>
                   <ColorOne BackGColor="#FFFFFF">
                     <p></p>
@@ -99,13 +104,21 @@ function BrowseProduct() {
                 </ColorCompination>
                 <input type="radio" name="compination" value="val4" />
               </DivContent>
-              */ }
+              
             </FlexBoxStyle>
             <FormProduct>
+              {/* {
+              product.size.length>0
+              ?
+              <>
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Size and Weight
               </CustomParaghraph>
               <OptionFileds />
+              </>
+              :null
+              } */}
+              
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Chip
               </CustomParaghraph>
