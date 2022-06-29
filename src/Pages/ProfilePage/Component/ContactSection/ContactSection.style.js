@@ -29,8 +29,13 @@ export const ContactDetails = styled.div`
   @media (max-width: 767.98px) {
     justify-content: flex-start;
     padding-left: 2rem;
+    padding-right: 2rem;
     height: 280px;
     align-items: flex-start;
+  }
+  @media (max-width: 575.98px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 export const CustomFlex = styled(FlexBox)`
