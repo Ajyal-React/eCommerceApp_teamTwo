@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FlexBox } from "../../Global.style";
 
 export const MainDiv = styled.div`
-   margin-top: 120px
+   margin-top: 140px
 `
 
 export const PaymentSection = styled.div`
