@@ -53,7 +53,7 @@ function MainNavbar() {
               <FlexBoxCenter>
                 <ListItems>
                   <Paragraphe fontSize="16px" color="#32353C">
-                  <CustomLink to="/profile">Home</CustomLink>
+                    <CustomLink to="/profile">Home</CustomLink>
                   </Paragraphe>
                 </ListItems>
                 <ListItems>
@@ -96,14 +96,14 @@ function MainNavbar() {
                     <BsHeartIcon />
                     <AiOutlineUserIcon />
                     <Paragraphe marginRight="3vh">0.00$</Paragraphe>
-                    <RiShoppingBagFillIcon />
+                    <CustomLink to="/cart">
+                      <RiShoppingBagFillIcon />
+                    </CustomLink>
                   </FlexBoxCenter>
                 </MainNavIcons>
               ) : (
                 <CustomLink to="/signin">
-                  <CustomSign>
-                    Sign in
-                  </CustomSign>
+                  <CustomSign>Sign in</CustomSign>
                 </CustomLink>
               )}
             </FlexBoxCenter>
