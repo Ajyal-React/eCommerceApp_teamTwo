@@ -123,8 +123,6 @@ export const Paragraphe = styled.p`
   margin-right: ${(props) => props.marginRight};
   padding: ${(props) => props.padding};
   width: ${(props) => props.width};
-  display: ${(props) => props.display};
-  align-items: ${(props) => props.alignItems};
 
   @media (max-width: 1199.98px) {
     font-size: 20px;
@@ -285,4 +283,10 @@ export const ListItemsStyle = styled.li`
     padding: 0 2vh;
     font-size: 12px;
   }
+`;
+export const Paragraph = styled(Paragraphe)`
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: hsl(0deg 0% 43%);
 `;

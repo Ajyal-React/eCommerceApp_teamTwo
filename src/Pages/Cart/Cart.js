@@ -5,10 +5,9 @@ import {
   CustomLink,
   InnerContainer,
   MainContainer,
-  Paragraphe,
+  Paragraph,
 } from "../../Global.style";
-import { LongArrowAltLeftIcon, MainDiv } from "./Cart.Style";
-
+import { LongArrowAltLeftIcon, MainDiv, ContainerCards } from "./Cart.Style";
 export default function Cart() {
   return (
     <MainContainer>
@@ -16,17 +15,15 @@ export default function Cart() {
       <InnerContainer>
         <MainDiv>
           <CustomLink to="">
-            <Paragraphe
-              display={"flex"}
-              alignItems={"center"}
-              color="hsl(0deg 0% 43%)"
-            >
+            <Paragraph>
               <LongArrowAltLeftIcon />
               Return to the product details
-            </Paragraphe>
+            </Paragraph>
           </CustomLink>
         </MainDiv>
-        <CartCard />
+        <ContainerCards>
+          <CartCard />
+        </ContainerCards>
       </InnerContainer>
     </MainContainer>
   );
