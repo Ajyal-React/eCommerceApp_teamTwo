@@ -99,7 +99,14 @@ export const Fileds = styled.div`
 
 export const Heading = styled.h5`
   font-size: 15px;
+  text-align:start;
   color: ${(props) => (props.color ? props.color : "hsl(330deg 1% 70%)")};
+  @media (max-width: 991.98px) {
+    margin:14px;
+  }
+  @media (max-width: 575.98px) {
+    margin:10px;
+  }
 `;
 export const CheckOutDiv = styled(FlexBox)`
   border-top: 2px solid #dddddd45;
