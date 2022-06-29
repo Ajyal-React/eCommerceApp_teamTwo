@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Components/Auth/Login/Login";
 import SignUp from "./Components/Auth/SignUp/SignUp";
 import BrowseProduct from "./Pages/Browsing/BrowseProduct";
+import Cart from "./Pages/Cart/Cart";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/test" element={<Test/>}/>
         <Route path="/Profile" element={<ProfilePage/>}/>
         <Route path="/Payment" element={<PaymentPage/>}/>
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
     </BrowserRouter>
   );
