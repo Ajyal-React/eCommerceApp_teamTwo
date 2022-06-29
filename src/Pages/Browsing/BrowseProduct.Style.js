@@ -138,3 +138,6 @@ export const FormProduct = Styled.form`
       width: 100%;
     }
 `;
+export const NotAvailable = Styled(SpanStyle)`
+   color :#f00
+`;

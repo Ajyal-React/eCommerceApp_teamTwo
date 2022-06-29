@@ -17,11 +17,11 @@ function TrendingPage({trending}) {
           <Title>trending this week</Title>
           <CardsContainer>
             {trending?.map((element) => (
-              <CustomLinkTrend to="/product">
+              <CustomLinkTrend to={`/product/${element?._id}`}>
                   <TrendingCards
-                    image={element.images}
-                    name={element.name}
-                    price={element.price}
+                    image={element?.images}
+                    name={element?.name}
+                    price={element?.price}
                   ></TrendingCards>
               </CustomLinkTrend>
             ))}
