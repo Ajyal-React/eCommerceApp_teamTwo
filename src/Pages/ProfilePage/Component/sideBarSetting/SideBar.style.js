@@ -18,9 +18,6 @@ export const SideBarDiv = styled.div`
   @media (max-width: 767.98px) {
     display: none;
   }
-  @media (max-width: 575.98px) {
-    /* width: 30px; */
-  }
 `;
 
 export const List = styled.div`

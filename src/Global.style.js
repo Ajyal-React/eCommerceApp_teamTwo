@@ -123,6 +123,8 @@ export const Paragraphe = styled.p`
   margin-right: ${(props) => props.marginRight};
   padding: ${(props) => props.padding};
   width: ${(props) => props.width};
+  display: ${(props) => props.display};
+  align-items: ${(props) => props.alignItems};
 
   @media (max-width: 1199.98px) {
     font-size: 20px;
