@@ -21,7 +21,7 @@ function SamplePrevArrow(props) {
   return <div className={className} onClick={onClick} />;
 }
 
-export default function SlickSlider({products}) {
+export default function SlickSlider({ products }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -48,10 +48,10 @@ export default function SlickSlider({products}) {
           slidesToScroll: 2,
           initialSlide: 2,
         },
-      }
+      },
     ],
   };
- 
+
   return (
     <FullContainer>
       <InnerContainer>

@@ -18,6 +18,7 @@ import {
   TrendingAction,
 } from "../../redux/guest/guestActions";
 import { useDispatch, useSelector } from "react-redux";
+import FeaturedCategories from "../../Components/FeaturedCategories/indx";
 
 function HomePage() {
   const dataStore = useSelector((store) => store);
@@ -33,7 +34,8 @@ function HomePage() {
     <MainContainer>
       <MainNavbar />
       <HeroSection offer={dataStore?.guestReducer?.offer[0]} />
-      <DevicesDisplaySection />
+      {/* <DevicesDisplaySection /> */}
+      <FeaturedCategories />
       <BackgroundImage>
         <DivOpacity></DivOpacity>
         <UpdateFlexBox>
