@@ -23,6 +23,9 @@ import {
   GrMailIcon,
   ContactContainer,
   FlexCenter,
+  FirstSecContainer,
+  
+ 
 } from "./FooterNav.Style";
 import LogoImage from "../../images/Group 14849.png";
 import { ThirdSide } from "./MainNavbar.Style";
@@ -34,7 +37,8 @@ import { IconContext } from "react-icons/lib";
 function FooterNav() {
   return (
     <FooterContainer>
-      <FlexBoxRow>
+   
+      <FirstSecContainer>
         <FirstSide>
           <LogoImg src={LogoImage}></LogoImg>
           <FooterText>
@@ -80,9 +84,11 @@ function FooterNav() {
           <ContactContainer>
             <FlexCol>
               <FooterTitle>Contacts</FooterTitle>
+
               <FooterSubTitle>
                 Fell free get in touch with us via phone or send us a message
               </FooterSubTitle>
+              
               <IconsSec>
                 {" "}
                 <FlexBoxCenter>
@@ -97,10 +103,13 @@ function FooterNav() {
                   <FooterSubTitle>support@khoomi.com</FooterSubTitle>
                 </FlexBoxCenter>
               </IconsSec>
+             
             </FlexCol>
           </ContactContainer>
         </ThirdSide>
-      </FlexBoxRow>
+      </FirstSecContainer>
+    
+
       <HrStyle></HrStyle>
 
       <LastSide>
@@ -109,15 +118,19 @@ function FooterNav() {
 
           <SocialIcons>
             <FlexBoxRow>
-              <IconContext.Provider value={{ color: "#FA7400" }}>
+              
                 <SocialStyle>
                   {" "}
+                  <IconContext.Provider value={{ color: "#0165E1" }}>
                   <SiFacebook />
+                  </IconContext.Provider>
                 </SocialStyle>
                 <SocialStyle>
+                <IconContext.Provider value={{ color: "#4FCE5D" }}>
                   <RiWhatsappFill />
+                  </IconContext.Provider>
                 </SocialStyle>
-              </IconContext.Provider>
+              
             </FlexBoxRow>
           </SocialIcons>
         </FlexCenter>
