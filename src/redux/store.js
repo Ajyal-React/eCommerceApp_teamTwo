@@ -2,12 +2,14 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import { userReducer } from "./user/userReducers";
 import { guestReducer } from "./guest/guestReducer";
 import { ProductReducer } from "./product/ProductReducer";
+import { FCReducer } from "./FeaturedCategories/FCReducer";
 import thunk from "redux-thunk";
 
 const reducer = combineReducers({
   userReducer,
   guestReducer,
   ProductReducer,
+  FCReducer,
 });
 
 const userDetailsLocalStorage = JSON.parse(localStorage.getItem("user")) || {};
