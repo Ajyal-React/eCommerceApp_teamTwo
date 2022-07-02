@@ -43,7 +43,7 @@ export const ImageDiv = Styled.div`
     background-color:${(props) => props.BackGColor};
     display: flex;
     justify-content: center;
-    height: 450px;
+    height: 50%;
     align-items: center;
     @media (max-width: 1199.98px) {
       height: 350px;
@@ -58,6 +58,7 @@ export const ImageDiv = Styled.div`
 export const ImageDivCustom = Styled(ImageDiv)`
     height: 100px;
     width: calc(90%/5);
+    cursor:pointer;
     /* @media (min-width: 500px) and (max-width: 677px) {
         width: 19%;
         height:80px;
@@ -145,6 +146,7 @@ export const CustomButton = Styled(Button)`
     color: #ffff;
 `;
 export const CustomTitle = styled(Title)`
+  color:${(props)=>props.color};
   @media (max-width: 575.98px) {
     font-size: 18px;
     text-align: start;

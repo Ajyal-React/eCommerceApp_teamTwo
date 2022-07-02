@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
-import { InnerContainer, MainContainer } from "../../Global.style";
+import { FlexBox, InnerContainer, MainContainer } from "../../Global.style";
 import FooterPage from "../FooterPage/FooterPage";
 import {
   FlexBoxStyle,
@@ -26,10 +26,9 @@ import { useParams } from "react-router-dom";
 
 function BrowseProduct() {
   const dispatch = useDispatch();
-  const dataStore = useSelector((store) => store);
-  const product = dataStore?.ProductReducer?.product;
+  const {size, memory, storage,colors, name, price,countInStock} = useSelector((store) => store?.ProductReducer?.product);
   const param = useParams();
-  const sizeProduct = product?.size;
+
   useEffect(() => {
     dispatch(FetchProduct(param?.id));
   }, [dispatch, param?.id]);
@@ -38,25 +37,28 @@ function BrowseProduct() {
       <MainNavbar />
       <InnerContainer>
         <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
-          <DivImages allImages={product?.images} />
+          <DivImages/>
+
           <SideRight>
+            <FlexBox>
             <CustomTitle marginBottom="0" textTransform="capitalize">
-              {product?.name}
+            {name}
             </CustomTitle>
-            <CustomParaghraph
-              margin="0 0 .5rem 0"
-              color="#9B9A9A"
-              fontSize="12px"
-            >
+            <CustomTitle color='#FA7400' marginBottom="0" textTransform="capitalize">
+            {`${price}$`}
+            </CustomTitle>
+            </FlexBox>
+
+            <CustomParaghraph margin="0 0 .5rem 0" color="#9B9A9A" fontSize="12px">
               The best for your professional life
             </CustomParaghraph>
             <CustomParaghraph margin="0 0 .5rem 0" color="#707070">
-              Availability in stock:{" "}
-              {product?.countInStock > 0 ? (
-                <SpanStyle>Available</SpanStyle>
-              ) : (
-                <NotAvailable>Not Available</NotAvailable>
-              )}
+              Availability in stock: {
+              countInStock>0 ?
+              <SpanStyle>Available</SpanStyle>
+              :
+              <NotAvailable>Not Available</NotAvailable>
+              }
             </CustomParaghraph>
             <HrS />
             <CustomParaghraph color="#646363">
@@ -64,71 +66,58 @@ function BrowseProduct() {
             </CustomParaghraph>
 
             <FlexBoxStyle MarginBottom="16px">
-              <DivContent>
-                <ColorCompination>
-                  <ColorOne BackGColor="#646363">
-                    <p></p>
-                  </ColorOne>
-                  <ColorTwo BackGColor="#000"></ColorTwo>
-                </ColorCompination>
-                <input
-                  type="radio"
-                  name="compination"
-                  value="val1"
-                  checked="checked"
-                />
-              </DivContent>
+            {colors?.map((ele) => (
+                <DivContent>
+                  <ColorCompination>
+                    <ColorOne BackGColor={`${ele[0]}`}>
+                      <p></p>
+                    </ColorOne>
 
-              <DivContent>
-                <ColorCompination>
-                  <ColorOne BackGColor="#FFFFFF">
-                    <p></p>
-                  </ColorOne>
-                  <ColorTwo BackGColor="#000000"></ColorTwo>
-                </ColorCompination>
-                <input type="radio" name="compination" value="val2" />
-              </DivContent>
-              <DivContent>
-                <ColorCompination>
-                  <ColorOne BackGColor="#AFAFAF">
-                    <p></p>
-                  </ColorOne>
-                  <ColorTwo BackGColor="#000000"></ColorTwo>
-                </ColorCompination>
-                <input type="radio" name="compination" value="val3" />
-              </DivContent>
-              <DivContent>
-                <ColorCompination>
-                  <ColorOne BackGColor="#CACACA">
-                    <p></p>
-                  </ColorOne>
-                  <ColorTwo></ColorTwo>
-                </ColorCompination>
-                <input type="radio" name="compination" value="val4" />
-              </DivContent>
+                    <ColorTwo BackGColor={`${ele[1]}`}></ColorTwo>
+                  </ColorCompination>
+                  <input
+                    type="radio"
+                    name="compination"
+                    value="val1"                   
+                    />
+                </DivContent>
+              ))}
+                            
             </FlexBoxStyle>
             <FormProduct>
-              {sizeProduct?.length > 0 ? (
-                <>
-                  <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
-                    Size and Weight
-                  </CustomParaghraph>
-                  <OptionFileds />
-                </>
-              ) : null}
-
+              {
+              size?.length>0
+              ?
+              <>
+              <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
+                Size and Weight
+              </CustomParaghraph>
+              <OptionFileds optionProduct={size}/>
+              </>
+              :null
+              }
+              
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Chip
               </CustomParaghraph>
               <OptionFileds />
-              <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
-                Storage
-              </CustomParaghraph>
-              <OptionFileds />
-              <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
-                Memory
-              </CustomParaghraph>
-              <OptionFileds />
+              {storage?.length > 0 ? (
+                <>
+                  <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
+                    Storage
+                  </CustomParaghraph>
+                  <OptionFileds optionProduct={storage}/>
+                </>
+              ) : null}
+
+              {memory?.length > 0 ? (
+                <>
+                  <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
+                    Memory
+                  </CustomParaghraph>
+                  <OptionFileds optionProduct={memory}/>
+                </>
+              ) : null}
               <CustomButton>Add To Card</CustomButton>
             </FormProduct>
           </SideRight>
