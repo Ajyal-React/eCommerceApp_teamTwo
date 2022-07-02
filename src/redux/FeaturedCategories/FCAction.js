@@ -1,4 +1,4 @@
-import { axios } from "axios";
+import axios from "axios";
 import { FEATURED_CATEGORIES } from "./FCType";
 
 export const GetFC = () => {
@@ -9,14 +9,11 @@ export const GetFC = () => {
       );
       dispatch({
         type: FEATURED_CATEGORIES,
-        payload: {
-          data: response.data,
-          isSuccuss: true,
-          isLoading: false,
-        },
+        payload: response.data,
       });
     } catch (error) {
-      console.log("error", error);
+      console.log("error in get feature categores => " + error);
     }
   };
 };
+

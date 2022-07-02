@@ -29,7 +29,6 @@ function HomePage() {
     dispatch(TrendingAction());
   }, [dispatch]);
 
-  console.log(dataStore);
   return (
     <MainContainer>
       <MainNavbar />

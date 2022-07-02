@@ -51,10 +51,7 @@ const FeaturedCategories = (props) => {
           <Products>
             <CardsLeft>
               {/*  <CardFeaturedCategories productName={FeaturedCategories[0].name} />  */}
-              <CardFeaturedCategories />
-              <CardFeaturedCategories />
-              <CardFeaturedCategories />
-              <CardFeaturedCategories />
+              <CardFeaturedCategories  />
             </CardsLeft>
 
             <Slider>

@@ -24,7 +24,6 @@ function DevicesDisplaySection() {
     dispach(getFeaturedCategories());
   }, [dispach]);
 
-  console.log("ddddddddd", store);
 
   return (
     <InnerContainer>
