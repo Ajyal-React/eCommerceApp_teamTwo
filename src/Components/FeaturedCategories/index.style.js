@@ -53,7 +53,7 @@ export const CardsLeft = styled.div`
 
 export const Slider = styled.div`
   width: 50%;
-  height: 900px;
+  height: 850px;
   background-color: #f9f8f8;
   display: flex;
   flex-direction: row;

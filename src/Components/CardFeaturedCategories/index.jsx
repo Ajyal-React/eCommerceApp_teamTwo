@@ -23,7 +23,7 @@ const CardFeaturedCategories = (props) => {
       <Image ImageSrc={im} />
       <ProductName>
         <Name>{props.productName}</Name>
-        <Price>$99</Price>
+        <Price>{props.productPrice}</Price>
       </ProductName>
       <ProductReview>
         <Review>
@@ -32,7 +32,7 @@ const CardFeaturedCategories = (props) => {
           <FaStar />
           <FaStar />
           <FaStar />
-          <Number>(5)</Number>
+          <Number>{props.productReview}</Number>
         </Review>
         <Basket>
           <FaCartPlus />

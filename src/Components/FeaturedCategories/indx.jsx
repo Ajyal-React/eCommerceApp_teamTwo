@@ -28,13 +28,15 @@ import { useState } from "react";
 const FeaturedCategories = (props) => {
   const [FeaturedCategories, setFeaturedCategories] = useState([]);
 
-  const { data } = useSelector((state) => state.FCReducer);
+  const { data, isLoading, isSuccess } = useSelector(
+    (state) => state.FCReducer
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(GetFC());
+    dispatch(GetFC(data));
     setFeaturedCategories(data);
-  }, []);
+  }, [data, isLoading, isSuccess]);
 
   return (
     <>
@@ -50,11 +52,15 @@ const FeaturedCategories = (props) => {
 
           <Products>
             <CardsLeft>
-              {/*  <CardFeaturedCategories productName={FeaturedCategories[0].name} />  */}
-              <CardFeaturedCategories />
-              <CardFeaturedCategories />
-              <CardFeaturedCategories />
-              <CardFeaturedCategories />
+             
+             {/*  {
+               FeaturedCategories.map((el) => { */}
+                 <CardFeaturedCategories /* productName={FeaturedCategories.name}  */ />
+                 <CardFeaturedCategories /* productName={FeaturedCategories.name} */ />
+                 <CardFeaturedCategories /* productName={FeaturedCategories._id.name} */ />
+                 <CardFeaturedCategories /* productName={FeaturedCategories._id.name} */ />
+              {/*  })
+              } */}
             </CardsLeft>
 
             <Slider>

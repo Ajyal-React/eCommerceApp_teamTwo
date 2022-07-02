@@ -12,6 +12,7 @@ export const Card = styled.div`
   align-items: center;
   background-color: #f9f8f8;
   border-radius: 9px;
+  min-width: 200px;
 `;
 
 export const Heart = styled.div`
