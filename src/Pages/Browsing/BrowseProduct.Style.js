@@ -44,23 +44,46 @@ export const ImageDiv = Styled.div`
     display: flex;
     justify-content: center;
     height: 50%;
+    align-items: center;
+    @media (max-width: 1199.98px) {
+      height: 350px;
+    }
+    @media (max-width: 768.98px) {
+      height: 300px;
+    }
+    @media (max-width: 575.98px) {
+      height: 200px;
+    }
 `;
 export const ImageDivCustom = Styled(ImageDiv)`
+    height: 100px;
     width: calc(90%/5);
     cursor:pointer;
     /* @media (min-width: 500px) and (max-width: 677px) {
         width: 19%;
         height:80px;
     } */
+    @media (max-width: 1199.98px) {
+      height: 90px;
+    }
+    @media (max-width: 768.98px) {
+      height: 80px;
+    }
+    @media (max-width: 575.98px) {
+      height: 60px;
+    }
 `;
 export const ImgStyle = Styled.img`
     width: 100%;
-    height: ${(props) => (props.width ? props.height : "118px")};
+    height: ${(props) => (props.width ? props.height : "85%")};
     object-fit: contain;
     margin-left: ${(props) => (props.marginLeft ? props.marginLeft : "0")};
     @media (max-width: 1400px) {
-       height: auto;
        padding: 10px 0;
+    }
+    
+    @media (max-width: 575.98px) {
+      height: 90%;
     }
 `;
 export const FlexGap = Styled(FlexBoxStyle)`

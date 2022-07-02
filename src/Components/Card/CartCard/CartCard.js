@@ -11,6 +11,8 @@ import {
   MinusIcon,
   PlusIcon,
   Quantity,
+  CloseIcon,
+  ProductPrice,
 } from "./CartCard.Style";
 import img from "./../../../images/BackBag.png";
 export default function CartCard() {
@@ -29,7 +31,10 @@ export default function CartCard() {
           </ContainerCounter>
         </InnerContainer>
       </LeftBox>
-      <RightBox></RightBox>
+      <RightBox>
+        <ProductPrice>$98</ProductPrice>
+        <CloseIcon />
+      </RightBox>
     </ContainerCartCard>
   );
 }

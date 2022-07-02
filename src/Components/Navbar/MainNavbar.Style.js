@@ -3,10 +3,25 @@ import { BsHeart } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { RiShoppingBagFill } from "react-icons/ri";
 import { Button } from "../../Global.style";
+import {CgMenuLeft}from "react-icons/cg"
 
 export const FirstSide = styled.div`
   margin: auto;
-`;
+  @media (max-width: 376px) {
+    display: none;
+  }
+`
+export const MenuResponsive = styled(CgMenuLeft)`
+display: none;
+@media (max-width: 376px) {
+ display: block;
+ height:20px;
+ width:20px;
+ 
+
+}
+`
+
 
 export const NavBG = styled.div`
   height: 100px;
@@ -16,6 +31,17 @@ export const NavBG = styled.div`
   width: 100%;
   z-index: 10000;
   display: flex;
+  @media (max-width: 376px) {
+    height: 75px;
+  }
+`;
+export const CategoriesList = styled.ul`
+  list-style: none;
+  margin:0;
+  @media (max-width: 376px) {
+    display:none;
+   
+   }
 `;
 
 export const CenterSide = styled.div`
@@ -24,6 +50,16 @@ export const CenterSide = styled.div`
 
 export const ListItems = styled.li`
   padding: 0 20px;
+  @media (max-width: 376px) {
+    display: none;
+    padding:0;
+  }
+`;
+export const LogoImg = styled.div`
+  padding: 0 20px;
+  @media (max-width: 376px) {
+   padding:0;
+  }
 `;
 
 export const ThirdSide = styled.div`
@@ -50,5 +86,11 @@ export const CustomSign = styled(Button)`
   &:hover {
     background: #fff;
     color: #fa7400;
+  }
+  @media (max-width: 376px) {
+    background: none;
+    width: 45px;
+    height: 0;
+    padding:0;
   }
 `;

@@ -22,7 +22,7 @@ import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchProduct } from "../../redux/product/ProductAction";
-import {useParams} from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 function BrowseProduct() {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ function BrowseProduct() {
 
   useEffect(() => {
     dispatch(FetchProduct(param?.id));
-  }, [dispatch,param?.id]);
+  }, [dispatch, param?.id]);
   return (
     <MainContainer>
       <MainNavbar />

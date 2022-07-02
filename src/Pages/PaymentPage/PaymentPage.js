@@ -5,6 +5,7 @@ import {
   FlexBox,
   InnerContainer,
   MainContainer,
+  Paragraph,
   Paragraphe,
 } from "../../Global.style";
 import FooterPage from "../FooterPage/FooterPage";
@@ -42,9 +43,9 @@ function PaymentPage() {
       <InnerContainer>
         <MainDiv>
           <CustomLink to="">
-            <Paragraphe display={'flex'} alignItems={'center'} color="hsl(0deg 0% 43%)">
+            <Paragraph>
               <LongArrowAltLeftIcon /> Return to my card
-            </Paragraphe>
+            </Paragraph>
           </CustomLink>
 
           <PaymentSection>

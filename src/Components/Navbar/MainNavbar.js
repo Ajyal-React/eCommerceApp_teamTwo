@@ -20,17 +20,22 @@ import {
   AiOutlineUserIcon,
   RiShoppingBagFillIcon,
   CustomSign,
+  MenuResponsive,
+  LogoImg,
+  CategoriesList
 } from "./MainNavbar.Style";
 import image from "../../images/Group 14849.png";
 import { useSelector } from "react-redux";
+
 
 function MainNavbar() {
   const dataStore = useSelector((store) => store);
   return (
     <NavBG>
       <InnerContainer>
-        <FlexBoxRow>
+        <FlexBoxCenter>
           <FirstSide>
+          
             <FlexBoxCenter>
               <Button
                 backgroundColor="#7B77770F"
@@ -46,14 +51,19 @@ function MainNavbar() {
               </Button>
               <BiSearch />
             </FlexBoxCenter>
-          </FirstSide>
+          
 
+           
+          </FirstSide>
+          <MenuResponsive/>
+          
           <CenterSide>
-            <StyledList>
+          <FlexBoxCenter>
+            <CategoriesList>
               <FlexBoxCenter>
                 <ListItems>
                   <Paragraphe fontSize="16px" color="#32353C">
-                  <CustomLink to="/profile">Home</CustomLink>
+                    <CustomLink to="/profile">Home</CustomLink>
                   </Paragraphe>
                 </ListItems>
                 <ListItems>
@@ -66,10 +76,14 @@ function MainNavbar() {
                     Mobiles
                   </Paragraphe>
                 </ListItems>
-                <ListItems>
+                </FlexBoxCenter>
+            </CategoriesList>
+                <LogoImg>
                   {" "}
                   <img src={image} alt="logo" />
-                </ListItems>
+                </LogoImg>
+                <CategoriesList>
+              <FlexBoxCenter>
                 <ListItems>
                   <Paragraphe fontSize="16px" color="#32353C">
                     Laptops
@@ -86,7 +100,8 @@ function MainNavbar() {
                   </Paragraphe>
                 </ListItems>
               </FlexBoxCenter>
-            </StyledList>
+            </CategoriesList>
+            </FlexBoxCenter>
           </CenterSide>
           <ThirdSide>
             <FlexBoxCenter>
@@ -96,19 +111,19 @@ function MainNavbar() {
                     <BsHeartIcon />
                     <AiOutlineUserIcon />
                     <Paragraphe marginRight="3vh">0.00$</Paragraphe>
-                    <RiShoppingBagFillIcon />
+                    <CustomLink to="/cart">
+                      <RiShoppingBagFillIcon />
+                    </CustomLink>
                   </FlexBoxCenter>
                 </MainNavIcons>
               ) : (
                 <CustomLink to="/signin">
-                  <CustomSign>
-                    Sign in
-                  </CustomSign>
+                  <CustomSign>Sign in</CustomSign>
                 </CustomLink>
               )}
             </FlexBoxCenter>
           </ThirdSide>
-        </FlexBoxRow>
+        </FlexBoxCenter>
       </InnerContainer>
     </NavBG>
   );
