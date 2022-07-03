@@ -34,6 +34,7 @@ import { RiWhatsappFill } from "react-icons/ri";
 import { SiFacebook } from "react-icons/si";
 import { IconContext } from "react-icons/lib";
 
+
 function FooterNav() {
   return (
     <FooterContainer>
@@ -135,6 +136,7 @@ function FooterNav() {
           </SocialIcons>
         </FlexCenter>
       </LastSide>
+  
     </FooterContainer>
   );
 }
