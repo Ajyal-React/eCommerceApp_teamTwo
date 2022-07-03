@@ -20,6 +20,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import FeaturedCategories from "../../Components/FeaturedCategories/indx";
 
+
 function HomePage() {
   const dataStore = useSelector((store) => store);
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ function HomePage() {
       <MainNavbar />
       <HeroSection offer={dataStore?.guestReducer?.offer[0]} />
       {/* <DevicesDisplaySection /> */}
-      <FeaturedCategories />
+      {/* <FeaturedCategories /> */}
       <BackgroundImage>
         <DivOpacity></DivOpacity>
         <UpdateFlexBox>
@@ -60,7 +61,9 @@ function HomePage() {
       </BackgroundImage>
       <SlickSlider products={dataStore?.guestReducer?.featuredProducts} />
       <TrendingPage trending={dataStore?.guestReducer?.trending} />
+      
       <FooterPage />
+     
     </MainContainer>
   );
 }
