@@ -11,12 +11,17 @@ import {
   UserIcon,
   ParagraphProfile
 } from "./ContactSection.style";
-import BackBag from "../../../../images/BackBag.png";
+import {useSelector} from 'react-redux'
+
+
 function ContactSection() {
+
+  const {firstName, lastName, profileImage} = useSelector((store)=>store?.userReducer?.user);
+
   return (
     <ContactDetails>
       <ImgProfile>
-        <Image src={BackBag} alt="" borderR="50%" />
+        <Image src={profileImage} alt="" borderR="50%" />
       </ImgProfile>
       <CustomFlex>
         <ConteainerUl marginRight="100px">
@@ -27,7 +32,7 @@ function ContactSection() {
             </ListItemsStyle>
             <ListItemsStyle width="50%" padding="0">
               <ParagraphProfile margin="-3px" fontSize="14px">
-                Eman Hassouna
+                {firstName} {lastName}
               </ParagraphProfile>
             </ListItemsStyle>
           </List>
