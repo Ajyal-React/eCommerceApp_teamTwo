@@ -34,7 +34,7 @@ function HomePage() {
       <MainNavbar />
       <HeroSection offer={dataStore?.guestReducer?.offer[0]} />
       {/* <DevicesDisplaySection /> */}
-      <FeaturedCategories />
+      {/* <FeaturedCategories /> */}
       <BackgroundImage>
         <DivOpacity></DivOpacity>
         <UpdateFlexBox>
