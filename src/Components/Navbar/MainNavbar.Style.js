@@ -9,6 +9,7 @@ export const FirstSide = styled.div`
   margin: auto;
   @media (max-width: 376px) {
     display: none;
+    
   }
 `
 export const MenuResponsive = styled(CgMenuLeft)`
@@ -17,6 +18,16 @@ display: none;
  display: block;
  height:20px;
  width:20px;
+ 
+
+}
+`
+export const MenuButton = styled(Button)`
+display: none;
+@media (max-width: 376px) {
+ display: block;
+
+ 
  
 
 }

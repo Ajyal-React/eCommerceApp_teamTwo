@@ -266,6 +266,7 @@ export const FlexBoxRow = styled(FlexBox)`
   flex-direction: row;
   padding: ${(props) => props.padding};
   align-items: ${(props) => props.alignItems};
+ 
 `;
 export const HrStyle = styled.hr``;
 export const StyledList = styled.ul`
