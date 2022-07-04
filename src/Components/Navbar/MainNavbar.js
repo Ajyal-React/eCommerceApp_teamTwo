@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { BiSearch } from "react-icons/bi";
 import {
   InnerContainer,
@@ -22,14 +22,20 @@ import {
   CustomSign,
   MenuResponsive,
   LogoImg,
-  CategoriesList
+  CategoriesList,
+  MenuButton
 } from "./MainNavbar.Style";
 import image from "../../images/Group 14849.png";
 import { useSelector } from "react-redux";
+import RightNav from './RightNav';
 
 
 function MainNavbar() {
   const dataStore = useSelector((store) => store);
+  const [isShown, setIsShown] = useState(false);
+  const handleClick = () => {
+     setIsShown(true);}
+
   return (
     <NavBG>
       <InnerContainer>
@@ -51,12 +57,13 @@ function MainNavbar() {
               </Button>
               <BiSearch />
             </FlexBoxCenter>
-          
-
-           
           </FirstSide>
+
+          <MenuButton onClick={handleClick} >
           <MenuResponsive/>
-          
+          </MenuButton>
+          {isShown && <RightNav />}
+
           <CenterSide>
           <FlexBoxCenter>
             <CategoriesList>
@@ -128,5 +135,4 @@ function MainNavbar() {
     </NavBG>
   );
 }
-
-export default MainNavbar;
+export default MainNavbar
