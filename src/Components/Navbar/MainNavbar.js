@@ -124,7 +124,7 @@ function MainNavbar() {
                   </FlexBoxCenter>
                 </MainNavIcons>
               ) : (
-                <CustomLink to="/signin">
+                <CustomLink to="/login">
                   <CustomSign>Sign in</CustomSign>
                 </CustomLink>
               )}

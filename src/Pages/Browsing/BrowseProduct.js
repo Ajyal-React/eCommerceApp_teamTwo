@@ -69,11 +69,11 @@ function BrowseProduct() {
             {colors?.map((ele) => (
                 <DivContent>
                   <ColorCompination>
-                    <ColorOne BackGColor={`${ele[0]}`}>
+                    <ColorOne BackGColor={`${ele.one}`}>
                       <p></p>
                     </ColorOne>
 
-                    <ColorTwo BackGColor={`${ele[1]}`}></ColorTwo>
+                    <ColorTwo BackGColor={`${ele.two}`}></ColorTwo>
                   </ColorCompination>
                   <input
                     type="radio"
