@@ -8,6 +8,7 @@ import {
   FullContainer,
   SupTitle,
   Title,
+  CustomLink,
 } from "../../Global.style";
 import ProductCard from "../Card/ProductCard/ProductCard";
 import { CustomBtn } from "./SlickSlider.Style";
@@ -60,11 +61,13 @@ export default function SlickSlider({ products }) {
       </InnerContainer>
       <Slider {...settings}>
         {products?.map((element) => (
-          <ProductCard
-            src={element.images}
-            name={element.name}
-            price={element.price}
-          />
+          <CustomLink to={`/product/${element?._id}`}>
+            <ProductCard
+              src={element.images}
+              name={element.name}
+              price={element.price}
+            />
+          </CustomLink>
         ))}
       </Slider>
       <CustomBtn>View More</CustomBtn>
