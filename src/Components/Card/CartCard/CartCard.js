@@ -20,11 +20,12 @@ import { useSelector } from "react-redux";
 
 export default function CartCard() {
   const cartItems = useSelector((store) => store?.cartReducer?.cart?.items);
+  
   return (
     <>
       {cartItems?.length > 0 ? (
-        cartItems?.map((element) => (
-          <ContainerCartCard>
+        cartItems?.map((element, index) => (
+          <ContainerCartCard key={element?.product?._id}>
             <LeftBox>
               <ContainerImage>
                 <Image src={element?.product?.images[0]} alt="not found" />

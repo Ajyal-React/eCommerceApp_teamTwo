@@ -39,11 +39,11 @@ function BrowseProduct() {
 
   const product = {
     productId: param?.id,
-    qty: 3,
+    qty: 1,
   };
   const handleAddToCart = (e) => {
     e.preventDefault();
-    dispatch(addToCartAction(product),navigate('/'));
+    dispatch(addToCartAction(product), navigate("/"));
   };
   return (
     <MainContainer>
@@ -51,7 +51,6 @@ function BrowseProduct() {
       <InnerContainer>
         <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
           <DivImages />
-
           <SideRight>
             <FlexBox>
               <CustomTitle marginBottom="0" textTransform="capitalize">
@@ -65,7 +64,6 @@ function BrowseProduct() {
                 {`${price}$`}
               </CustomTitle>
             </FlexBox>
-
             <CustomParaghraph
               margin="0 0 .5rem 0"
               color="#9B9A9A"

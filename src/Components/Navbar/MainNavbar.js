@@ -36,7 +36,7 @@ function MainNavbar() {
   const [isShown, setIsShown] = useState(false);
   const handleClick = () => {
      setIsShown(true);}
-  const totalPrice = JSON.parse(localStorage.getItem('cart')).totalPrice
+  const totalPrice = JSON.parse(localStorage.getItem('cart'))?.totalPrice
   return (
     <NavBG>
       <InnerContainer>
