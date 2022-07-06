@@ -22,7 +22,7 @@ import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchProduct } from "../../redux/product/ProductAction";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { addToCartAction } from "../../redux/Cart/cartActions";
 
 function BrowseProduct() {
@@ -30,10 +30,8 @@ function BrowseProduct() {
   const { size, memory, storage, colors, name, price, countInStock } =
     useSelector((store) => store?.ProductReducer?.product);
 
-  const dataStore = useSelector((store) => store);
-  console.log(dataStore);
-  
   const param = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(FetchProduct(param?.id));
@@ -45,7 +43,7 @@ function BrowseProduct() {
   };
   const handleAddToCart = (e) => {
     e.preventDefault();
-    dispatch(addToCartAction(product));
+    dispatch(addToCartAction(product),navigate('/'));
   };
   return (
     <MainContainer>

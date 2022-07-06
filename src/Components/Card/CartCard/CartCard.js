@@ -13,32 +13,42 @@ import {
   Quantity,
   CloseIcon,
   ProductPrice,
+  EmptyCart,
 } from "./CartCard.Style";
-import img from "./../../../images/BackBag.png";
+import img from "./../../../images/empty-cart.gif";
 import { useSelector } from "react-redux";
 
 export default function CartCard() {
-  const dataStore = useSelector((store) => store);
-  console.log(dataStore);
+  const cartItems = useSelector((store) => store?.cartReducer?.cart?.items);
   return (
-    <ContainerCartCard>
-      <LeftBox>
-        <ContainerImage>
-          <Image src={img} alt="not found" />
-        </ContainerImage>
-        <InnerContainer>
-          <ProductName>Laptop Bag</ProductName>
-          <ContainerCounter>
-            <MinusIcon />
-            <Quantity>1</Quantity>
-            <PlusIcon />
-          </ContainerCounter>
-        </InnerContainer>
-      </LeftBox>
-      <RightBox>
-        <ProductPrice>$98</ProductPrice>
-        <CloseIcon />
-      </RightBox>
-    </ContainerCartCard>
+    <>
+      {cartItems?.length > 0 ? (
+        cartItems?.map((element) => (
+          <ContainerCartCard>
+            <LeftBox>
+              <ContainerImage>
+                <Image src={element?.product?.images[0]} alt="not found" />
+              </ContainerImage>
+              <InnerContainer>
+                <ProductName>{element?.product?.name} </ProductName>
+                <ContainerCounter>
+                  <MinusIcon />
+                  <Quantity>{element?.qty} </Quantity>
+                  <PlusIcon />
+                </ContainerCounter>
+              </InnerContainer>
+            </LeftBox>
+            <RightBox>
+              <ProductPrice>${element?.product?.price} </ProductPrice>
+              <CloseIcon />
+            </RightBox>
+          </ContainerCartCard>
+        ))
+      ) : (
+        <EmptyCart>
+          <Image src={img} alt="Empty cart" />
+        </EmptyCart>
+      )}
+    </>
   );
 }

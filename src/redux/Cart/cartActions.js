@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ADD_TO_CART } from "./cartType";
 
-export const addToCartAction = (values) => {
+export const addToCartAction = (values, callBack) => {
   return async (dispatch, getStore) => {
     const store = getStore();
     const config = {
@@ -17,11 +17,12 @@ export const addToCartAction = (values) => {
         values,
         config
       );
-      console.log("response.data",response.data);
+      localStorage.setItem("cart", JSON.stringify(response.data.cart));
       dispatch({
         type: ADD_TO_CART,
         payload: response.data,
       });
+      callBack?.()
     } catch (error) {
       console.log("error", error);
     }

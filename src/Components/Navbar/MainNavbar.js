@@ -23,7 +23,8 @@ import {
   MenuResponsive,
   LogoImg,
   CategoriesList,
-  MenuButton
+  MenuButton,
+  GoToCart
 } from "./MainNavbar.Style";
 import image from "../../images/Group 14849.png";
 import { useSelector } from "react-redux";
@@ -35,7 +36,7 @@ function MainNavbar() {
   const [isShown, setIsShown] = useState(false);
   const handleClick = () => {
      setIsShown(true);}
-
+  const totalPrice = JSON.parse(localStorage.getItem('cart')).totalPrice
   return (
     <NavBG>
       <InnerContainer>
@@ -117,10 +118,10 @@ function MainNavbar() {
                   <FlexBoxCenter>
                     <BsHeartIcon />
                     <AiOutlineUserIcon />
-                    <Paragraphe marginRight="3vh">0.00$</Paragraphe>
-                    <CustomLink to="/cart">
+                    <Paragraphe marginRight="3vh">{totalPrice}$</Paragraphe>
+                    <GoToCart to="/cart">
                       <RiShoppingBagFillIcon />
-                    </CustomLink>
+                    </GoToCart>
                   </FlexBoxCenter>
                 </MainNavIcons>
               ) : (

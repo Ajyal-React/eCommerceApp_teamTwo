@@ -7,7 +7,13 @@ import {
   MainContainer,
   Paragraph,
 } from "../../Global.style";
-import { LongArrowAltLeftIcon, MainDiv, ContainerCards } from "./Cart.Style";
+import {
+  LongArrowAltLeftIcon,
+  MainDiv,
+  ContainerCards,
+  GoToPayment,
+  ContainerBtn
+} from "./Cart.Style";
 export default function Cart() {
   return (
     <MainContainer>
@@ -24,6 +30,16 @@ export default function Cart() {
         <ContainerCards>
           <CartCard />
         </ContainerCards>
+        <ContainerBtn>
+          <GoToPayment
+            width="auto"
+            margin="2rem 0"
+            padding="1rem 3rem"
+            to="/payment"
+          >
+            Go To Payment
+          </GoToPayment>
+        </ContainerBtn>
       </InnerContainer>
     </MainContainer>
   );

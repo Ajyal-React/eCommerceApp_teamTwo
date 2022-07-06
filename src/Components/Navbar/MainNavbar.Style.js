@@ -2,37 +2,29 @@ import styled from "styled-components";
 import { BsHeart } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { RiShoppingBagFill } from "react-icons/ri";
-import { Button } from "../../Global.style";
-import {CgMenuLeft}from "react-icons/cg"
+import { Button, CustomLink, Paragraph } from "../../Global.style";
+import { CgMenuLeft } from "react-icons/cg";
 
 export const FirstSide = styled.div`
   margin: auto;
   @media (max-width: 376px) {
     display: none;
-    
   }
-`
+`;
 export const MenuResponsive = styled(CgMenuLeft)`
-display: none;
-@media (max-width: 376px) {
- display: block;
- height:20px;
- width:20px;
- 
-
-}
-`
+  display: none;
+  @media (max-width: 376px) {
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+`;
 export const MenuButton = styled(Button)`
-display: none;
-@media (max-width: 376px) {
- display: block;
-
- 
- 
-
-}
-`
-
+  display: none;
+  @media (max-width: 376px) {
+    display: block;
+  }
+`;
 
 export const NavBG = styled.div`
   height: 100px;
@@ -48,11 +40,10 @@ export const NavBG = styled.div`
 `;
 export const CategoriesList = styled.ul`
   list-style: none;
-  margin:0;
+  margin: 0;
   @media (max-width: 376px) {
-    display:none;
-   
-   }
+    display: none;
+  }
 `;
 
 export const CenterSide = styled.div`
@@ -63,13 +54,13 @@ export const ListItems = styled.li`
   padding: 0 20px;
   @media (max-width: 376px) {
     display: none;
-    padding:0;
+    padding: 0;
   }
 `;
 export const LogoImg = styled.div`
   padding: 0 20px;
   @media (max-width: 376px) {
-   padding:0;
+    padding: 0;
   }
 `;
 
@@ -85,7 +76,7 @@ export const AiOutlineUserIcon = styled(AiOutlineUser)`
   margin-right: 1vh;
 `;
 export const RiShoppingBagFillIcon = styled(RiShoppingBagFill)`
-  margin-right: 3vh;
+  /* margin-right: 3vh; */
 `;
 export const CustomSign = styled(Button)`
   width: 90px;
@@ -102,6 +93,20 @@ export const CustomSign = styled(Button)`
     background: none;
     width: 45px;
     height: 0;
-    padding:0;
+    padding: 0;
   }
 `;
+
+export const GoToCart = styled(CustomLink)`
+  background: #0000000f;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+`;
+
+export const CartCount = styled(Paragraph)`
+  
+`

@@ -6,9 +6,10 @@ import Cart from "./Pages/Cart/Cart";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
-import Test from "./Pages/Test";
 import {useSelector} from 'react-redux';
 import NotFound from "./Pages/NotFoundPage/NotFound";
+import { DecodeToken } from "./Pages/DecodeToken";
+import {loadStripe} from '@stripe/stripe-js';
 
 function App() {
   const {_id} = useSelector((store)=>store?.userReducer?.user);
@@ -22,6 +23,9 @@ function App() {
   function AuthLogin ({childern}){
       return _id ? childern : <Navigate to='/'/>
   }
+
+  const stripe = loadStripe('pk_test_51LEyhkFXidM3zNk5QBClUHhH2akvsSNCt5HwaTjHfolKzqRgrF5GR4Oqmgqfz8PQPe1vAyIf1c3tkr0JsqDoErcM00NomsxiMS');
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -35,6 +39,7 @@ function App() {
         <Route path="/payment" element={<AuthLogin childern={<PaymentPage/>}/>}/>
         <Route path="/cart" element={<AuthLogin childern={<Cart/>}/>}/>
         
+        <Route path="/d" element={<DecodeToken/>}/>
         <Route path="*" element={<NotFound/>}/>
 
         {/* <Route path="/test" element={<Test/>}/> */}
