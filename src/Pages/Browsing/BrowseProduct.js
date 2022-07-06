@@ -29,23 +29,23 @@ function BrowseProduct() {
   const dispatch = useDispatch();
   const { size, memory, storage, colors, name, price, countInStock } =
     useSelector((store) => store?.ProductReducer?.product);
+
   const dataStore = useSelector((store) => store);
   console.log(dataStore);
-
+  
   const param = useParams();
 
   useEffect(() => {
     dispatch(FetchProduct(param?.id));
   }, [dispatch, param?.id]);
 
-  const handleAddToCart = (e, values) => {
+  const product = {
+    productId: param?.id,
+    qty: 3,
+  };
+  const handleAddToCart = (e) => {
     e.preventDefault();
-    dispatch(
-      addToCartAction({
-        productId: "62b761d3bf201c2428b307f6",
-        qty: 2,
-      })
-    );
+    dispatch(addToCartAction(product));
   };
   return (
     <MainContainer>

@@ -10,15 +10,14 @@ export const addToCartAction = (values) => {
         Authorization: `Bearer ${store?.userReducer?.user?.token}`,
       },
     };
-    console.log(store?.userReducer?.user?.token)
 
     try {
       const response = await axios.put(
         "https://omar-tech-store.herokuapp.com/api/users/profile/cart",
-        config,
-        values
+        values,
+        config
       );
-      console.log(response);
+      console.log("response.data",response.data);
       dispatch({
         type: ADD_TO_CART,
         payload: response.data,

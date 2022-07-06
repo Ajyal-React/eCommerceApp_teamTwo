@@ -15,7 +15,11 @@ import {
   ProductPrice,
 } from "./CartCard.Style";
 import img from "./../../../images/BackBag.png";
+import { useSelector } from "react-redux";
+
 export default function CartCard() {
+  const dataStore = useSelector((store) => store);
+  console.log(dataStore);
   return (
     <ContainerCartCard>
       <LeftBox>
