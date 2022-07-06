@@ -26,10 +26,10 @@ const TopSliderSection = () => {
       <Sale>SALE -50%</Sale>
       <SliderItem>
         <Slider {...settings}>
-          <img src={img} />
-          <img src={img} />
-          <img src={img} />
-          <img src={img} />
+          <img src={img} alt="" />
+          <img src={img} alt="" />
+          <img src={img} alt="" />
+          <img src={img} alt="" />
         </Slider>
       </SliderItem>
       <ProductName>

@@ -8,7 +8,7 @@ import {
   DivOpacity,
   MainHeaderUpdate,
 } from "./HomePage.Style";
-import DevicesDisplaySection from "../../Components/devicesDisplaySection/DevicesDisplaySection";
+// import DevicesDisplaySection from "../../Components/devicesDisplaySection/DevicesDisplaySection";
 import SlickSlider from "../../Components/Slider/SlickSlider";
 import TrendingPage from "../TrendingPage/TrendingPage";
 import FooterPage from "../FooterPage/FooterPage";
@@ -18,7 +18,7 @@ import {
   TrendingAction,
 } from "../../redux/guest/guestActions";
 import { useDispatch, useSelector } from "react-redux";
-import FeaturedCategories from "../../Components/FeaturedCategories/indx";
+// import FeaturedCategories from "../../Components/FeaturedCategories/indx";
 
 
 function HomePage() {

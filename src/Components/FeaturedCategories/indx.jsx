@@ -1,18 +1,18 @@
 import {
   FullContainer,
-  InnerContainer,
+  // InnerContainer,
   SupTitle,
   Title,
 } from "../../Global.style";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import {
   Header,
   HeaderLeft,
   HeaderRight,
   Products,
-  Tabs,
+  // Tabs,
   CardsLeft,
   Slider,
   FeaturedCategoriesSection,

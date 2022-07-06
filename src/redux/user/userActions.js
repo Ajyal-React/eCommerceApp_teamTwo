@@ -1,6 +1,6 @@
 import { USER_LOGIN, USER_PROFILE, USER_SIGNUP } from "./userTypes";
 import axios from "axios";
-import { userReducer } from "./userReducers";
+// import { userReducer } from "./userReducers";
 export const LoginAction = (values) => {
   return async (dispatch) => {
     try {
