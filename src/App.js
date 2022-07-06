@@ -8,6 +8,7 @@ import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
 import Test from "./Pages/Test";
 import {useSelector} from 'react-redux';
+import NotFound from "./Pages/NotFoundPage/NotFound";
 
 function App() {
   const {_id} = useSelector((store)=>store?.userReducer?.user);
@@ -34,7 +35,9 @@ function App() {
         <Route path="/payment" element={<AuthLogin childern={<PaymentPage/>}/>}/>
         <Route path="/cart" element={<AuthLogin childern={<Cart/>}/>}/>
         
-        <Route path="/test" element={<Test/>}/>
+        <Route path="*" element={<NotFound/>}/>
+
+        {/* <Route path="/test" element={<Test/>}/> */}
       </Routes>
     </BrowserRouter>
   );

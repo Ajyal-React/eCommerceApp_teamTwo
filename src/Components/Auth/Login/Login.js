@@ -111,7 +111,7 @@ export default function Login() {
               </AuthBtn>
               <AlreadySign>
                 Don't have account?{" "}
-                <CustomLink to="/signin">
+                <CustomLink to="/SignUp">
                   <Bold> Sign Up</Bold>
                 </CustomLink>
               </AlreadySign>
