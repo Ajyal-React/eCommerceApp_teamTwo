@@ -33,8 +33,14 @@ import { Formik } from "formik";
 import { SignInSchema } from "../Schema";
 import { useDispatch } from "react-redux";
 import { LoginAction } from "../../../redux/user/userActions";
+import { useSelector } from "react-redux/es/exports";
+import SpinnerComp from './../../Spinner/index';
+
 
 export default function Login() {
+  const isLoading =useSelector(store=>store?.userReducer?.isLoading)
+  console.log(isLoading);
+  
   const dispatch = useDispatch();
   return (
     <MainSign>
@@ -109,6 +115,9 @@ export default function Login() {
                   <FaLongArrow />
                 </ContainerIcon>
               </AuthBtn>
+              {isLoading?<SpinnerComp />:null}
+              
+             
               <AlreadySign>
                 Don't have account?{" "}
                 <CustomLink to="/SignUp">
