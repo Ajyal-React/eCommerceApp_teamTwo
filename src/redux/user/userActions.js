@@ -1,17 +1,24 @@
-import { USER_LOGIN, USER_PROFILE, USER_SIGNUP } from "./userTypes";
+import { USER_LOGIN,START_LOGIN, USER_PROFILE, USER_SIGNUP ,START_SIGNUP} from "./userTypes";
 import axios from "axios";
 // import { userReducer } from "./userReducers";
 export const LoginAction = (values) => {
   return async (dispatch) => {
+    dispatch({
+      type: START_LOGIN,
+      isLoading:true,
+    });
     try {
       const response = await axios.post(
         "https://omar-tech-store.herokuapp.com/api/users/login",
         values
       );
       localStorage.setItem("user", JSON.stringify(response.data));
+     
+
       dispatch({
         type: USER_LOGIN,
         payload: response.data,
+        isLoading:false,
       });
     } catch (error) {
       console.log("error",error);
@@ -19,8 +26,13 @@ export const LoginAction = (values) => {
   };
 };
 
+
 export const SignUpAction = (values) => {
   return async (dispatch) => {
+    dispatch({
+      type: START_SIGNUP,
+      isLoading:true,
+    });
     try {
       const response = await axios.post(
         "https://omar-tech-store.herokuapp.com/api/users/signup",
@@ -30,6 +42,7 @@ export const SignUpAction = (values) => {
       dispatch({
         type: USER_SIGNUP,
         payload: response.data,
+        isLoading:false,
       });
     } catch (error) {
       console.log("error",error);
