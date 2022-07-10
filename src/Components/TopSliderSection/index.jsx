@@ -18,8 +18,7 @@ import { GetFC } from "../../redux/FeaturedCategories/FCAction";
 import { Image } from "../../Global.style";
 
 const TopSliderSection = () => {
-  const {images} = useSelector((state) => state?.FCReducer?.FCProducts[0]);
-  console.log(images);
+  const data = useSelector((state) => state?.FCReducer?.FCProducts[0]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -39,7 +38,7 @@ const TopSliderSection = () => {
       <Sale>SALE -50%</Sale>
       <SliderItem>
         <Slider {...settings}>
-          {images?.map((srcImg) => (
+          {data?.images?.map((srcImg) => (
             <ContainerImage>
               {console.log(srcImg)}
               <Image src={srcImg} width="100%" height={"100%"} />
