@@ -59,3 +59,8 @@ export const Text = styled.div`
   text-decoration: line-through;
   text-decoration-color: red;
 `;
+
+export const ContainerImage = styled.div`
+  width: 80%;
+  margin: auto;
+`;

@@ -21,6 +21,7 @@ const CardFeaturedCategories = () => {
   const data = useSelector((state) => state?.FCReducer?.FCProducts);
   const dispatch = useDispatch();
 
+  console.log(data?.slice(0));
   useEffect(() => {
     dispatch(GetFC());
   }, [dispatch]);
