@@ -116,6 +116,9 @@ export const AuthBtn = styled(Button)`
   ${Bolder};
   ${StyleFont};
   cursor: pointer;
+  &:hover{
+    background: transparent;
+  }
 `;
 export const ContainerIcon = styled(FlexBox)`
   display: flex;

@@ -2,7 +2,6 @@ import React from "react";
 import {
   FlexBoxRow,
   HrStyle,
-  FlexBox,
   FlexBoxCenter,
   FlexCol,
 } from "../../Global.style";
@@ -23,9 +22,7 @@ import {
   GrMailIcon,
   ContactContainer,
   FlexCenter,
-  FirstSecContainer,
-  
- 
+  FirstSecContainer, 
 } from "./FooterNav.Style";
 import LogoImage from "../../images/Group 14849.png";
 import { ThirdSide } from "./MainNavbar.Style";

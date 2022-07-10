@@ -1,18 +1,13 @@
 import { SelectField } from "./BrowseProduct.Style";
 
-
 function OptionFields(optionProduct) {
   return (
-      <SelectField>
+    <SelectField>
       <option></option>
-      {optionProduct?.optionProduct?.map((ele)=>(
-        <option>{ele}</option>
+      {optionProduct?.optionProduct?.map((ele, index) => (
+        <option key={index}>{ele}</option>
       ))}
-
     </SelectField>
-
-
-
   );
 }
 export default OptionFields;

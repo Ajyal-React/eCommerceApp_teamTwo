@@ -61,7 +61,7 @@ export default function SlickSlider({ products }) {
       </InnerContainer>
       <Slider {...settings}>
         {products?.map((element) => (
-          <CustomLink to={`/product/${element?._id}`}>
+          <CustomLink key={element?._id} to={`/product/${element?._id}`}>
             <ProductCard
               src={element.images}
               name={element.name}

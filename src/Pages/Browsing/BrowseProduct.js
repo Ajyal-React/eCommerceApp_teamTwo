@@ -86,7 +86,7 @@ function BrowseProduct() {
 
             <FlexBoxStyle MarginBottom="16px">
               {colors?.map((ele) => (
-                <DivContent>
+                <DivContent key={ele._id}>
                   <ColorCompination>
                     <ColorOne BackGColor={`${ele.one}`}>
                       <p></p>

@@ -38,9 +38,8 @@ const TopSliderSection = () => {
       <Sale>SALE -50%</Sale>
       <SliderItem>
         <Slider {...settings}>
-          {data?.images?.map((srcImg) => (
-            <ContainerImage>
-              {console.log(srcImg)}
+          {data?.images?.map((srcImg, index) => (
+            <ContainerImage key={index}>
               <Image src={srcImg} width="100%" height={"100%"} />
             </ContainerImage>
           ))}

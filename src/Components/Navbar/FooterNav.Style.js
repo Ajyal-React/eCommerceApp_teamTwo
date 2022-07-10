@@ -31,7 +31,7 @@ export const FirstSide = styled("div")`
   }
 `;
 
-export const LogoImg = styled("Img")`
+export const LogoImg = styled("img")`
   width: 188px;
   height: 39px;
   @media (max-width: 376px) {

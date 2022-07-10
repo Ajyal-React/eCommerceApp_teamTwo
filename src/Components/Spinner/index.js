@@ -1,17 +1,7 @@
+import { SpinnerStyle } from "./SpinnerStyle.js";
 
-
-import SpinnerStyle from './SpinnerStyle.js'
-
-
-
-function SpinnerComp(){
-
-    return (
-        <SpinnerStyle/>
-    )
+function SpinnerComp() {
+  return <SpinnerStyle />;
 }
 
-
-
-export default SpinnerComp
-
+export default SpinnerComp;
