@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {BiUserCircle}from"react-icons/bi"
 
 export const RightNavContainer = styled.div`
 display: none;

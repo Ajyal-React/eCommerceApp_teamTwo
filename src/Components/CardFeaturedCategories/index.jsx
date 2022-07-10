@@ -11,27 +11,24 @@ import {
   Number,
 } from "./index.style";
 import { FaHeart } from "react-icons/fa";
-// import im from "../../images/BackBag.png";
 import { FaStar } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { useEffect } from "react";
 import { GetFC } from "../../redux/FeaturedCategories/FCAction";
 import { useSelector, useDispatch } from "react-redux";
-// import { useState } from "react";
 
 const CardFeaturedCategories = () => {
-  const data = useSelector((state) => state?.FCReducer?.FCProducts.filter((e,i)=> i !== 0 ));
+  const data = useSelector((state) => state?.FCReducer?.FCProducts);
   const dispatch = useDispatch();
 
-  // data.filter((e,i)=> i !== 0 )
- console.log(data)
+  const filterData = data.filter((e, i) => i !== 0);
+
   useEffect(() => {
     dispatch(GetFC());
-    // setFeaturedCategories(data);
   }, [dispatch]);
   return (
     <>
-      {data?.map((element) => 
+      {filterData?.map((element) => 
         <Card key={element?._id}>
           <Heart>
             <FaHeart />
