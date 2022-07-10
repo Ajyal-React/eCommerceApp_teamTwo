@@ -9,7 +9,7 @@ width: 50px;
 height: 50px;
 border: 3px solid rgba(255,255,255,.3);
 border-radius: 50%;
-border-top-color: #73A9AD;
+border-top-color: #fa7400;
 animation: spin 1s ease-in-out infinite;
 -webkit-animation: spin 1s ease-in-out infinite;
 
