@@ -21,38 +21,36 @@ const CardFeaturedCategories = () => {
   const data = useSelector((state) => state?.FCReducer?.FCProducts);
   const dispatch = useDispatch();
 
-  const filterData = data.filter((e, i) => i !== 0);
-
   useEffect(() => {
     dispatch(GetFC());
   }, [dispatch]);
   return (
     <>
-      {filterData?.map((element) => 
-        <Card key={element?._id}>
-          <Heart>
-            <FaHeart />
-          </Heart>
-          <Image ImageSrc={element?.images} />
-          <ProductName>
-            <Name>{element?.name}</Name>
-            <Price>$99</Price>
-          </ProductName>
-          <ProductReview>
-            <Review>
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <Number>(5)</Number>
-            </Review>
-            <Basket>
-              <FaCartPlus />
-            </Basket>
-          </ProductReview>
-        </Card>
-      )}
+      {data?.filter((element, index) => index !== 0)?.map((element) => (
+          <Card key={element?._id}>
+            <Heart>
+              <FaHeart />
+            </Heart>
+            <Image ImageSrc={element?.images} />
+            <ProductName>
+              <Name>{element?.name}</Name>
+              <Price>$99</Price>
+            </ProductName>
+            <ProductReview>
+              <Review>
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <Number>(5)</Number>
+              </Review>
+              <Basket>
+                <FaCartPlus />
+              </Basket>
+            </ProductReview>
+          </Card>
+        ))}
     </>
   );
 };
