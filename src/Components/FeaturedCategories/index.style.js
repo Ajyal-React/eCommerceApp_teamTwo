@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FeaturedCategoriesSection = styled.div`
   margin-bottom: 100px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +23,6 @@ export const Header = styled.div`
 export const HeaderRight = styled.div`
   width: 70%;
   min-width: 300px;
-  background-color: red;
 `;
 
 export const HeaderLeft = styled.div`
@@ -49,11 +49,17 @@ export const CardsLeft = styled.div`
   align-items: center;
   flex-wrap: wrap;
   min-width: 400px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 992px) {
+    width: 100%;
+  }
 `;
 
 export const Slider = styled.div`
   width: 50%;
-  height: 900px;
+  height: 100%;
   background-color: #f9f8f8;
   display: flex;
   flex-direction: row;
@@ -62,6 +68,10 @@ export const Slider = styled.div`
   align-items: center;
   border-radius: 9px;
   margin-bottom: 20px;
+  padding: 34px 0px;
+  @media (max-width: 992px) {
+    width: 76%;
+  }
 `;
 
 export const Button = styled.button`
