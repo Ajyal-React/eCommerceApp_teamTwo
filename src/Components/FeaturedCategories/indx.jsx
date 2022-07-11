@@ -1,8 +1,4 @@
-import {
-  FullContainer,
-  SupTitle,
-  Title,
-} from "../../Global.style";
+import { FullContainer, SupTitle, Title } from "../../Global.style";
 
 import {
   Header,
@@ -29,7 +25,7 @@ const FeaturedCategories = (props) => {
   useEffect(() => {
     dispatch(GetFC());
     setFeaturedCategories(data);
-  }, [data,dispatch]);
+  }, [data, dispatch]);
 
   return (
     <>
@@ -45,8 +41,7 @@ const FeaturedCategories = (props) => {
 
           <Products>
             <CardsLeft>
-              {/*  <CardFeaturedCategories productName={FeaturedCategories[0].name} />  */}
-              <CardFeaturedCategories  />
+              <CardFeaturedCategories />
             </CardsLeft>
 
             <Slider>

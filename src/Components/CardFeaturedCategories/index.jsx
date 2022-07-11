@@ -9,6 +9,7 @@ import {
   Basket,
   ProductReview,
   Number,
+  ImageContainer,
 } from "./index.style";
 import { FaHeart } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
@@ -27,12 +28,16 @@ const CardFeaturedCategories = () => {
   }, [dispatch]);
   return (
     <>
-      {data?.filter((element, index) => index !== 0)?.map((element) => (
+      {data
+        ?.filter((element, index) => index !== 0)
+        ?.map((element) => (
           <Card key={element?._id}>
             <Heart>
               <FaHeart />
             </Heart>
-            <Image ImageSrc={element?.images} />
+            <ImageContainer>
+              <Image ImageSrc={element?.images} />
+            </ImageContainer>
             <ProductName>
               <Name>{element?.name}</Name>
               <Price>$99</Price>
