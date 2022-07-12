@@ -21,6 +21,7 @@ export const MenuResponsive = styled(CgMenuLeft)`
 `;
 export const MenuButton = styled(Button)`
   display: none;
+  background-color: transparent;
   @media (max-width: 991.98px) {
     display: block;
   }
