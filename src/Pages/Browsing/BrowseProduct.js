@@ -23,8 +23,10 @@ import OptionFileds from "./OptionFields";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchProduct } from "../../redux/product/ProductAction";
 import { useParams } from "react-router-dom";
+import SpinnerComp from '../../Components/Spinner/index'
 
 function BrowseProduct() {
+  const isLoading =useSelector(store=>store?.ProductReducer?.isLoading)
   const dispatch = useDispatch();
   const {size, memory, storage,colors, name, price,countInStock} = useSelector((store) => store?.ProductReducer?.product);
   const param = useParams();
@@ -33,8 +35,11 @@ function BrowseProduct() {
     dispatch(FetchProduct(param?.id));
   }, [dispatch, param?.id]);
   return (
-    <MainContainer>
+
+    <MainContainer>    
       <MainNavbar />
+      {isLoading?<SpinnerComp/>:
+
       <InnerContainer>
         <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
           <DivImages/>
@@ -124,6 +129,7 @@ function BrowseProduct() {
         </FlexBoxContainer>
         <HrS margin="0px -101px" />
       </InnerContainer>
+      }
       <FooterPage />
     </MainContainer>
   );

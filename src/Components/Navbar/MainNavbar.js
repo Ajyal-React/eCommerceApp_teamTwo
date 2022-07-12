@@ -70,7 +70,7 @@ function MainNavbar() {
               <FlexBoxCenter>
                 <ListItems>
                   <Paragraphe fontSize="16px" color="#32353C">
-                    <CustomLink to="/profile">Home</CustomLink>
+                   Home
                   </Paragraphe>
                 </ListItems>
                 <ListItems>
@@ -116,7 +116,7 @@ function MainNavbar() {
                 <MainNavIcons>
                   <FlexBoxCenter>
                     <BsHeartIcon />
-                    <AiOutlineUserIcon />
+                    <CustomLink to='/profile'><AiOutlineUserIcon /></CustomLink>
                     <Paragraphe marginRight="3vh">0.00$</Paragraphe>
                     <CustomLink to="/cart">
                       <RiShoppingBagFillIcon />
