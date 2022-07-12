@@ -7,29 +7,42 @@ import {
   Price,
   Text,
   Brand,
+  ContainerImage,
 } from "./index.style";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import img from '../../images/Base1.png'
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { GetFC } from "../../redux/FeaturedCategories/FCAction";
+import { Image } from "../../Global.style";
 
 const TopSliderSection = () => {
+  const data = useSelector((state) => state?.FCReducer?.FCProducts[0]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(GetFC());
+  }, [dispatch]);
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,autoplay: true,
+    slidesToScroll: 1,
+    autoplay: true,
   };
+
   return (
     <SSlider>
       <Sale>SALE -50%</Sale>
       <SliderItem>
         <Slider {...settings}>
-          <img src={img} alt="" />
-          <img src={img} alt="" />
-          <img src={img} alt="" />
-          <img src={img} alt="" />
+          {data?.images?.map((srcImg, index) => (
+            <ContainerImage key={index}>
+              <Image src={srcImg} width="100%" height={"100%"} />
+            </ContainerImage>
+          ))}
         </Slider>
       </SliderItem>
       <ProductName>

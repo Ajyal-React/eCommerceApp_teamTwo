@@ -1,25 +1,24 @@
-import styled, { keyframes } from 'styled-components'
-
-
+import styled from "styled-components";
 
 export const SpinnerStyle = styled.div`
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgb(175 172 172 / 30%);
+  border-radius: 50%;
+  border-top-color: #fa7400;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+  @keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+`;
 
-display: inline-block;
-width: 50px;
-height: 50px;
-border: 3px solid rgba(255,255,255,.3);
-border-radius: 50%;
-border-top-color: #73A9AD;
-animation: spin 1s ease-in-out infinite;
--webkit-animation: spin 1s ease-in-out infinite;
-
-
-@keyframes spin {
-to { -webkit-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-to { -webkit-transform: rotate(360deg); }
-}
-`
-
-export default SpinnerStyle

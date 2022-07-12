@@ -196,7 +196,7 @@ export const Input = styled.input`
   outline: none;
   letter-spacing: 1px;
   font-size: 14px;
-  width: 70%;
+  width: 100%;
 
   &[type="email"] {
     font-size: 18px;

@@ -30,9 +30,12 @@ import { Formik } from "formik";
 import { SignUpSchema } from "../Schema";
 import { SignUpAction } from "../../../redux/user/userActions";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
     <MainSign>
       <LeftBox>
@@ -49,8 +52,8 @@ export default function SignUp() {
         <Formik
           initialValues={{ email: "", password: "", passwordConfirm: "" }}
           validationSchema={SignUpSchema()}
-          onSubmit={(values, { setSubmitting }) => {
-            dispatch(SignUpAction(values))
+          onSubmit={(values) => {
+            dispatch(SignUpAction(values, navigate("/")))
           }}
         >
           {({

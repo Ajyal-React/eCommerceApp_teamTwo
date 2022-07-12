@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 40%;
+  width: 45%;
   background-color: #f9f8f8;
-  height: auto;
+  height: 50%;
   min-width: 200px;
   margin-bottom: 20px;
   display: flex;
@@ -12,6 +12,18 @@ export const Card = styled.div`
   align-items: center;
   background-color: #f9f8f8;
   border-radius: 9px;
+  max-width: 400px;
+
+  @media(max-width: 375px) {
+    width: 100%;
+  }
+  @media(max-width: 640px) {
+    width: 100%;
+  }
+
+ /*  @media(max-width: 768px) {
+    width: 100%;
+  } */
 `;
 
 export const Heart = styled.div`
@@ -26,10 +38,20 @@ export const Heart = styled.div`
   } */
 `;
 
+export const ImageContainer = styled.div`
+  width: 80%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+`;
+
 export const Image = styled.img.attrs((props) => ({
   src: props.ImageSrc,
 }))`
-  width: 80%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -46,12 +68,14 @@ export const ProductName = styled.div`
   height: auto;
   border-bottom: 0.2px solid #c4c4c4;
   padding-bottom: 10px;
+  margin-top: 30px
 `;
 
 export const Name = styled.div`
-  width: 80%;
+  width: 90%;
   color: #111111;
   font-weight: bold;
+  font-size: 12px;
 `;
 
 export const Price = styled.div`
