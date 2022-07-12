@@ -26,81 +26,81 @@ function DevicesDisplaySection() {
 
 
   return (
-    <InnerContainer>
-      <CategoriesNav />
-      {/* FlexBox contain on left and right  */}
-      <ParentDivLiftAndRight>
-        {/* 50% div in left  */}
-        <LeftDiv>
-          {/* {store.map((item, index) => ( */}
+    // <InnerContainer>
+    //   <CategoriesNav />
+    //   {/* FlexBox contain on left and right  */}
+    //   <ParentDivLiftAndRight>
+    //     {/* 50% div in left  */}
+    //     <LeftDiv>
+    //       {/* {store.map((item, index) => ( */}
 
-          <DeviceItem
-            name={store[1]?.name}
-            price={store[1]?.price}
-            images={store[1]?.images}
-            rating={store[1]?.rating}
-          />
-          <DeviceItem
-            name={store[2]?.name}
-            price={store[2]?.price}
-            images={store[2]?.images}
-            rating={store[2]?.rating}
-          />
-          <DeviceItem
-            name={store[3]?.name}
-            price={store[3]?.price}
-            images={store[3]?.images}
-            rating={store[3]?.rating}
-          />
-          <DeviceItem
-            name={store[4]?.name}
-            price={store[4]?.price}
-            images={store[4]?.images}
-            rating={store[4]?.rating}
-          />
-        </LeftDiv>
+    //       <DeviceItem
+    //         name={store[1]?.name}
+    //         price={store[1]?.price}
+    //         images={store[1]?.images}
+    //         rating={store[1]?.rating}
+    //       />
+    //       <DeviceItem
+    //         name={store[2]?.name}
+    //         price={store[2]?.price}
+    //         images={store[2]?.images}
+    //         rating={store[2]?.rating}
+    //       />
+    //       <DeviceItem
+    //         name={store[3]?.name}
+    //         price={store[3]?.price}
+    //         images={store[3]?.images}
+    //         rating={store[3]?.rating}
+    //       />
+    //       <DeviceItem
+    //         name={store[4]?.name}
+    //         price={store[4]?.price}
+    //         images={store[4]?.images}
+    //         rating={store[4]?.rating}
+    //       />
+    //     </LeftDiv>
 
-        {/* 50% div in right  */}
-        <RightDiv>
-          {/* row1 */}
-          <FlexBox>
-            <Button
-              background-color="#FACE75"
-              padding="1rem 3rem"
-              border-radius="10px"
-              border="none"
-              display="flex"
-              alignItems="center"
-              fontWeight=" bolder"
-              fontSize="20px"
-            >
-              SALE_50%
-            </Button>
+    //     {/* 50% div in right  */}
+    //     <RightDiv>
+    //       {/* row1 */}
+    //       <FlexBox>
+    //         <Button
+    //           background-color="#FACE75"
+    //           padding="1rem 3rem"
+    //           border-radius="10px"
+    //           border="none"
+    //           display="flex"
+    //           alignItems="center"
+    //           fontWeight=" bolder"
+    //           fontSize="20px"
+    //         >
+    //           SALE_50%
+    //         </Button>
 
-            <div>
-              <FaCircle color="#DBDBDB" />
-              <FaCircle color="#DBDBDB" />
-              <FaCircle color="#DBDBDB" />
-              <FaCircle color="#DBDBDB" />
-              <FaCircle color="#DBDBDB" />
-            </div>
-          </FlexBox>
+    //         <div>
+    //           <FaCircle color="#DBDBDB" />
+    //           <FaCircle color="#DBDBDB" />
+    //           <FaCircle color="#DBDBDB" />
+    //           <FaCircle color="#DBDBDB" />
+    //           <FaCircle color="#DBDBDB" />
+    //         </div>
+    //       </FlexBox>
 
-          {/* row2 */}
-          <FlexBox>
-            <div>
-              <img src={store[0]?.images[0]} alt="" />
-            </div>
-          </FlexBox>
+    //       {/* row2 */}
+    //       <FlexBox>
+    //         <div>
+    //           <img src={store[0]?.images[0]} alt="" />
+    //         </div>
+    //       </FlexBox>
 
-          {/* row3 */}
-          <FlexBox>
-            <LabName>{store[0]?.name}</LabName>
-            <LabPrice>${store[0]?.price}</LabPrice>
-          </FlexBox>
-        </RightDiv>
-      </ParentDivLiftAndRight>
-    </InnerContainer>
+    //       {/* row3 */}
+    //       <FlexBox>
+    //         <LabName>{store[0]?.name}</LabName>
+    //         <LabPrice>${store[0]?.price}</LabPrice>
+    //       </FlexBox>
+    //     </RightDiv>
+    //   </ParentDivLiftAndRight>
+    // </InnerContainer>
   );
 }
 

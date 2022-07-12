@@ -34,14 +34,15 @@ import { SignInSchema } from "../Schema";
 import { useDispatch } from "react-redux";
 import { LoginAction } from "../../../redux/user/userActions";
 import { useSelector } from "react-redux/es/exports";
-import SpinnerComp from './../../Spinner/index';
-
+import SpinnerComp from "./../../Spinner/index";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const isLoading =useSelector(store=>store?.userReducer?.isLoading)
-  console.log(isLoading);
-  
+
+  const isLoading = useSelector((store) => store?.userReducer?.isLoading);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+
   return (
     <MainSign>
       <LeftBox>
@@ -56,12 +57,12 @@ export default function Login() {
       </LeftBox>
       <Formik
         initialValues={{
-          email: "omaralhafni@gmail.com",
-          password: "omarAlhafni@123456",
+          email: "",
+          password: "",
         }}
         validationSchema={SignInSchema()}
-        onSubmit={(values, { setSubmitting }) => {
-          dispatch(LoginAction(values));
+        onSubmit={(values) => {
+          dispatch(LoginAction(values, navigate("/")));
         }}
       >
         {({
@@ -110,14 +111,13 @@ export default function Login() {
                 <div style={{ color: "red" }}>{errors.password}</div>
               ) : null}
               <AuthBtn>
-                <Paragraphe>LOGIN </Paragraphe>
+                {isLoading ? <SpinnerComp /> : null}
+                <Paragraphe>LOGIN</Paragraphe>
                 <ContainerIcon>
                   <FaLongArrow />
                 </ContainerIcon>
               </AuthBtn>
-              {isLoading?<SpinnerComp />:null}
               
-             
               <AlreadySign>
                 Don't have account?{" "}
                 <CustomLink to="/SignUp">

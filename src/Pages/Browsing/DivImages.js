@@ -22,9 +22,9 @@ function DivImages() {
       </ImageDiv>
       <FlexGap>
         
-        {product?.images?.map((imgProduct)=>(
-          <ImageDivCustom>
-            <ImgStyle src={imgProduct} onClick={(e)=>displayImg(e)}   alt='Image'/>
+        {product?.images?.map((imgProduct, index)=>(
+          <ImageDivCustom key={index}>
+            <ImgStyle src={imgProduct} onClick={(e)=>displayImg(e)} alt='Image'/>
           </ImageDivCustom>
         ))}
       </FlexGap>

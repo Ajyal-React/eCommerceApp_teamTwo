@@ -1,18 +1,10 @@
-import {
-  FullContainer,
-  InnerContainer,
-  SupTitle,
-  Title,
-} from "../../Global.style";
-
-import { Link } from "react-router-dom";
+import { FullContainer, SupTitle, Title } from "../../Global.style";
 
 import {
   Header,
   HeaderLeft,
   HeaderRight,
   Products,
-  Tabs,
   CardsLeft,
   Slider,
   FeaturedCategoriesSection,
@@ -30,11 +22,10 @@ const FeaturedCategories = (props) => {
 
   const { data } = useSelector((state) => state.FCReducer);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(GetFC());
     setFeaturedCategories(data);
-  }, []);
+  }, [data, dispatch]);
 
   return (
     <>
@@ -50,8 +41,7 @@ const FeaturedCategories = (props) => {
 
           <Products>
             <CardsLeft>
-              {/*  <CardFeaturedCategories productName={FeaturedCategories[0].name} />  */}
-              <CardFeaturedCategories  />
+              <CardFeaturedCategories />
             </CardsLeft>
 
             <Slider>

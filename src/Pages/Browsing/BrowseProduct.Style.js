@@ -6,7 +6,7 @@ import { Paragraphe, Title } from "../../Global.style";
 export const FlexBoxStyle = Styled.div`
     display: flex;
     flex-wrap:wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 80%;
     /* gap: 35px; */
     padding-top:${(props) => (props.PaddingTop ? props.PaddingTop : "0")};

@@ -8,7 +8,6 @@ import {
   DivOpacity,
   MainHeaderUpdate,
 } from "./HomePage.Style";
-import DevicesDisplaySection from "../../Components/devicesDisplaySection/DevicesDisplaySection";
 import SlickSlider from "../../Components/Slider/SlickSlider";
 import TrendingPage from "../TrendingPage/TrendingPage";
 import FooterPage from "../FooterPage/FooterPage";
@@ -35,7 +34,7 @@ function HomePage() {
       <MainNavbar />
       <HeroSection offer={dataStore?.guestReducer?.offer[0]} />
       {/* <DevicesDisplaySection /> */}
-      {/* <FeaturedCategories /> */}
+      <FeaturedCategories />
       <BackgroundImage>
         <DivOpacity></DivOpacity>
         <UpdateFlexBox>

@@ -3,6 +3,7 @@ import { userReducer } from "./user/userReducers";
 import { guestReducer } from "./guest/guestReducer";
 import { ProductReducer } from "./product/ProductReducer";
 import { FCReducer } from "./FeaturedCategories/FCReducer";
+import { cartReducer } from "./Cart/cartReducer";
 import thunk from "redux-thunk";
 
 const reducer = combineReducers({
@@ -10,14 +11,19 @@ const reducer = combineReducers({
   guestReducer,
   ProductReducer,
   FCReducer,
+  cartReducer,
 });
 
 const userDetailsLocalStorage = JSON.parse(localStorage.getItem("user")) || {};
+const cartLocalStorage = JSON.parse(localStorage.getItem("cart")) || {};
 
 const initialState = {
   userReducer: {
     user: userDetailsLocalStorage,
   },
+  cartReducer:{
+    cart:cartLocalStorage
+  }
 };
 
 const middleWare = [thunk];

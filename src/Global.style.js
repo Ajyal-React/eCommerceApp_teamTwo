@@ -196,7 +196,7 @@ export const Input = styled.input`
   outline: none;
   letter-spacing: 1px;
   font-size: 14px;
-  width: 70%;
+  width: 100%;
 
   &[type="email"] {
     font-size: 18px;
@@ -290,4 +290,16 @@ export const Paragraph = styled(Paragraphe)`
   align-items: center;
   font-weight: bold;
   color: hsl(0deg 0% 43%);
+`;
+export const CustomButton = styled(Button)`
+    background: #FA7400;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 3px 6px #00000029;
+    min-height:40px;
+    height:auto;
+    width: ${props=>props.width? props.width:'100%'};
+    margin: ${props=>props.margin};
+    padding: ${props=>props.padding};
+    color: #ffff;
 `;

@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const SSlider = styled.div`
   width: 90%;
-  height: 90%;
+  height: auto;
+  min-width: 400px;
 `;
 
 export const Sale = styled.div`
@@ -16,7 +17,7 @@ export const Sale = styled.div`
 
 export const SliderItem = styled.div`
   height: 80%;
-  width: 100%;
+  width: auto;
 `;
 
 export const ProductName = styled.div`
@@ -58,4 +59,9 @@ export const Text = styled.div`
   text-align: center;
   text-decoration: line-through;
   text-decoration-color: red;
+`;
+
+export const ContainerImage = styled.div`
+  width: 80%;
+  margin: auto;
 `;

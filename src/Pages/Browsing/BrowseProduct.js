@@ -22,18 +22,31 @@ import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchProduct } from "../../redux/product/ProductAction";
-import { useParams } from "react-router-dom";
 import SpinnerComp from '../../Components/Spinner/index'
+import { useParams, useNavigate } from "react-router-dom";
+import { addToCartAction } from "../../redux/Cart/cartActions";
 
 function BrowseProduct() {
   const isLoading =useSelector(store=>store?.ProductReducer?.isLoading)
   const dispatch = useDispatch();
-  const {size, memory, storage,colors, name, price,countInStock} = useSelector((store) => store?.ProductReducer?.product);
+  const { size, memory, storage, colors, name, price, countInStock } =
+    useSelector((store) => store?.ProductReducer?.product);
+
   const param = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(FetchProduct(param?.id));
   }, [dispatch, param?.id]);
+
+  const product = {
+    productId: param?.id,
+    qty: 1,
+  };
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    dispatch(addToCartAction(product), navigate("/"));
+  };
   return (
 
     <MainContainer>    
@@ -42,28 +55,34 @@ function BrowseProduct() {
 
       <InnerContainer>
         <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
-          <DivImages/>
-
+          <DivImages />
           <SideRight>
             <FlexBox>
-            <CustomTitle marginBottom="0" textTransform="capitalize">
-            {name}
-            </CustomTitle>
-            <CustomTitle color='#FA7400' marginBottom="0" textTransform="capitalize">
-            {`${price}$`}
-            </CustomTitle>
+              <CustomTitle marginBottom="0" textTransform="capitalize">
+                {name}
+              </CustomTitle>
+              <CustomTitle
+                color="#FA7400"
+                marginBottom="0"
+                textTransform="capitalize"
+              >
+                {`${price}$`}
+              </CustomTitle>
             </FlexBox>
-
-            <CustomParaghraph margin="0 0 .5rem 0" color="#9B9A9A" fontSize="12px">
+            <CustomParaghraph
+              margin="0 0 .5rem 0"
+              color="#9B9A9A"
+              fontSize="12px"
+            >
               The best for your professional life
             </CustomParaghraph>
             <CustomParaghraph margin="0 0 .5rem 0" color="#707070">
-              Availability in stock: {
-              countInStock>0 ?
-              <SpanStyle>Available</SpanStyle>
-              :
-              <NotAvailable>Not Available</NotAvailable>
-              }
+              Availability in stock:{" "}
+              {countInStock > 0 ? (
+                <SpanStyle>Available</SpanStyle>
+              ) : (
+                <NotAvailable>Not Available</NotAvailable>
+              )}
             </CustomParaghraph>
             <HrS />
             <CustomParaghraph color="#646363">
@@ -71,8 +90,8 @@ function BrowseProduct() {
             </CustomParaghraph>
 
             <FlexBoxStyle MarginBottom="16px">
-            {colors?.map((ele) => (
-                <DivContent>
+              {colors?.map((ele) => (
+                <DivContent key={ele._id}>
                   <ColorCompination>
                     <ColorOne BackGColor={`${ele.one}`}>
                       <p></p>
@@ -80,28 +99,20 @@ function BrowseProduct() {
 
                     <ColorTwo BackGColor={`${ele.two}`}></ColorTwo>
                   </ColorCompination>
-                  <input
-                    type="radio"
-                    name="compination"
-                    value="val1"                   
-                    />
+                  <input type="radio" name="compination" value="val1" />
                 </DivContent>
               ))}
-                            
             </FlexBoxStyle>
             <FormProduct>
-              {
-              size?.length>0
-              ?
-              <>
-              <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
-                Size and Weight
-              </CustomParaghraph>
-              <OptionFileds optionProduct={size}/>
-              </>
-              :null
-              }
-              
+              {size?.length > 0 ? (
+                <>
+                  <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
+                    Size and Weight
+                  </CustomParaghraph>
+                  <OptionFileds optionProduct={size} />
+                </>
+              ) : null}
+
               <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                 Chip
               </CustomParaghraph>
@@ -111,7 +122,7 @@ function BrowseProduct() {
                   <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                     Storage
                   </CustomParaghraph>
-                  <OptionFileds optionProduct={storage}/>
+                  <OptionFileds optionProduct={storage} />
                 </>
               ) : null}
 
@@ -120,10 +131,10 @@ function BrowseProduct() {
                   <CustomParaghraph margin="0 0 .5rem 0" color="#646363">
                     Memory
                   </CustomParaghraph>
-                  <OptionFileds optionProduct={memory}/>
+                  <OptionFileds optionProduct={memory} />
                 </>
               ) : null}
-              <CustomButton>Add To Card</CustomButton>
+              <CustomButton onClick={handleAddToCart}>Add To Card</CustomButton>
             </FormProduct>
           </SideRight>
         </FlexBoxContainer>

@@ -1,11 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import {
   InnerContainer,
   Button,
   FlexBoxCenter,
-  StyledList,
-  FlexBoxRow,
   Paragraphe,
   CustomLink,
 } from "../../Global.style";
@@ -23,25 +21,25 @@ import {
   MenuResponsive,
   LogoImg,
   CategoriesList,
-  MenuButton
+  MenuButton,
+  GoToCart,
 } from "./MainNavbar.Style";
 import image from "../../images/Group 14849.png";
 import { useSelector } from "react-redux";
-import RightNav from './RightNav';
-
+import RightNav from "./RightNav";
 
 function MainNavbar() {
   const dataStore = useSelector((store) => store);
   const [isShown, setIsShown] = useState(false);
   const handleClick = () => {
-     setIsShown(true);}
-
+    setIsShown(true);
+  };
+  const totalPrice = JSON.parse(localStorage.getItem("cart"))?.totalPrice;
   return (
     <NavBG>
       <InnerContainer>
         <FlexBoxCenter>
           <FirstSide>
-          
             <FlexBoxCenter>
               <Button
                 backgroundColor="#7B77770F"
@@ -59,8 +57,8 @@ function MainNavbar() {
             </FlexBoxCenter>
           </FirstSide>
 
-          <MenuButton onClick={handleClick} >
-          <MenuResponsive/>
+          <MenuButton onClick={handleClick}>
+            <MenuResponsive />
           </MenuButton>
           {isShown && <RightNav />}
 
@@ -84,30 +82,30 @@ function MainNavbar() {
                   </Paragraphe>
                 </ListItems>
                 </FlexBoxCenter>
-            </CategoriesList>
-                <LogoImg>
-                  {" "}
-                  <img src={image} alt="logo" />
-                </LogoImg>
-                <CategoriesList>
-              <FlexBoxCenter>
-                <ListItems>
-                  <Paragraphe fontSize="16px" color="#32353C">
-                    Laptops
-                  </Paragraphe>
-                </ListItems>
-                <ListItems>
-                  <Paragraphe fontSize="16px" color="#32353C">
-                    HeadPhones
-                  </Paragraphe>
-                </ListItems>
-                <ListItems>
-                  <Paragraphe fontSize="16px" color="#32353C">
-                    Mobiles
-                  </Paragraphe>
-                </ListItems>
-              </FlexBoxCenter>
-            </CategoriesList>
+              </CategoriesList>
+              <LogoImg>
+                {" "}
+                <img src={image} alt="logo" />
+              </LogoImg>
+              <CategoriesList>
+                <FlexBoxCenter>
+                  <ListItems>
+                    <Paragraphe fontSize="16px" color="#32353C">
+                      Laptops
+                    </Paragraphe>
+                  </ListItems>
+                  <ListItems>
+                    <Paragraphe fontSize="16px" color="#32353C">
+                      HeadPhones
+                    </Paragraphe>
+                  </ListItems>
+                  <ListItems>
+                    <Paragraphe fontSize="16px" color="#32353C">
+                      Mobiles
+                    </Paragraphe>
+                  </ListItems>
+                </FlexBoxCenter>
+              </CategoriesList>
             </FlexBoxCenter>
           </CenterSide>
           <ThirdSide>
@@ -117,10 +115,12 @@ function MainNavbar() {
                   <FlexBoxCenter>
                     <BsHeartIcon />
                     <CustomLink to='/profile'><AiOutlineUserIcon /></CustomLink>
-                    <Paragraphe marginRight="3vh">0.00$</Paragraphe>
-                    <CustomLink to="/cart">
+                    {totalPrice > 0 ? (
+                      <Paragraphe marginRight="3vh">{totalPrice}$</Paragraphe>
+                    ) : null}
+                    <GoToCart to="/cart">
                       <RiShoppingBagFillIcon />
-                    </CustomLink>
+                    </GoToCart>
                   </FlexBoxCenter>
                 </MainNavIcons>
               ) : (
@@ -135,4 +135,4 @@ function MainNavbar() {
     </NavBG>
   );
 }
-export default MainNavbar
+export default MainNavbar;

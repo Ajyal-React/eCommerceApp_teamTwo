@@ -5,7 +5,7 @@ import { ImPlus } from "react-icons/im";
 import { RiCloseCircleFill } from "react-icons/ri";
 
 export const ContainerCartCard = styled(FlexBox)`
-  height: 147px;
+  height: 130px;
   border: 1px solid #707070;
   padding: 0 2rem 0 1rem;
   @media (max-width: 767.98px) {
@@ -18,12 +18,10 @@ export const ContainerCartCard = styled(FlexBox)`
 `;
 
 export const LeftBox = styled(FlexBox)`
-  width: 50%;
+  width: 60%;
   height: 100%;
   align-items: center;
-  @media (max-width: 1199.98px) {
-    width: 60%;
-  }
+
   @media (max-width: 991.98px) {
     width: 75%;
   }
@@ -51,10 +49,11 @@ export const ContainerImage = styled.div`
   height: 80%;
   width: 174px;
   background: #e3e3e3;
+  /* padding: 0 1rem; */
 `;
 
 export const InnerContainer = styled(FlexBox)`
-  padding-left: 5rem;
+  padding-left: 4rem;
   @media (max-width: 767.98px) {
     flex-direction: column;
   }
@@ -63,7 +62,7 @@ export const InnerContainer = styled(FlexBox)`
   }
 `;
 export const ContainerCounter = styled(FlexBox)`
-  width: 35%;
+  width: 30%;
   align-items: center;
   @media (max-width: 767.98px) {
     width: 70%;
@@ -72,11 +71,9 @@ export const ContainerCounter = styled(FlexBox)`
 
 const sytleSize = css`
   font-weight: bold;
-  @media (max-width: 1199.98px) {
-    font-size: 18px;
-  }
+  font-size: 16px;
   @media (max-width: 991.98px) {
-    font-size: 16px;
+    font-size: 15px;
   }
   @media (max-width: 767.98px) {
     font-size: 14px;
@@ -87,7 +84,7 @@ const sytleSize = css`
 `;
 export const ProductName = styled.p`
   color: #646363;
-  font-size: 21px;
+  font-size: 16px;
   ${sytleSize}
 `;
 export const MinusIcon = styled(ImMinus)`
@@ -127,4 +124,13 @@ export const Quantity = styled.p`
 
 export const ProductPrice = styled(ProductName)`
   color: #0ea965;
+`;
+export const EmptyCart = styled(FlexBox)`
+  width: 100%;
+  margin: auto;
+  margin-bottom: 2rem;
+  height: 60vh;
+  @media (max-width: 991.98px) {
+    height: auto;
+  }
 `;

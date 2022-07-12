@@ -35,8 +35,23 @@ import debitCard from "../../images/debitCard.png";
 import creditCard from "../../images/creditCard.png";
 import { LongArrowAltLeftIcon } from "./PaymentPage.style";
 import InputFiled from "./Component/InputFiled";
+import { useDispatch } from "react-redux";
+import { createOrder } from "../../redux/order/orderActions";
 
 function PaymentPage() {
+  const dispatch = useDispatch();
+
+  const orderDetails = {
+    address: "string",
+    city: "string",
+    postalCode: 1234,
+    country: "string",
+  };
+  const handleOrder = () => {
+    dispatch(createOrder(orderDetails));
+  };
+
+
   return (
     <MainContainer>
       <MainNavbar />
@@ -47,7 +62,7 @@ function PaymentPage() {
               <LongArrowAltLeftIcon /> Return to my card
             </Paragraph>
           </CustomLink>
-
+          
           <PaymentSection>
             <PaymentMethod>
               <Label color="hsl(0deg 0% 14%)">Choose your payment method</Label>
@@ -134,7 +149,12 @@ function PaymentPage() {
             >
               Go Back
             </Button>
-            <Button borderR="5px" padding="10px 40px" backgroundColor="#f7981d">
+            <Button
+              onClick={handleOrder}
+              borderR="5px"
+              padding="10px 40px"
+              backgroundColor="#f7981d"
+            >
               Checkout
             </Button>
           </CheckOutDiv>
