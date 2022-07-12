@@ -1,7 +1,6 @@
-import { ListItemsStyle } from "../../../../Global.style";
-import { List } from "../../../../Global.style";
 import { CustomListItemsStyle, DivImg, Item } from "./Mylist.style";
-import BackBag from "../../../../images/BackBag.png";
+import BackBag from "../../images/BackBag.png";
+import { List, ListItemsStyle } from "../../Global.style";
 
 function Items() {
   return (

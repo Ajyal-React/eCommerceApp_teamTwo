@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { FlexBox, Paragraphe } from "../../../../Global.style";
+import { FlexBox, Paragraphe } from "../../Global.style";
 import { FaUserAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";

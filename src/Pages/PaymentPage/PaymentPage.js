@@ -33,7 +33,7 @@ import visa from "../../images/visa.png";
 import debitCard from "../../images/debitCard.png";
 import creditCard from "../../images/creditCard.png";
 import { LongArrowAltLeftIcon } from "./PaymentPage.style";
-import InputFiled from "./Component/InputFiled";
+import InputFiled from "../../Components/InputComponent/InputFiled";
 import { useDispatch } from "react-redux";
 import { createOrder } from "../../redux/order/orderActions";
 import Footer from "../../Components/Footer/Footer";

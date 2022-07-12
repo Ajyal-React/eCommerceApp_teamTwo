@@ -1,4 +1,4 @@
-import { Image, List, ListItemsStyle } from "../../../../Global.style";
+import { Image, List, ListItemsStyle } from "../../Global.style";
 import {
   ContactDetails,
   ConteainerUl,

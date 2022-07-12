@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const RightNavContainer = styled.div`
 display: none;
-  @media (max-width: 376px) {
+  @media (max-width: 991.98px) {
     display:block;
     max-width:300px;
     height:812px;
    background-color:	#FFFFFF;
    position: fixed;
-   zIndex: 1;
+   z-index: 1;
    top: 0;
    right: 0;
    bottom: 0;
@@ -19,7 +19,7 @@ display: none;
 
 export const UserSec = styled.div`
 display: none;
-  @media (max-width: 376px) {
+  @media (max-width: 991.98px) {
     display:block;
     height:80px;
     max-width:200px;
@@ -28,7 +28,7 @@ display: none;
 `
 export const UserImage = styled.img`
 display: none;
-  @media (max-width: 376px) {
+  @media (max-width: 991.98px) {
     display:block;
     height:75px;
     width:75px;
@@ -36,14 +36,14 @@ display: none;
 `
 export const UserData = styled.div`
 display: none;
-  @media (max-width: 376px) {
+  @media (max-width: 991.98px) {
     display:block;
     height:75px;
   }
 `
 export const UserText = styled.p`
 display: none;
-  @media (max-width: 376px) {
+  @media (max-width: 991.98px) {
     display:flex;
     font-size:1rem;
     color: #fa7400;
@@ -53,7 +53,7 @@ display: none;
 `
 export const RightNavList = styled.ul`
 display: none;
-  @media (max-width: 376px) {
+  @media (max-width: 991.98px) {
     display:flex;
     list-style: none;
     width:225px;
@@ -62,13 +62,13 @@ display: none;
 
 export const RightNavListItems = styled.li`
 display: none;
-  @media (max-width: 376px) {
+  @media (max-width: 991.98px) {
     display:flex;
   }
 `
 export const FirstPart = styled.div`
 display: none;
-  @media (max-width: 376px) {
+  @media (max-width: 991.98px) {
     display:flex;
   }
 `

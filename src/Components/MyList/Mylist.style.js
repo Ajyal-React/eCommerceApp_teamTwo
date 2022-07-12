@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FlexBox, ListItemsStyle } from "../../../../Global.style";
+import { FlexBox, ListItemsStyle } from "../../Global.style";
 
 export const ListContents = styled.div`
   /* margin-top: 245px; */

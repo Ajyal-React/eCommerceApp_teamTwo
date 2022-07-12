@@ -6,6 +6,7 @@ import {
   FlexBoxCenter,
   Paragraphe,
   CustomLink,
+  Image,
 } from "../../Global.style";
 import {
   FirstSide,
@@ -63,29 +64,29 @@ function MainNavbar() {
           {isShown && <RightNav />}
 
           <CenterSide>
-          <FlexBoxCenter>
-            <CategoriesList>
-              <FlexBoxCenter>
-                <ListItems>
-                  <Paragraphe fontSize="16px" color="#32353C">
-                   Home
-                  </Paragraphe>
-                </ListItems>
-                <ListItems>
-                  <Paragraphe fontSize="16px" color="#32353C">
-                    New arrival
-                  </Paragraphe>
-                </ListItems>
-                <ListItems>
-                  <Paragraphe fontSize="16px" color="#32353C">
-                    Mobiles
-                  </Paragraphe>
-                </ListItems>
+            <FlexBoxCenter>
+              <CategoriesList>
+                <FlexBoxCenter>
+                  <ListItems>
+                    <Paragraphe fontSize="16px" color="#32353C">
+                      Home
+                    </Paragraphe>
+                  </ListItems>
+                  <ListItems>
+                    <Paragraphe fontSize="16px" color="#32353C">
+                      New arrival
+                    </Paragraphe>
+                  </ListItems>
+                  <ListItems>
+                    <Paragraphe fontSize="16px" color="#32353C">
+                      Mobiles
+                    </Paragraphe>
+                  </ListItems>
                 </FlexBoxCenter>
               </CategoriesList>
               <LogoImg>
                 {" "}
-                <img src={image} alt="logo" />
+                <Image src={image} alt="logo" />
               </LogoImg>
               <CategoriesList>
                 <FlexBoxCenter>
@@ -114,7 +115,9 @@ function MainNavbar() {
                 <MainNavIcons>
                   <FlexBoxCenter>
                     <BsHeartIcon />
-                    <CustomLink to='/profile'><AiOutlineUserIcon /></CustomLink>
+                    <CustomLink to="/profile">
+                      <AiOutlineUserIcon />
+                    </CustomLink>
                     {totalPrice > 0 ? (
                       <Paragraphe marginRight="3vh">{totalPrice}$</Paragraphe>
                     ) : null}
