@@ -22,20 +22,18 @@ import {
   GrMailIcon,
   ContactContainer,
   FlexCenter,
-  FirstSecContainer, 
-} from "./FooterNav.Style";
+  FirstSecContainer,
+  ThirdSide,
+} from "./FooterComponent.Style";
 import LogoImage from "../../images/Group 14849.png";
-import { ThirdSide } from "./MainNavbar.Style";
 
 import { RiWhatsappFill } from "react-icons/ri";
 import { SiFacebook } from "react-icons/si";
 import { IconContext } from "react-icons/lib";
 
-
-function FooterNav() {
+function FooterComponent() {
   return (
     <FooterContainer>
-   
       <FirstSecContainer>
         <FirstSide>
           <LogoImg src={LogoImage}></LogoImg>
@@ -86,7 +84,7 @@ function FooterNav() {
               <FooterSubTitle>
                 Fell free get in touch with us via phone or send us a message
               </FooterSubTitle>
-              
+
               <IconsSec>
                 {" "}
                 <FlexBoxCenter>
@@ -101,12 +99,10 @@ function FooterNav() {
                   <FooterSubTitle>support@khoomi.com</FooterSubTitle>
                 </FlexBoxCenter>
               </IconsSec>
-             
             </FlexCol>
           </ContactContainer>
         </ThirdSide>
       </FirstSecContainer>
-    
 
       <HrStyle></HrStyle>
 
@@ -116,25 +112,22 @@ function FooterNav() {
 
           <SocialIcons>
             <FlexBoxRow>
-              
-                <SocialStyle>
-                  {" "}
-                  <IconContext.Provider value={{ color: "#0165E1" }}>
+              <SocialStyle>
+                {" "}
+                <IconContext.Provider value={{ color: "#0165E1" }}>
                   <SiFacebook />
-                  </IconContext.Provider>
-                </SocialStyle>
-                <SocialStyle>
+                </IconContext.Provider>
+              </SocialStyle>
+              <SocialStyle>
                 <IconContext.Provider value={{ color: "#4FCE5D" }}>
                   <RiWhatsappFill />
-                  </IconContext.Provider>
-                </SocialStyle>
-              
+                </IconContext.Provider>
+              </SocialStyle>
             </FlexBoxRow>
           </SocialIcons>
         </FlexCenter>
       </LastSide>
-  
     </FooterContainer>
   );
 }
-export default FooterNav;
+export default FooterComponent;

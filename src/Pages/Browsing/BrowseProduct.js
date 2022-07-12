@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
 import { FlexBox, InnerContainer, MainContainer } from "../../Global.style";
-import FooterPage from "../FooterPage/FooterPage";
 import {
   FlexBoxStyle,
   SideRight,
@@ -25,6 +24,7 @@ import { FetchProduct } from "../../redux/product/ProductAction";
 import SpinnerComp from '../../Components/Spinner/index'
 import { useParams, useNavigate } from "react-router-dom";
 import { addToCartAction } from "../../redux/Cart/cartActions";
+import Footer from "../../Components/Footer/Footer";
 
 function BrowseProduct() {
   const isLoading =useSelector(store=>store?.ProductReducer?.isLoading)
@@ -141,7 +141,7 @@ function BrowseProduct() {
         <HrS margin="0px -101px" />
       </InnerContainer>
       }
-      <FooterPage />
+      <Footer />
     </MainContainer>
   );
 }

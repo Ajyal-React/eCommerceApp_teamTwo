@@ -1,6 +1,6 @@
+import Footer from "../../Components/Footer/Footer";
 import MainNavbar from "../../Components/Navbar/MainNavbar";
 import { MainContainer } from "../../Global.style";
-import FooterPage from "../FooterPage/FooterPage";
 import ContactSection from "./Component/ContactSection/ContactSection";
 import Mylist from "./Component/MyList/Mylist";
 import SideBar from "./Component/sideBarSetting/SideBar";
@@ -19,7 +19,7 @@ function ProfilePage() {
         </Logout>
       </Flex>
       <DivArround>
-        <FooterPage />
+        <Footer />
       </DivArround>
     </MainContainer>
   );

@@ -10,7 +10,6 @@ import {
 } from "./HomePage.Style";
 import SlickSlider from "../../Components/Slider/SlickSlider";
 import TrendingPage from "../TrendingPage/TrendingPage";
-import FooterPage from "../FooterPage/FooterPage";
 import {
   getFeaturedProductsAction,
   offerAction,
@@ -18,6 +17,7 @@ import {
 } from "../../redux/guest/guestActions";
 import { useDispatch, useSelector } from "react-redux";
 import FeaturedCategories from "../../Components/FeaturedCategories/indx";
+import Footer from "../../Components/Footer/Footer";
 
 
 function HomePage() {
@@ -61,7 +61,7 @@ function HomePage() {
       <SlickSlider products={dataStore?.guestReducer?.featuredProducts} />
       <TrendingPage trending={dataStore?.guestReducer?.trending} />
       
-      <FooterPage />
+      <Footer />
      
     </MainContainer>
   );

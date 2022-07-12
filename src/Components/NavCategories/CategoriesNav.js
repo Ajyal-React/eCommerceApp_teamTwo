@@ -13,7 +13,7 @@ import {
   NavMainHeader,
   NavContainer,
   CategoriesSection,
-} from "./CategoriesNav.style";
+} from "../Navbar/CategoriesNav.style";
 
 function CategoriesNav() {
   return (

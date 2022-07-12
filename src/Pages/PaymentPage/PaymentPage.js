@@ -8,7 +8,6 @@ import {
   Paragraph,
   Paragraphe,
 } from "../../Global.style";
-import FooterPage from "../FooterPage/FooterPage";
 import {
   ChooseMethod,
   FormStyle,
@@ -37,6 +36,7 @@ import { LongArrowAltLeftIcon } from "./PaymentPage.style";
 import InputFiled from "./Component/InputFiled";
 import { useDispatch } from "react-redux";
 import { createOrder } from "../../redux/order/orderActions";
+import Footer from "../../Components/Footer/Footer";
 
 function PaymentPage() {
   const dispatch = useDispatch();
@@ -160,7 +160,7 @@ function PaymentPage() {
           </CheckOutDiv>
         </MainDiv>
       </InnerContainer>
-      <FooterPage />
+      <Footer />
     </MainContainer>
   );
 }
