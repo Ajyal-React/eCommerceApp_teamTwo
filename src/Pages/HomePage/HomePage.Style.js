@@ -8,6 +8,10 @@ export const BackgroundImage = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    background-position: center center;
+    @media (max-width: 1199.98px) {
+        height: 120px;
+      }
 `
 export const UpdateFlexBox = styled(FlexBox)`
     justify-content: space-around;
@@ -16,6 +20,11 @@ export const UpdateFlexBox = styled(FlexBox)`
     width: 80%;
     margin: auto;
     align-items: center;
+
+    @media (max-width: 1199.98px) {
+        padding-top: 50px;
+        align-items: baseline;
+    }
 `
 
 export const DivOpacity = styled.div`
@@ -24,7 +33,7 @@ export const DivOpacity = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.7;
     background: #000;    
 `
 export const MainHeaderUpdate = styled(MainHeader)`

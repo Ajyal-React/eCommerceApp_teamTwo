@@ -90,8 +90,8 @@ function BrowseProduct() {
             </CustomParaghraph>
 
             <FlexBoxStyle MarginBottom="16px">
-              {colors?.map((ele) => (
-                <DivContent key={ele._id}>
+              {colors?.map((ele, index) => (
+                <DivContent>
                   <ColorCompination>
                     <ColorOne BackGColor={`${ele.one}`}>
                       <p></p>
@@ -99,7 +99,7 @@ function BrowseProduct() {
 
                     <ColorTwo BackGColor={`${ele.two}`}></ColorTwo>
                   </ColorCompination>
-                  <input type="radio" name="compination" value="val1" />
+                  <input type="radio" name="color" value="color" checked={index===0?'checked':null}/>
                 </DivContent>
               ))}
             </FlexBoxStyle>
