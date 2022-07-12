@@ -63,24 +63,24 @@ function MainNavbar() {
           {isShown && <RightNav />}
 
           <CenterSide>
-            <FlexBoxCenter>
-              <CategoriesList>
-                <FlexBoxCenter>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      <CustomLink to="/profile">Home</CustomLink>
-                    </Paragraphe>
-                  </ListItems>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      New arrival
-                    </Paragraphe>
-                  </ListItems>
-                  <ListItems>
-                    <Paragraphe fontSize="16px" color="#32353C">
-                      Mobiles
-                    </Paragraphe>
-                  </ListItems>
+          <FlexBoxCenter>
+            <CategoriesList>
+              <FlexBoxCenter>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                   Home
+                  </Paragraphe>
+                </ListItems>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                    New arrival
+                  </Paragraphe>
+                </ListItems>
+                <ListItems>
+                  <Paragraphe fontSize="16px" color="#32353C">
+                    Mobiles
+                  </Paragraphe>
+                </ListItems>
                 </FlexBoxCenter>
               </CategoriesList>
               <LogoImg>
@@ -114,7 +114,7 @@ function MainNavbar() {
                 <MainNavIcons>
                   <FlexBoxCenter>
                     <BsHeartIcon />
-                    <AiOutlineUserIcon />
+                    <CustomLink to='/profile'><AiOutlineUserIcon /></CustomLink>
                     {totalPrice > 0 ? (
                       <Paragraphe marginRight="3vh">{totalPrice}$</Paragraphe>
                     ) : null}

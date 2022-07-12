@@ -1,1 +1,2 @@
 export const PRODUCT = 'PRODUCT' 
+export const START_FETCH_PRODUCT = 'START_FETCH_PRODUCT'

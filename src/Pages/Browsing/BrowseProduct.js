@@ -22,10 +22,12 @@ import DivImages from "./DivImages";
 import OptionFileds from "./OptionFields";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchProduct } from "../../redux/product/ProductAction";
+import SpinnerComp from '../../Components/Spinner/index'
 import { useParams, useNavigate } from "react-router-dom";
 import { addToCartAction } from "../../redux/Cart/cartActions";
 
 function BrowseProduct() {
+  const isLoading =useSelector(store=>store?.ProductReducer?.isLoading)
   const dispatch = useDispatch();
   const { size, memory, storage, colors, name, price, countInStock } =
     useSelector((store) => store?.ProductReducer?.product);
@@ -46,8 +48,11 @@ function BrowseProduct() {
     dispatch(addToCartAction(product), navigate("/"));
   };
   return (
-    <MainContainer>
+
+    <MainContainer>    
       <MainNavbar />
+      {isLoading?<SpinnerComp/>:
+
       <InnerContainer>
         <FlexBoxContainer PaddingTop="115px" MarginBottom="75px">
           <DivImages />
@@ -135,6 +140,7 @@ function BrowseProduct() {
         </FlexBoxContainer>
         <HrS margin="0px -101px" />
       </InnerContainer>
+      }
       <FooterPage />
     </MainContainer>
   );
