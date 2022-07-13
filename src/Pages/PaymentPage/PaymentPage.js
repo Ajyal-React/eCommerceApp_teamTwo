@@ -51,7 +51,6 @@ function PaymentPage() {
     dispatch(createOrder(orderDetails));
   };
 
-
   return (
     <MainContainer>
       <MainNavbar />
@@ -62,7 +61,7 @@ function PaymentPage() {
               <LongArrowAltLeftIcon /> Return to my card
             </Paragraph>
           </CustomLink>
-          
+
           <PaymentSection>
             <PaymentMethod>
               <Label color="hsl(0deg 0% 14%)">Choose your payment method</Label>
@@ -99,7 +98,6 @@ function PaymentPage() {
 
                 <Fileds>
                   <InputFiled name="Credit card number" />
-
                   <CustomFlex>
                     <InputFiled name="CVV code" />
                     <InputFiled name="Expiry date" placeholder="MM/YY" />

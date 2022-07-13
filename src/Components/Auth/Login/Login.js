@@ -26,6 +26,7 @@ import {
   Forget,
   ImageLogo,
   AuthP,
+  Box,
 } from "../Auth.Style";
 import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
@@ -38,7 +39,6 @@ import SpinnerComp from "./../../Spinner/index";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-
   const isLoading = useSelector((store) => store?.userReducer?.isLoading);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -117,14 +117,15 @@ export default function Login() {
                   <FaLongArrow />
                 </ContainerIcon>
               </AuthBtn>
-              
+            </InnerRigth>
+            <Box>
               <AlreadySign>
                 Don't have account?{" "}
                 <CustomLink to="/SignUp">
                   <Bold> Sign Up</Bold>
                 </CustomLink>
               </AlreadySign>
-            </InnerRigth>
+            </Box>
           </RightBox>
         )}
       </Formik>

@@ -187,6 +187,7 @@ export const StylePlaceholder = css`
   margin-bottom: 0.5rem;
   @media (max-width: 575.98px) {
     margin-top: 12px;
+    font-size: 12px;
   }
 `;
 
@@ -198,18 +199,18 @@ export const Input = styled.input`
   font-size: 14px;
   width: 100%;
 
-  &[type="email"] {
-    font-size: 18px;
-    letter-spacing: 2px;
-    color: #707070;
-  }
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #707070;
+
   &placeholder {
     ${StylePlaceholder}
   }
   @media (max-width: 1199.98px) {
-    &[type="email"] {
-      font-size: 14px;
-    }
+    font-size: 14px;
+  }
+  @media (max-width: 575.98px) {
+    font-size: 12px;
   }
 `;
 
@@ -266,7 +267,6 @@ export const FlexBoxRow = styled(FlexBox)`
   flex-direction: row;
   padding: ${(props) => props.padding};
   align-items: ${(props) => props.alignItems};
- 
 `;
 export const HrStyle = styled.hr``;
 export const StyledList = styled.ul`
@@ -292,14 +292,14 @@ export const Paragraph = styled(Paragraphe)`
   color: hsl(0deg 0% 43%);
 `;
 export const CustomButton = styled(Button)`
-    background: #FA7400;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 3px 6px #00000029;
-    min-height:40px;
-    height:auto;
-    width: ${props=>props.width? props.width:'100%'};
-    margin: ${props=>props.margin};
-    padding: ${props=>props.padding};
-    color: #ffff;
+  background: #fa7400;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 3px 6px #00000029;
+  min-height: 40px;
+  height: auto;
+  width: ${(props) => (props.width ? props.width : "100%")};
+  margin: ${(props) => props.margin};
+  padding: ${(props) => props.padding};
+  color: #ffff;
 `;

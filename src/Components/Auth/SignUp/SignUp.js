@@ -23,6 +23,7 @@ import {
   ImageLogo,
   AuthP,
   RightBox,
+  Box,
 } from "../Auth.Style";
 import Logo from "../../../images/Mask Group 2.png";
 import Labtop from "../../../images/Base1.png";
@@ -53,7 +54,7 @@ export default function SignUp() {
           initialValues={{ email: "", password: "", passwordConfirm: "" }}
           validationSchema={SignUpSchema()}
           onSubmit={(values) => {
-            dispatch(SignUpAction(values, navigate("/")))
+            dispatch(SignUpAction(values, navigate("/")));
           }}
         >
           {({
@@ -118,12 +119,14 @@ export default function SignUp() {
                   <FaLongArrow />
                 </ContainerIcon>
               </AuthBtn>
-              <AlreadySign>
-                Already member?
-                <CustomLink to="/login">
-                  <Bold> Sign in</Bold>
-                </CustomLink>
-              </AlreadySign>
+              <Box>
+                <AlreadySign>
+                  Already member?
+                  <CustomLink to="/login">
+                    <Bold> Sign in</Bold>
+                  </CustomLink>
+                </AlreadySign>
+              </Box>
             </InnerRigth>
           )}
         </Formik>
